@@ -1,0 +1,30 @@
+$global-width: (
+	break-point-pc: 1100px,
+	break-point-sp: 960px,
+	break-point-iPhoneX: 375px,
+	break-point-iPhone5: 350px,
+	max-width: 1024px,
+);
+
+$global-space: (
+	content-a: 6vw,
+	content-a-sp: 12px,
+);
+
+$global-z-index: (
+	layer-5: 5000,
+	layer-4: 4000,
+	layer-3: 3000,
+	layer-2: 2000,
+	layer-1: 1000,
+	default: 0,
+);
+
+$global-color: (
+	primary: #00aba3,
+	link: #0e67e1,
+);
+
+@function global-color($key) {
+	@return map-get($global-color, $key);
+}

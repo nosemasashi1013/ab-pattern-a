@@ -1,0 +1,165 @@
+-
+  var organizations = [
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D010000",
+      text : "総務部",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D013400",
+      text : "地域戦略部",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D013600",
+      text : "交流文化部",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D014000",
+      text : "安全環境部",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D016007",
+      text : "健康福祉部",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D018500",
+      text : "産業労働部",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D021000",
+      text : "農林水産部",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D023000",
+      text : "土木部",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D025205",
+      text : "会計局",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D036050",
+      text : "議会局",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D055000",
+      text : "教育庁",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#D055001",
+      text : "教育機関",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/syozoku.html#Dkakushu",
+      text : "各種委員会",
+    }
+  ]
+    var links = [
+    {
+      link : "https://www.pref.fukui.lg.jp/doc/toukei-jouhou/link.html",
+      text : "リンク集",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/doc/about/intro.html",
+      text : "サイトポリシー",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/doc/about/privacy.html",
+      text : "プライバシーポリシー",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/sitemap.html",
+      text : "サイトマップ",
+    },
+    {
+      link : "https://www.pref.fukui.lg.jp/doc/zaisankastuyou/annai.html",
+      text : "県庁フロアマップ",
+    },
+  ]
+-
+footer.footer
+  .footer-wrapper
+    .content-top
+      div
+        .content-search
+          .content-body
+            form(action="https://www.pref.fukui.lg.jp/search.html" class="search-box form-footer")
+              input(
+                type="text"
+                class="text search-box-footer"
+                id="q_footer"
+                name="q"
+                placeholder="キーワード検索"
+              )
+              button(
+                accesskey="s"
+                class="button-search"
+                type="submit"
+                onClick="gtag('event', 'click', {'event_category': 'search-free-word', 'event_label': 'footer'});"
+              )
+                i(class="fas fa-search")
+
+        include ../parts/_search-keyword-list.pug
+        +featureKeywords('footer')
+
+        .content-category
+          h3.title
+            | カテゴリーから探す
+          ul.category-list
+            each item in globalNavi
+              li.category-item 
+                a(
+                  href=item.link
+                  onClick="gtag('event', 'click', {'event_category': 'category', 'event_label': 'footer', 'value': '"+ item.text + "'});"
+                ) 
+                  =item.text
+      div
+        .content-request
+          h3.title
+            | お問い合わせ
+          a.phone(
+            href="tel:0776211111" 
+          )
+            .label
+              | 代表電話
+            div
+              <i class="fas fa-phone-alt"></i>
+              span.number
+                | 0776-21-1111
+          h4.title-b
+            a(href="https://www.pref.fukui.lg.jp/syozoku.html")
+              | 組織一覧
+          ul.organizations-list 
+            each item in organizations
+              li.organizations-item
+                a(
+                  href=item.link
+                  target=item.isTargetBlank ? "_blank" : "_self"
+                ) 
+                  span.text
+                    =item.text
+
+      div
+        .content-map
+          h3.title
+            | 福井県庁
+          .map
+            p 
+              | 〒910-8580 福井市大手3丁目17番1号
+            a(
+              href="https://www.google.com/maps?q=%E3%80%92910-8580+%E7%A6%8F%E4%BA%95%E5%B8%82%E5%A4%A7%E6%89%8B3%E4%B8%81%E7%9B%AE17%E7%95%AA1%E5%8F%B7&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiq5NrR0-nyAhWPyIsBHX80BfsQ_AUoAXoECAEQAw"
+              target="blank"
+            )
+              p 
+                | 地図・アクセス
+              img(src=pathImage + "common/map.png" alt="福井市大手3丁目17番1号")
+
+    .content-links 
+      ul.links-list 
+        each item in links
+          li.links-item
+            a(href=item.link) 
+              span.text
+                =item.text
+
+    .copy-right
+      | &copy; 2021 福井県

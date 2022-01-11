@@ -1,0 +1,49 @@
+extends common/_layout
+
+block pageOption
+  - pageClass.push('page-index')
+  - contentClass.push('index-container')
+
+block content
+  include mixins/_ga-link.pug
+
+  .fix-search-wrapper
+    section.section-content.section-search
+      .section-content-wrapper
+        .section-content-body.box-shadow
+          nav.nav
+            ul.nav-list
+              each item in globalNavi
+                - var className = "nav-item " + item.className
+                  li(
+                    class=className
+                  ) 
+                    a(
+                      href=item.link
+                      onClick="gtag('event', 'click', {'event_category': 'category', 'event_label': 'header', 'value': '"+ item.text + "'});"
+                    ) 
+                      h1
+                        =item.text
+                      i(class="fas fa-angle-right")
+          .content-search-wrapper
+            .content-search
+              .content-body
+                form(action="https://www.pref.fukui.lg.jp/search.html" class="form-main")
+                  .search-box
+                    input(
+                      type="text"
+                      class="text search-box-main"
+                      id="q"
+                      name="q"
+                      placeholder="キーワード検索"
+                    )
+                    button(
+                      accesskey="s"
+                      class="button-search"
+                      type="submit"
+                      onClick="gtag('event', 'click', {'event_category': 'search-free-word', 'event_label': 'header'});"
+                    )
+                      i(class="fas fa-search")
+                </form>
+            include parts/_search-keyword-list.pug
+            +featureKeywords('header')

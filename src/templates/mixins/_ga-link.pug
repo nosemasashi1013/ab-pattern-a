@@ -1,0 +1,14 @@
+mixin gaLink(category, position, url, className = "")
+  if category === gaCategory.internal
+    a(
+      href=url
+      class=className
+    )
+      block
+  else
+    a(
+      href=url
+      class=className
+      onClick="gtag('event', 'click', {'event_category': '"+category+"', 'event_label': '"+position+":"+url+"'});"
+    )
+      block
