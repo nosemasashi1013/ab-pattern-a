@@ -79,39 +79,17 @@
 footer.footer
   .footer-wrapper
     .content-top
-      div
-        .content-search
-          .content-body
-            form(action="https://www.pref.fukui.lg.jp/search.html" class="search-box form-footer")
-              input(
-                type="text"
-                class="text search-box-footer"
-                id="q_footer"
-                name="q"
-                placeholder="キーワード検索"
-              )
-              button(
-                accesskey="s"
-                class="button-search"
-                type="submit"
-                onClick="gtag('event', 'click', {'event_category': 'search-free-word', 'event_label': 'footer'});"
-              )
-                i(class="fas fa-search")
-
-        include ../parts/_search-keyword-list.pug
-        +featureKeywords('footer')
-
-        .content-category
-          h3.title
-            | カテゴリーから探す
-          ul.category-list
-            each item in globalNavi
-              li.category-item 
-                a(
-                  href=item.link
-                  onClick="gtag('event', 'click', {'event_category': 'category', 'event_label': 'footer', 'value': '"+ item.text + "'});"
-                ) 
-                  =item.text
+      .content-category
+        h3.title
+          | カテゴリーから探す
+        ul.category-list
+          each item in globalNavi
+            li.category-item 
+              a(
+                href=item.link
+                onClick="gtag('event', 'click', {'event_category': 'category', 'event_label': 'footer', 'value': '"+ item.text + "'});"
+              ) 
+                =item.text
       div
         .content-request
           h3.title

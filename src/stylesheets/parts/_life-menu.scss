@@ -1,0 +1,43 @@
+.life-menu-container {
+	.life-menu-list {
+		margin-top: 56px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+		gap: 8px;
+	}
+	.menu-item-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.life-menu-item {
+		padding: 16px 0;
+		background-color: #fff;
+		flex-basis: calc(25% - 8px);
+		border-radius: 8px;
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&:last-child {
+			flex-basis: 100%;
+			.life-menu-text {
+				margin-top: 0;
+				text-align: center;
+			}
+		}
+
+		.life-menu-text {
+			font-weight: bold;
+			font-size: 20px;
+			margin-top: 8px;
+		}
+	}
+	.life-menu-icon {
+		width: 120px;
+		height: auto;
+	}
+}

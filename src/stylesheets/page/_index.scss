@@ -51,95 +51,20 @@
 			margin-top: 50px;
 		}
 	}
-	.searchbox-fixed {
-		position: fixed;
-		top: 0;
-		width: 100%;
-		z-index: 9999;
-		.section-content-body {
-			border-radius: 0 0 8px 8px;
-		}
-	}
-	.section-search {
-		display: block;
-		width: 928px;
-		margin: 0 auto;
+	.section-content-hero {
+		position: relative;
+		height: 474px;
+		overflow: hidden;
 
-		&.hide-animation {
-			animation: hideAnimation 0.3s forwards;
-		}
-		@keyframes hideAnimation {
-			from {
-				transform: translateY(-100%);
-			}
-			to {
-				transform: translateY(0);
-			}
-		}
-		&.hide {
-			display: none;
-		}
-		&.is-fixed {
-			position: fixed;
+		.label-img {
+			position: absolute;
 			top: 0;
-			width: 928px;
-			max-width: 928px;
-			z-index: 999;
-
-			.section-content-body {
-				border-radius: 0 0 8px 8px;
-			}
-		}
-		.section-content-body {
-			.content-search-wrapper {
-				display: flex;
-				justify-content: space-between;
-				padding-top: 16px;
-			}
-			.nav {
-				.nav-list {
-					display: flex;
-					justify-content: space-between;
-					font-weight: bold;
-					.nav-item {
-						width: 16%;
-						h1 {
-							padding-bottom: 8px;
-							text-align: center;
-						}
-						svg {
-							display: none;
-						}
-						a {
-							&:hover {
-								text-decoration: underline;
-								opacity: 0.8;
-								transition: 0.2s all ease-in-out;
-							}
-						}
-						&.life-environment {
-							border-bottom: 2px solid #8ab992;
-						}
-						&.medical-welfare {
-							border-bottom: 2px solid #7fa6d6;
-						}
-						&.job-industry {
-							border-bottom: 2px solid #ddd0be;
-						}
-						&.tourism-culture {
-							border-bottom: 2px solid #c97c8a;
-						}
-						&.education-child {
-							border-bottom: 2px solid #746fa9;
-						}
-						&.prefectual-gov-info {
-							border-bottom: 2px solid #97a8c1;
-						}
-					}
-				}
-			}
+			right: 8%;
+			width: 190px;
+			z-index: 1;
 		}
 	}
+
 	.back-to-top {
 		font-size: 18px;
 		font-weight: bold;
@@ -176,32 +101,9 @@
 				margin-top: 30px;
 			}
 		}
-
 		.section-content {
 			.section-content-body {
 				padding: 10px;
-			}
-		}
-		.section-search {
-			padding: 0 16px;
-			width: auto;
-			.section-content-body {
-				padding: 16px;
-				.nav {
-					display: none;
-				}
-				.content-search-wrapper {
-					display: block;
-					padding: 0;
-				}
-			}
-		}
-		.content-search {
-			width: 100%;
-			.search-box {
-				input {
-					flex-grow: 1;
-				}
 			}
 		}
 		.show-more {

@@ -14,6 +14,7 @@ import {
 	faRss,
 	faArrowCircleUp,
 	faInfoCircle,
+	faChevronCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import isMobile from "ismobilejs";
 
@@ -30,7 +31,8 @@ $(function () {
 		faExclamationTriangle,
 		faRss,
 		faArrowCircleUp,
-		faInfoCircle
+		faInfoCircle,
+		faChevronCircleRight
 	);
 
 	$(".x-global-mune-trigger").on("click", function () {
@@ -68,11 +70,6 @@ $(function () {
 	var fontSize = Cookies.get("font-size")
 		? Cookies.get("font-size")
 		: "regular";
-
-	let fixedPosition = $(".fix-search-wrapper").offset().top;
-	function resetFixedPosition() {
-		fixedPosition = $(".fix-search-wrapper").offset().top;
-	}
 
 	if (!Cookies.get("font-size")) {
 		Cookies.set("font-size", "regular", { expires: 1, path: "/" });
