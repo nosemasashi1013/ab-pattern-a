@@ -16,7 +16,6 @@ import {
 	faInfoCircle,
 	faChevronCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
-import isMobile from "ismobilejs";
 
 $(function () {
 	library.add(
@@ -34,35 +33,6 @@ $(function () {
 		faInfoCircle,
 		faChevronCircleRight
 	);
-
-	$(".x-global-mune-trigger").on("click", function () {
-		$(".x-header").toggleClass("is-active");
-		$(".x-header").hasClass("is-active")
-			? $(this).find(".menu-text").text("閉じる")
-			: $(this).find(".menu-text").text("メニュー");
-	});
-
-	$(".x-search-menu-trigger").on("click", function () {
-		$(".x-header").removeClass("search-active");
-		$(".search-box-header").attr("placeholder", "検索");
-		$(".x-global-mune-trigger").find(".menu-text").text("メニュー");
-	});
-
-	$(".search-box-header").on("click", function () {
-		$(".x-header").removeClass("is-active");
-		$(".x-header").addClass("search-active");
-		$(".search-box-header").attr("placeholder", "キーワード検索");
-		$(".x-global-mune-trigger").find(".menu-text").text("メニュー");
-	});
-
-	$(".x-accordion-trigger").on("click", function () {
-		$(this).parents(".section-content").toggleClass("is-active");
-		resetFixedPosition();
-	});
-
-	$(".section-filter-title").on("click", function () {
-		$(this).parents(".section-content").toggleClass("is-active");
-	});
 
 	var colorName = Cookies.get("font-color")
 		? Cookies.get("font-color")
@@ -119,115 +89,62 @@ $(function () {
 		$(this).remove();
 	});
 
-	$(window).on("load", function () {
-		console.log("log");
-		// log
-		if (isMobile(window.navigator).phone) return;
-		const afterSearchboxEl = $("body").find(".fix-search-wrapper").next();
-		afterSearchboxEl.addClass("after-search-content-wrapper");
+	$(".new-info-filter")
+		.filter(":checked")
+		.parent()
+		.css("background-color", "#00aba3");
+
+	$("input[name=target]").on("change", function () {
+		changeFilterColor("target");
 	});
 
-	$(window).on("scroll", function () {
-		if (!isMobile(window.navigator).phone) {
-			fixElement(fixedPosition);
-		} else if (isMobile(window.navigator).phone) {
-			showSearchboxSp();
-		}
-	});
-
-	$(".form-header").on("submit", function (e) {
-		if ($("header").hasClass("is-active")) {
-			$("header").removeClass("is-active");
-		}
-		if (!$("header").hasClass("search-active")) {
-			e.preventDefault();
-			$(".search-box-header").attr("placeholder", "キーワード検索");
-			$(".x-header").addClass("search-active");
-			return;
-		}
-		changePlaceholder(".search-box-header", e);
-	});
-
-	$(".form-main").on("submit", function (e) {
-		changePlaceholder(".search-box-main", e);
-	});
-
-	$(".form-footer").on("submit", function (e) {
-		changePlaceholder(".search-box-footer", e);
-	});
-
-	$(".search-box-header").on("keyup", function () {
-		changePlaceholder(".search-box-header");
-	});
-
-	$(".search-box-main").on("keyup", function () {
-		changePlaceholder(".search-box-main");
-	});
-
-	$(".search-box-footer").on("keyup", function () {
-		changePlaceholder(".search-box-footer");
+	$("input[name=category]").on("change", function () {
+		changeFilterColor("category");
 	});
 
 	$(".new-info-filter").on("change", function () {
 		searchFilter();
 	});
 
-	$(".top").on("click", function () {
-		$("body,html").animate(
-			{
-				scrollTop: 0,
-			},
-			500
-		);
-		return false;
-	});
-
 	dom.i2svg();
 });
 
+const hideClass = "is-hide";
+
 /**
- * 検索BOXを画面上部に固定処理
+ * 新着情報リストの絞り込みを行う
  */
-function fixElement(p) {
-	if (window.pageYOffset >= p) {
-		$(".fix-search-wrapper").addClass("searchbox-fixed");
-		$(".content").css({ paddingTop: $(".fix-search-wrapper").height() });
-	} else {
-		$(".fix-search-wrapper").removeClass("searchbox-fixed");
-		$(".content").css({ paddingTop: 0 });
-	}
+function searchFilter() {
+	const $newInfoItems = $(".new-info-item");
+	const selectedTarget = $(".target-item")
+		.find("input:checked")[0]
+		.getAttribute("value");
+	const selectedCategories = $(".category-item")
+		.find("input:checked")
+		.map((_, i) => i.getAttribute("value"));
+
+	$newInfoItems.addClass(hideClass);
+	$(".no-info-text").toggleClass(hideClass, selectedCategories.length !== 0);
+	$newInfoItems
+		.filter((_, item) =>
+			selectedTarget === "general" || selectedTarget === "business"
+				? $(item).data(`target-${selectedTarget}`)
+				: true
+		)
+		.filter((_, item) =>
+			[...selectedCategories].includes($(item).data("category"))
+		)
+		.removeClass(hideClass);
 }
 
 /**
- * 検索ボタン押下時に未入力の場合はplaceholderを「入力してください」に変更
- * 入力されている場合はplaceholderを「キーワード検索」に変更
- * @param {string} el 要素
- * @param {any} event イベント
+ * 新着フィルターの色を変える
+ * @param {string} name 対象にするinputのname属性の値
  */
-function changePlaceholder(el, event) {
-	const inputVal = $(el).val();
-	if ((!inputVal || !inputVal.match(/[^\s\t]/)) && event) {
-		event.preventDefault();
-		$(el).attr("placeholder", "入力してください");
-	} else {
-		$(el).attr("placeholder", "キーワード検索");
-	}
-}
-
-let startPos = 0;
-
-/**
- * SPヘッダー内検索BOXの表示切り替え
- */
-function showSearchboxSp() {
-	let winScrollTop = $(window).scrollTop();
-	let elemTop = $(".content-search-wrapper").offset().top;
-	if (elemTop < winScrollTop) {
-		$(".content-search").removeClass("display-none");
-	} else {
-		$(".content-search").addClass("display-none");
-		$(".x-header").removeClass("search-active");
-		$(".search-box-header").attr("placeholder", "検索");
-	}
-	startPos = winScrollTop;
+function changeFilterColor(name) {
+	$("input[name=" + name + "]").each(function (i, el) {
+		$(el).prop("checked")
+			? $(this).parent().css("background-color", "#00aba3")
+			: $(this).parent().removeAttr("style");
+	});
 }
