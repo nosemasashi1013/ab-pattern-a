@@ -57,5 +57,8 @@ mixin iconImg(fileName)
         a(href="#") 
           .menu-item-container
             +iconImg(menu.icon)
-            p.life-menu-text
-              = menu.text
+            .menu-text-container
+              p.life-menu-text
+                = menu.text
+              .icon-wrapper
+                i(class="fas fa-chevron-circle-right")
