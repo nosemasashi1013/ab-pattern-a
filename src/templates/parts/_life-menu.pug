@@ -1,0 +1,61 @@
+-
+  const lifeMenu = [
+    {
+      icon: "life_menu_icon_1.png",
+      text: "妊娠から子育て"
+    },
+    {
+      icon: "life_menu_icon_2.png",
+      text: "入園・入学"
+    },
+    {
+      icon: "life_menu_icon_3.png",
+      text: "就職から退職まで"
+    },
+    {
+      icon: "life_menu_icon_4.png",
+      text: "結婚・離婚"
+    },
+    {
+      icon: "life_menu_icon_5.png",
+      text: "高齢・介護"
+    },
+    {
+      icon: "life_menu_icon_6.png",
+      text: "引越し"
+    },
+    {
+      icon: "life_menu_icon_7.png",
+      text: "病気・けが"
+    },
+    {
+      icon: "life_menu_icon_8.png",
+      text: "お悔やみ"
+    },
+    {
+      icon: "",
+      text: "あなたの状況・ご用件を選んで探す"
+    },
+  ]
+
+mixin iconImg(fileName)
+  if fileName
+    img(
+      src="../images/common/" + fileName
+      alt=""
+      class="life-menu-icon"
+    )
+  else
+    block
+
+.life-menu-container.layout-default 
+  h2.section-title.life-menu-title
+    | ライフシーンで探す
+  ul.life-menu-list
+    each menu in lifeMenu
+      li.life-menu-item.box-shadow 
+        a(href="#") 
+          .menu-item-container
+            +iconImg(menu.icon)
+            p.life-menu-text
+              = menu.text

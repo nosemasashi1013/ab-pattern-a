@@ -75,6 +75,7 @@ module.exports = {
 				generator: {
 					filename: "images/commmon/[name][ext]",
 				},
+				type: "asset/resource",
 				use: ["image-webpack-loader"],
 			},
 			{
@@ -82,6 +83,11 @@ module.exports = {
 				use: ["html-loader", "pug-html-loader"],
 			},
 		],
+	},
+	resolve: {
+		alias: {
+			"~": path.resolve(__dirname, "src"),
+		},
 	},
 	plugins: [
 		new MiniCssExtractPlugin({

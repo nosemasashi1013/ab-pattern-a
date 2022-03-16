@@ -3,8 +3,12 @@
 @import "base/reset";
 @import "base/variables";
 @import "base/base";
+@import "base/contrast";
+@import "base/magnify";
 @import "common/accessibility";
 @import "common/header";
-@import "parts/search-keyword-list";
+@import "parts/life-menu";
+@import "parts/new-info";
+@import "parts/business-menu";
 @import "common/footer";
 @import "page/index";

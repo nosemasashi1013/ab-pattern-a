@@ -1,0 +1,95 @@
+// コントラスト「白」スタイル
+body[data-color="white"] {
+	background-color: #000 !important;
+	* {
+		color: #fff !important;
+		background-color: #000 !important;
+		border-color: #fff !important;
+		.box-shadow {
+			border: 1px solid #fff !important;
+		}
+		input::placeholder {
+			color: #fff;
+		}
+	}
+	header .logo svg,
+	path {
+		fill: #fff !important;
+	}
+	.header .select-font-size .check-box,
+	.header .select-color .check-box {
+		svg,
+		path {
+			fill: #000 !important;
+		}
+	}
+	.header input[type="radio"]:checked + .check-box {
+		svg,
+		path {
+			fill: #fff !important;
+		}
+	}
+	.header .select-list .select-item {
+		background-color: transparent !important;
+	}
+	.index-container .section-emergency {
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+	}
+	.content-search .search-box .button-search {
+		border-left: 1px solid;
+	}
+	.obotai-chatbot-controller {
+		background-color: transparent !important;
+	}
+}
+
+// コントラスト「黄」スタイル
+body[data-color="yellow"] {
+	background-color: #0000ff !important;
+	* {
+		color: #ffff00 !important;
+		background-color: #0000ff !important;
+		border-color: #ffff00 !important;
+		.box-shadow {
+			border: 1px solid #ffff00 !important;
+		}
+		input::placeholder {
+			color: #ffff00;
+		}
+	}
+	header .logo svg,
+	path {
+		fill: #ffff00 !important;
+	}
+	.header .select-font-size .check-box,
+	.header .select-color .check-box {
+		svg,
+		path {
+			fill: #0000ff !important;
+		}
+	}
+	.header input[type="radio"]:checked + .check-box {
+		svg,
+		path {
+			fill: #ffff00 !important;
+		}
+	}
+	.header .select-list .select-item {
+		background-color: transparent !important;
+	}
+	.content-search .search-box .button-search {
+		border-left: 1px solid;
+	}
+}
+
+@media only screen and (max-width: map-get($global-width, break-point-sp)) {
+	body[data-color="yellow"],
+	body[data-color="white"] {
+		.header-wrapper {
+			&.box-shadow {
+				border: none !important;
+			}
+		}
+	}
+}
