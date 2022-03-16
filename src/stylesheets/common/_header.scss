@@ -1,16 +1,11 @@
 .header {
 	width: 100%;
-	max-width: map-get($global-width, max-width);
-	min-width: 910px;
-	padding: 16px 32px 0;
-	margin: 0 auto;
 	font-weight: bold;
 	line-height: 1;
-	margin-bottom: 24px;
 	.header-wrapper {
 		border-radius: 6px;
 		background-color: #fff;
-		padding: 16px 20px;
+		padding: 24px 20px;
 	}
 	.conten-top {
 		display: flex;
@@ -22,14 +17,17 @@
 	.icon-menu-icon {
 		display: none;
 	}
-
-	.logo {
+	.icon-wrapper {
 		flex-grow: 1;
+	}
+	.logo {
 		margin-right: 20px;
 		transition: 0.2s all ease-in-out;
 		&:hover {
 			opacity: 0.8;
 		}
+		width: 180px;
+		height: auto;
 	}
 	.accessibility {
 		display: flex;
