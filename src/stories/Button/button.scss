@@ -1,0 +1,39 @@
+.btn {
+	font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	border: 0;
+	border-radius: 3em;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1;
+	&:hover {
+		opacity: 0.8;
+	}
+}
+.btn--primary {
+	color: #fff;
+	background-color: #008660;
+}
+.btn--secondary {
+	color: #3b4043;
+	background-color: #fff;
+	border: 1px solid #40927b;
+}
+.btn--small {
+	font-size: 12px;
+	padding: 10px 16px;
+}
+.btn--medium {
+	font-size: 14px;
+	padding: 11px 20px;
+}
+.btn--large {
+	font-size: 16px;
+	padding: 12px 24px;
+}
+.btn--disabled {
+	opacity: 0.3;
+	&:hover {
+		opacity: 0.3;
+	}
+}
