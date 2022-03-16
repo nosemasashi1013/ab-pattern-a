@@ -12,6 +12,13 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		vertical-align: middle;
+		justify-content: center;
+	}
+	.menu-text-container {
+		display: flex;
+		align-items: baseline;
+		margin-top: 8px;
 	}
 	.life-menu-item {
 		padding: 16px 0;
@@ -24,16 +31,15 @@
 
 		&:last-child {
 			flex-basis: 100%;
-			.life-menu-text {
+			.menu-text-container {
 				margin-top: 0;
-				text-align: center;
 			}
 		}
 
 		.life-menu-text {
 			font-weight: bold;
 			font-size: 20px;
-			margin-top: 8px;
+			margin-right: 8px;
 		}
 	}
 	.life-menu-icon {
