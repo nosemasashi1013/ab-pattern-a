@@ -23,7 +23,7 @@
 		.business-menu-text {
 			font-weight: bold;
 			font-size: 20px;
-			margin-top: 8px;
+			margin-right: 8px;
 		}
 	}
 	.icon-container {
@@ -38,5 +38,10 @@
 	}
 	.business-menu-icon {
 		width: 50%;
+	}
+	.business-menu-text-container {
+		display: flex;
+		align-items: baseline;
+		margin-top: 8px;
 	}
 }
