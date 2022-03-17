@@ -90,6 +90,13 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			template: "./src/templates/index.pug",
+			filename: "index.html",
+			inject: "body",
+			chunks: ["main"],
+		}),
+		new HtmlWebpackPlugin({
+			template: "./src/templates/search.pug",
+			filename: "search.html",
 			inject: "body",
 			chunks: ["main"],
 		}),
