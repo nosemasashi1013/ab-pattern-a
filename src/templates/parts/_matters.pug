@@ -1,0 +1,106 @@
+-
+  const matters = [
+    {
+      label: "情報を受け取る",
+      value: "1",
+      checked: true
+    },
+    {
+      label: "証明書が欲しい",
+      value: "2",
+      checked: false
+    },
+    {
+      label: "手続き・届出する",
+      value: "3",
+      checked: false
+    },
+    {
+      label: "選挙・投票する",
+      value: "4",
+      checked: false
+    },
+    {
+      label: "ごみを出したい",
+      value: "5",
+      checked: false
+    },
+    {
+      label: "医療を受けたい",
+      value: "6",
+      checked: false
+    },
+    {
+      label: "健康づくり",
+      value: "7",
+      checked: false
+    },
+    {
+      label: "学びたい",
+      value: "8",
+      checked: false
+    },
+    {
+      label: "働きたい",
+      value: "9",
+      checked: false
+    },
+    {
+      label: "遊びたい・楽しみたい",
+      value: "10",
+      checked: false
+    },
+    {
+      label: "役立ちたい",
+      value: "11",
+      checked: false
+    },
+    {
+      label: "生活トラブル",
+      value: "12",
+      checked: false
+    },
+    {
+      label: "悩み・相談したい",
+      value: "13",
+      checked: false
+    },
+    {
+      label: "注意点を知りたい",
+      value: "14",
+      checked: false
+    },
+    {
+      label: "年金を受けたい",
+      value: "15",
+      checked: false
+    },
+    {
+      label: "予備",
+      value: "16",
+      checked: false
+    },
+  ]
+
+.search-menu-container.matters-container.layout-default
+  h2.matters-title
+    | ご用件
+  ul.matters-list 
+    each item in matters 
+      li.matters-item.box-shadow
+        label(
+          class="checkbox"
+          for="matters" + item.value
+        )
+          input(
+            id="matters-" + item.value
+            class="checkbox-input visually-hidden"
+            type="checkbox"
+            name="status"
+            value=item.value
+            checked=item.checked
+            onClick="gtag('event', 'click', {'event_category': 'matters', 'event_label': '"+item.value+"'});"
+          )
+          span.checkbox-label
+            =item.label
+

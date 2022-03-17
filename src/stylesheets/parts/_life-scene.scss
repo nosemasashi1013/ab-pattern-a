@@ -14,7 +14,7 @@ $checkbox-border-color: #ccc;
 }
 .checkbox {
 	display: block;
-	padding: 10px 32px;
+	padding: 16px 0 16px 32px;
 
 	.checkbox-input {
 		&:checked + .checkbox-label::before {

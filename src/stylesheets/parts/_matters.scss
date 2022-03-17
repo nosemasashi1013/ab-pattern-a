@@ -1,0 +1,30 @@
+.matters-title {
+	font-size: 30px;
+	font-weight: bold;
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+	position: relative;
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 56px;
+		height: 2px;
+		background-color: #cdd6dd;
+		margin-top: 40px;
+	}
+}
+.matters-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+
+	.matters-item {
+		border: 1px solid global-color(primary);
+		background-color: #fff;
+		border-radius: 8px;
+		width: calc(100% / 4 - 8px);
+	}
+}
