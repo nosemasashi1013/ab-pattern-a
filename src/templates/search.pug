@@ -1,11 +1,20 @@
 extends common/_layout
 
 block content
-  section.section-content
-    include ../templates/parts/_life-scene.pug
+  section.layout-default
+    include ../templates/parts/_life-scene-header.pug
+  section.life-menu-search-section
+    form
+      .section-content
+        include ../templates/parts/_life-scene.pug
 
-  section.section-content.bg-light
-    include ../templates/parts/_status.pug
+      .section-content.bg-light
+        include ../templates/parts/_status.pug
 
-  section.section-content
-    include ../templates/parts/_matters.pug
+      .section-content
+        include ../templates/parts/_matters.pug
+
+      .section-content.layout-default
+        .search-btn-wrapper
+          button(type="submit" class="btn btn-primary btn-search")
+            | 検索する

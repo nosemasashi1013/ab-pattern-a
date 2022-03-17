@@ -90,13 +90,13 @@
       li.matters-item.box-shadow
         label(
           class="checkbox"
-          for="matters" + item.value
+          for="matters-" + item.value
         )
           input(
             id="matters-" + item.value
             class="checkbox-input visually-hidden"
             type="checkbox"
-            name="status"
+            name="matters"
             value=item.value
             checked=item.checked
             onClick="gtag('event', 'click', {'event_category': 'matters', 'event_label': '"+item.value+"'});"

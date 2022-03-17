@@ -1,0 +1,25 @@
+.life-scene-header-container {
+	text-align: center;
+	background-color: #fff;
+	border-radius: 8px;
+	margin-top: 40px;
+	position: relative;
+
+	.life-scene-header {
+		font-size: 36px;
+		font-weight: bold;
+		padding-top: 60px;
+		margin-bottom: 16px;
+	}
+	.life-scene-description {
+		color: #707070;
+		padding-bottom: 60px;
+	}
+	.life-scene-header-img {
+		width: 128px;
+		height: auto;
+		position: absolute;
+		top: 24px;
+		right: 40px;
+	}
+}

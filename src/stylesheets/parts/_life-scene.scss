@@ -3,6 +3,23 @@ $checkbox-border-radius: 4px;
 $checkbox-bg: #008660;
 $checkbox-border-color: #ccc;
 
+.btn {
+	padding: 12px 48px;
+	border-radius: 50px;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.btn-primary {
+	background-color: #008660;
+	color: #fff;
+}
+
+.search-btn-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
 .visually-hidden {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
