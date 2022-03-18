@@ -27,6 +27,12 @@
 			border-radius: 8px;
 			width: auto;
 			min-width: 162px;
+			&:hover {
+				background-color: #008660;
+				color: #fff;
+				cursor: pointer;
+				transition: 0.2s;
+			}
 		}
 		.target-label {
 			position: relative;
