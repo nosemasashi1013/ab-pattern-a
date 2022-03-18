@@ -89,10 +89,10 @@ $(function () {
 		$(this).remove();
 	});
 
-	$(".new-info-filter")
+	$(".checkbox-input")
 		.filter(":checked")
 		.parent()
-		.css("background-color", "#00aba3");
+		.css("background-color", "#008660");
 
 	$("input[name=target]").on("change", function () {
 		changeFilterColor("target");
@@ -100,6 +100,15 @@ $(function () {
 
 	$("input[name=category]").on("change", function () {
 		changeFilterColor("category");
+	});
+	$("input[name=life-scene]").on("change", function () {
+		changeFilterColor("life-scene");
+	});
+	$("input[name=status]").on("change", function () {
+		changeFilterColor("status");
+	});
+	$("input[name=matters]").on("change", function () {
+		changeFilterColor("matters");
 	});
 
 	$(".new-info-filter").on("change", function () {
@@ -144,7 +153,7 @@ function searchFilter() {
 function changeFilterColor(name) {
 	$("input[name=" + name + "]").each(function (i, el) {
 		$(el).prop("checked")
-			? $(this).parent().css("background-color", "#00aba3")
+			? $(this).parent().css("background-color", "#008660")
 			: $(this).parent().removeAttr("style");
 	});
 }

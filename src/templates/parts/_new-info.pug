@@ -334,20 +334,21 @@
           ul.category-list
             each item in category
               li.item.category-item
-                input(
-                  id="category-" + item.value
-                  class="new-info-filter"
-                  type="checkbox"
-                  name="category"
-                  value=item.value
-                  checked=item.checked
-                  onClick="gtag('event', 'click', {'event_category': 'category-filter', 'event_label': '"+item.value+"'});"
-                )
                 label(
-                  class="category-label"
+                  class="checkbox category-label"
                   for="category-" + item.value
                 )
-                  =item.label
+                  input(
+                    id="category-" + item.value
+                    class="checkbox-input visually-hidden new-info-filter"
+                    type="checkbox"
+                    name="category"
+                    value=item.value
+                    checked=item.checked
+                    onClick="gtag('event', 'click', {'event_category': 'category-filter', 'event_label': '"+item.value+"'});"
+                  )
+                  span.checkbox-label
+                    =item.label
 
     .section-new-info-list
       ul.list.new-info-list

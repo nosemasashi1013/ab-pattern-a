@@ -22,9 +22,15 @@
 	gap: 8px;
 
 	.matters-item {
-		border: 1px solid global-color(primary);
+		border: 1px solid #e1e1e1;
 		background-color: #fff;
 		border-radius: 8px;
 		width: calc(100% / 4 - 8px);
+		&:hover {
+			background-color: #008660;
+			color: #fff;
+			cursor: pointer;
+			transition: 0.2s;
+		}
 	}
 }

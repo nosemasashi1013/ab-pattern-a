@@ -10,24 +10,6 @@
 		display: none;
 	}
 	.section-filter {
-		.item {
-			display: flex;
-			align-items: center;
-			&:hover {
-				background-color: global-color(primary);
-				color: #fff;
-				cursor: pointer;
-				transition: 0.2s;
-			}
-			.target-label,
-			.category-label {
-				width: 100%;
-				font-weight: bold;
-				&:hover {
-					cursor: pointer;
-				}
-			}
-		}
 		.filter-title {
 			font-weight: bold;
 			font-size: 16px;
@@ -47,40 +29,10 @@
 			min-width: 162px;
 			margin-right: 8px;
 		}
-		.new-info-filter {
-			display: none;
-			position: relative;
-
-			&:checked + .target-label {
-				color: #fff;
-				&::after {
-					content: "";
-					display: block;
-					position: absolute;
-					border-radius: 50%;
-					width: 12px;
-					height: 12px;
-					left: 6px;
-					top: 6px;
-					background-color: #256c69;
-				}
-			}
-		}
 		.target-label {
 			position: relative;
 			display: flex;
 			align-items: center;
-
-			&::before {
-				content: "";
-				display: block;
-				border-radius: 50%;
-				border: 1px solid #a6adc6;
-				background-color: #fff;
-				width: 24px;
-				height: 24px;
-				margin-right: 8px;
-			}
 		}
 	}
 	.section-category {
@@ -89,48 +41,20 @@
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
+			gap: 8px;
+		}
+		.category-label {
+			border-radius: 6px;
 		}
 		.category-item {
 			width: calc(100% / 3 - 6px);
-			border: 1px solid global-color(primary);
+			border: 1px solid #008660;
 			border-radius: 8px;
-			padding: 8px 16px;
-			margin-bottom: 8px;
-		}
-		.new-info-filter {
-			display: none;
-			position: relative;
-
-			&:checked + .category-label {
+			&:hover {
+				background-color: #008660;
 				color: #fff;
-				&::after {
-					content: "";
-					display: block;
-					position: absolute;
-					width: 8px;
-					height: 16px;
-					left: 8px;
-					top: 4px;
-					border-right: 3px solid #256c69;
-					border-bottom: 3px solid #256c69;
-					transform: rotate(45deg);
-				}
-			}
-		}
-		.category-label {
-			position: relative;
-			display: flex;
-			align-items: center;
-
-			&::before {
-				content: "";
-				display: block;
-				border: 1px solid #a6adc6;
-				border-radius: 4px;
-				background-color: #fff;
-				width: 24px;
-				height: 24px;
-				margin-right: 8px;
+				cursor: pointer;
+				transition: 0.2s;
 			}
 		}
 	}
