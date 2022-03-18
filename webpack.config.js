@@ -73,9 +73,8 @@ module.exports = {
 				test: /\.(jpeg|jpg|png|ico)/,
 				type: "asset/resource",
 				generator: {
-					filename: "images/commmon/[name][ext]",
+					filename: "images/[name][ext]",
 				},
-				type: "asset/resource",
 				use: ["image-webpack-loader"],
 			},
 			{
