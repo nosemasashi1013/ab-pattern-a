@@ -20,14 +20,13 @@
 		.target-list {
 			display: flex;
 			justify-content: flex-start;
+			gap: 8px;
 		}
 		.target-item {
-			border: 1px solid global-color(primary);
+			border: 1px solid #0c8730;
 			border-radius: 8px;
-			padding: 8px 16px;
 			width: auto;
 			min-width: 162px;
-			margin-right: 8px;
 		}
 		.target-label {
 			position: relative;

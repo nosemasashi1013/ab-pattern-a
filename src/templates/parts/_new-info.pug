@@ -313,20 +313,21 @@
           ul.target-list
             each item in target 
               li.item.target-item
-                input(
-                  id="target-" + item.value
-                  class="new-info-filter"
-                  type="radio"
-                  name="target"
-                  value=item.value
-                  checked=item.checked
-                  onClick="gtag('event', 'click', {'event_category': 'target-filter', 'event_label': '"+item.value+"'});"
-                )
                 label(
-                  class="target-label"
+                  class="radio target-label"
                   for="target-" + item.value
                 )
-                  =item.label
+                  input(
+                    id="target-" + item.value
+                    class="radio-input visually-hidden new-info-filter"
+                    type="radio"
+                    name="target"
+                    value=item.value
+                    checked=item.checked
+                    onClick="gtag('event', 'click', {'event_category': 'target-filter', 'event_label': '"+item.value+"'});"
+                  )
+                  span.radio-label
+                    =item.label
 
         .section-category.section-filter
           h2.filter-title 
