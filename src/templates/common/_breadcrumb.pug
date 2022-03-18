@@ -1,0 +1,14 @@
+mixin breadcrumb(items)
+  nav(aria-label="Breadcrumb" class="breadcrumb layout-default")
+    ol
+      each item in items
+        li
+          if item.isCurrent
+            span.breadcrumb-link-text.is-current
+              = item.text
+          else
+            a(href=item.link class="breadcrumb-link")
+              span.breadcrumb-link-text
+                = item.text
+
+

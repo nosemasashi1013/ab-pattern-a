@@ -1,8 +1,28 @@
 extends common/_layout
 
 block content
+  -
+    const breadcrumbItem = [
+      {
+        text : "トップページ",
+        link : "./index.html",
+        isCurrent : false
+
+      },
+      {
+        text : "ライフシーンで探す",
+        link : "",
+        isCurrent : true
+
+      },
+    ]
+
+  include ../templates/common/_breadcrumb.pug
+  +breadcrumb(breadcrumbItem)
+
   section.layout-default
     include ../templates/parts/_life-scene-header.pug
+
   section.life-menu-search-section
     form
       .section-content
@@ -16,5 +36,5 @@ block content
 
       .section-content.layout-default
         .search-btn-wrapper
-          button(type="submit" class="btn btn-primary btn-search")
+          button(type="submit" class="btn btn-primary btn-search box-shadow")
             | 検索する
