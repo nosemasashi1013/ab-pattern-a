@@ -68,19 +68,14 @@
   ul.life-scene-list 
     each item in lifeScene 
       li.life-scene-item
-        label(
-          class="checkbox"
-          for="life-scene-" + item.value
-        )
-          input(
-            id="life-scene-" + item.value
-            class="checkbox-input visually-hidden"
-            type="checkbox"
-            name="life-scene"
-            value=item.value
-            checked=item.checked
-            onClick="gtag('event', 'click', {'event_category': 'life-scene', 'event_label': '"+item.value+"'});"
-          )
-          span.checkbox-label
-            =item.label
+        include ../../components/base/Checkbox.pug
+        +Checkbox({
+          id: `life-scene__${item.value}`,
+          name: "life-scene",
+          value: item.value,
+          checked: item.checked,
+          label: item.label,
+          onClick: () => {}
+        })
+
 

@@ -1,0 +1,41 @@
+extends common/_layout
+
+block content
+	-
+		const breadcrumbItem = [
+			{
+				text : "トップページ",
+				link : "./index.html",
+				isCurrent : false
+
+			},
+			{
+				text : "ライフシーンで探す",
+				link : "",
+				isCurrent : true
+
+			},
+		]
+
+	include ../components/base/Breadcrumb.pug
+	+Breadcrumb(breadcrumbItem)
+
+	section.layout-default
+		include ../components/parts/_life-scene-header.pug
+
+	section.life-menu-search-section
+		form
+			.section-content
+				include ../components/parts/_life-scene.pug
+
+			.section-content.bg-light
+				include ../components/parts/_status.pug
+
+			.section-content
+				include ../components/parts/_matters.pug
+
+			.section-content.layout-default
+				.search-btn-wrapper
+					include ../components/base/Button.pug
+					+Button({type: "submit"})
+						| 検索する

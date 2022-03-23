@@ -88,19 +88,13 @@
   ul.status-list 
     each item in status 
       li.status-item
-        label(
-          class="checkbox"
-          for="status-" + item.value
-        )
-          input(
-            id="status-" + item.value
-            class="checkbox-input visually-hidden"
-            type="checkbox"
-            name="status"
-            value=item.value
-            checked=item.checked
-            onClick="gtag('event', 'click', {'event_category': 'status', 'event_label': '"+item.value+"'});"
-          )
-          span.checkbox-label
-            =item.label
+        include ../../components/base/Checkbox.pug
+        +Checkbox({
+          id: `status__${item.value}`,
+          name: "status",
+          value: item.value,
+          checked: item.checked,
+          label: item.label,
+          onClick: () => {}
+        })
 

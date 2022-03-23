@@ -88,13 +88,13 @@ module.exports = {
 			filename: "./stylesheets/main.css",
 		}),
 		new HtmlWebpackPlugin({
-			template: "./src/templates/index.pug",
+			template: "./src/components/index.pug",
 			filename: "index.html",
 			inject: "body",
 			chunks: ["main"],
 		}),
 		new HtmlWebpackPlugin({
-			template: "./src/templates/search.pug",
+			template: "./src/components/search.pug",
 			filename: "search.html",
 			inject: "body",
 			chunks: ["main"],

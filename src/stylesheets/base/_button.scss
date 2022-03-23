@@ -6,6 +6,8 @@
 }
 
 .btn-primary {
+	@extend .btn;
+	@extend .box-shadow;
 	background-color: #008660;
 	color: #fff;
 }

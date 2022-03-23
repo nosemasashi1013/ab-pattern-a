@@ -1,32 +1,39 @@
 $radio-size: 24px;
-$radio-border-radius: 50px;
 $radio-bg: #fff;
 $radio-border-color: #ccc;
 
 .radio {
-	display: inline-block;
+	display: block;
 	padding: 16px 0 16px 44px;
 	border-radius: 6px;
 
-	.radio-input {
-		&:checked + .radio-label {
-			color: #fff;
+	.radio__input {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+
+		&:checked + .radio__label {
+			color: $radio-bg;
 		}
-		&:checked + .radio-label::before {
-			color: #fff;
+		&:checked + .radio__label::before {
+			color: $radio-bg;
 			border-color: $radio-border-color;
 			background-color: $radio-bg;
 		}
-		&:focus + .radio-label::before {
+		&:focus + .radio__label::before {
 			box-shadow: 0 0 0 4px rgba(blue, 0.4);
 			border: 2px solid blue;
 		}
 
-		&:checked + .radio-label::after {
+		&:checked + .radio__label::after {
 			transform: translateY(-50%) scale(1);
 		}
 	}
-	.radio-label {
+	.radio__label {
 		position: relative;
 		margin-bottom: 0;
 		vertical-align: middle;
@@ -43,9 +50,9 @@ $radio-border-color: #ccc;
 			box-sizing: border-box;
 			transform: translateY(-50%);
 			pointer-events: none;
-			background-color: #fff;
+			background-color: $radio-bg;
 			border: 1px solid $radio-border-color;
-			border-radius: $radio-border-radius;
+			border-radius: 50px;
 			transition: background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1),
 				border-color 0.3s cubic-bezier(0.19, 1, 0.22, 1),
 				box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1);

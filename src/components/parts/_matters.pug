@@ -88,19 +88,13 @@
   ul.matters-list 
     each item in matters 
       li.matters-item
-        label(
-          class="checkbox"
-          for="matters-" + item.value
-        )
-          input(
-            id="matters-" + item.value
-            class="checkbox-input visually-hidden"
-            type="checkbox"
-            name="matters"
-            value=item.value
-            checked=item.checked
-            onClick="gtag('event', 'click', {'event_category': 'matters', 'event_label': '"+item.value+"'});"
-          )
-          span.checkbox-label
-            =item.label
+        include ../../components/base/Checkbox.pug
+        +Checkbox({
+          id: `matters__${item.value}`,
+          name: "matters",
+          value: item.value,
+          checked: item.checked,
+          label: item.label,
+          onClick: () => {}
+        })
 

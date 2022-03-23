@@ -313,21 +313,15 @@
           ul.target-list
             each item in target 
               li.item.target-item
-                label(
-                  class="radio target-label"
-                  for="target-" + item.value
-                )
-                  input(
-                    id="target-" + item.value
-                    class="radio-input visually-hidden new-info-filter"
-                    type="radio"
-                    name="target"
-                    value=item.value
-                    checked=item.checked
-                    onClick="gtag('event', 'click', {'event_category': 'target-filter', 'event_label': '"+item.value+"'});"
-                  )
-                  span.radio-label
-                    =item.label
+                include ../../components/base/Radio.pug
+                +Radio({
+                  id: `target__${item.value}`,
+                  name: "target",
+                  value: item.value,
+                  checked: item.checked,
+                  label: item.label,
+                  onClick: () => {}
+                })
 
         .section-category.section-filter
           h2.filter-title 
@@ -335,21 +329,15 @@
           ul.category-list
             each item in category
               li.item.category-item
-                label(
-                  class="checkbox category-label"
-                  for="category-" + item.value
-                )
-                  input(
-                    id="category-" + item.value
-                    class="checkbox-input visually-hidden new-info-filter"
-                    type="checkbox"
-                    name="category"
-                    value=item.value
-                    checked=item.checked
-                    onClick="gtag('event', 'click', {'event_category': 'category-filter', 'event_label': '"+item.value+"'});"
-                  )
-                  span.checkbox-label
-                    =item.label
+                include ../../components/base/Checkbox.pug
+                +Checkbox({
+                  id: `category__${item.value}`,
+                  name: "category",
+                  value: item.value,
+                  checked: item.checked,
+                  label: item.label,
+                  onClick: () => {}
+                })
 
     .section-new-info-list
       ul.list.new-info-list

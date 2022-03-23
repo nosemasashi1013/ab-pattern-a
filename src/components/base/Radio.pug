@@ -1,0 +1,16 @@
+mixin Radio(params={})
+  - const props = Object.assign(params)
+  label.radio(
+    for=props.id
+  )
+    input(
+      id=props.id
+      class="radio__input"
+      type="radio"
+      name=props.name
+      value=props.value
+      checked=props.checked
+      onClick=props.onClick
+    )
+    span.radio__label
+      =props.label

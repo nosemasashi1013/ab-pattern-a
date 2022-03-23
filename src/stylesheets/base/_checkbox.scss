@@ -8,24 +8,32 @@ $checkbox-border-color: #ccc;
 	padding: 16px 0 16px 32px;
 	border-radius: 6px;
 
-	.checkbox-input {
-		&:checked + .checkbox-label {
+	.checkbox__input {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+
+		&:checked + .checkbox__label {
 			color: #fff;
 		}
-		&:checked + .checkbox-label::before {
+		&:checked + .checkbox__label::before {
 			color: $checkbox-bg;
-			border-color: $checkbox-bg;
+			border-color: $checkbox-border-color;
 			background-color: $checkbox-bg;
 		}
-		&:focus + .checkbox-label::before {
+		&:focus + .checkbox__label::before {
 			box-shadow: 0 0 0 4px rgba(blue, 0.4);
 			border: 2px solid blue;
 		}
-		&:checked + .checkbox-label::after {
+		&:checked + .checkbox__label::after {
 			transform: translateY(-50%) scale(1);
 		}
 	}
-	.checkbox-label {
+	.checkbox__label {
 		position: relative;
 		margin-bottom: 0;
 		vertical-align: middle;

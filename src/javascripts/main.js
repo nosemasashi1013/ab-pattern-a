@@ -89,7 +89,7 @@ $(function () {
 		$(this).remove();
 	});
 
-	$(".checkbox-input, .radio-input")
+	$(".checkbox__input, .radio__input")
 		.filter(":checked")
 		.parent()
 		.css("background-color", "#008660");
