@@ -1,7 +1,19 @@
-export const defaultTemplate = ({ label, item }) => {
+export const defaultTemplate = ({ label, value, id, checked }) => {
 	return `
-    <label for="checkboxId">${label}</label>
-    <input id="checkboxId" type="checkbox" /><span>${item}</span>
+    <label
+      class="checkbox"
+      for=${id}
+    >
+      <input
+        id=${id}
+        class="checkbox-input visually-hidden new-info-filter"
+        type="checkbox"
+        name="name"
+        value=${value}
+        checked=${checked}
+      />
+      <span class="checkbox-label">${label}</span>
+    </label>
   `;
 };
 
