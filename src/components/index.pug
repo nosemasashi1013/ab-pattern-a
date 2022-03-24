@@ -12,6 +12,8 @@ block content
 
 	section.section-content
 		include ../components/parts/_life-menu.pug
+		include ../components/base/Textfield.pug
+		+Textfield({id: "input", label: "お名前"})
 
 	section.section-content.section-content-new-info
 		include ../components/parts/_new-info.pug

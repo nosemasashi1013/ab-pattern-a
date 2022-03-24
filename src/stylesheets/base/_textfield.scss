@@ -1,0 +1,22 @@
+.textfield__container {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	.textfield__input {
+		border: 1px solid #cdd6dd;
+		background-color: #fff;
+		width: 340px;
+		padding: 8px 16px;
+		&::placeholder {
+			color: #cdd6dd;
+		}
+		&:focus {
+			border: 1px solid #008660;
+		}
+	}
+	.textfield__label {
+		font-size: 12px;
+		color: #707070;
+	}
+}

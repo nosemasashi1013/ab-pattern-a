@@ -1,0 +1,14 @@
+mixin Textfield(params={})
+  - const props = Object.assign({placeholder: ""}, params)
+  .textfield__container
+    label(
+      for=props.id
+      class="textfield__label"
+    )
+    =props.label
+    input(
+      id=props.id
+      class="textfield__input"
+      type="text"
+      placeholder=props.placeholder
+    )
