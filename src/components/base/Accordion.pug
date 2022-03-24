@@ -1,3 +1,13 @@
+//-
+  params: {
+    title: string,
+    items: [
+      {
+        label: string
+        content: string
+      }
+    ]
+  }
 mixin Accordion(params={})
   - const props = Object.assign(params)
   ul.accordion-list
