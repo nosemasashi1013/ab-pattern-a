@@ -3,6 +3,17 @@ extends common/_layout
 block pageOption
 	- pageClass.push('page-index')
 	- contentClass.push('index-container')
+	- 
+		const accordionItems = [
+			{
+				label: "県知事の部屋",
+				content: "県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。"
+			},
+			{
+				label: "label2",
+				content: "bbbbbb"
+			},
+		]
 
 block content
 	section.section-content.section-content-hero
@@ -12,8 +23,8 @@ block content
 
 	section.section-content
 		include ../components/parts/_life-menu.pug
-		include ../components/base/Textfield.pug
-		+Textfield({id: "input", label: "お名前"})
+		//- include ../components/base/Accordion.pug
+		//- +Accordion({title: "government", items: accordionItems })
 
 	section.section-content.section-content-new-info
 		include ../components/parts/_new-info.pug

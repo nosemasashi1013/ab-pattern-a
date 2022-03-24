@@ -4,6 +4,7 @@ import { dom, library } from "@fortawesome/fontawesome-svg-core";
 import {
 	faCheck,
 	faAngleRight,
+	faAngleDown,
 	faSearch,
 	faExclamationCircle,
 	faArrowRight,
@@ -21,6 +22,7 @@ $(function () {
 	library.add(
 		faCheck,
 		faAngleRight,
+		faAngleDown,
 		faSearch,
 		faExclamationCircle,
 		faArrowRight,
@@ -113,6 +115,22 @@ $(function () {
 
 	$(".new-info-filter").on("change", function () {
 		searchFilter();
+	});
+
+	$(".accordion__trigger").on("click", function () {
+		if ($(this).attr("aria-expanded") === "true") {
+			$(this).attr("aria-expanded", "false");
+			$(this)
+				.parents(".accordion")
+				.find(".accordion__panel")
+				.attr("aria-hidden", "true");
+		} else {
+			$(this).attr("aria-expanded", "true");
+			$(this)
+				.parents(".accordion")
+				.find(".accordion__panel")
+				.attr("aria-hidden", "false");
+		}
 	});
 
 	dom.i2svg();

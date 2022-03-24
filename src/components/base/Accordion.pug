@@ -1,0 +1,29 @@
+mixin Accordion(params={})
+  - const props = Object.assign(params)
+  ul.accordion-list
+    each item, index in params.items
+      - let triggerId = "accordion-" + params.title + "-" + (index + 1)
+      - let panelId = "accordion-panel-" + params.title + "-" + (index + 1)
+      li.accordion
+        h3.accordion__header
+          button(
+            type="button"
+            id=triggerId
+            class="accordion__trigger"
+            aria-expanded="false"
+            aria-controls=panelId
+          )
+            .accordion__header-label-container
+              span.accordion__header-label
+                = item.label
+              .accordion__header-label-icon
+                i(class="fas fa-angle-down")
+
+        .accordion__panel(
+          id=panelId
+          role="region"
+          aria-hidden="true"
+          aria-labelledby=triggerId
+        )
+          p.accordion__panel-text
+            = item.content
