@@ -23,8 +23,10 @@ block content
 
 	section.section-content
 		include ../components/parts/_life-menu.pug
-		//- include ../components/base/Accordion.pug
-		//- +Accordion({title: "government", items: accordionItems })
+		include ../components/base/Accordion.pug
+		+Accordion({title: "government", items: accordionItems })
+		include ../components/base/Textarea.pug
+		+Textarea({id: "textarea", label: "label" })
 
 	section.section-content.section-content-new-info
 		include ../components/parts/_new-info.pug
