@@ -110,11 +110,11 @@ module.exports = {
 		minimizer: [
 			new TerserPlugin({
 				extractComments: false,
-				terserOptions: {
-					compress: {
-						drop_console: true,
-					},
-				},
+				// terserOptions: {
+				// 	compress: {
+				// 		drop_console: true,
+				// 	},
+				// },
 			}),
 			new CssMinimizerPlugin(),
 		],
