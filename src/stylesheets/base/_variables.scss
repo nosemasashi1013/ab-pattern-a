@@ -54,6 +54,7 @@ $z-index: (
 	@return map-get($z-index, $key);
 }
 
+// font-size設定要検討
 $font-size: (
 	S: 12px,
 	BASE: 16px,
