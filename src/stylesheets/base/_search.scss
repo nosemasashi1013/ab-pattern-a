@@ -1,0 +1,28 @@
+.search__container {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	width: 100%;
+	border: 1px solid #cdd6dd;
+	min-height: 36px;
+	overflow: hidden;
+	align-items: center;
+	background-color: #fff;
+}
+.search__input {
+	padding: 16px;
+}
+.search__btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 36px;
+	min-width: 36px;
+	max-width: 36px;
+	height: 36px;
+	min-height: 36px;
+	max-height: 36px;
+	text-align: center;
+	color: #3b4043;
+	padding-right: 16px;
+}
