@@ -53,3 +53,14 @@ $z-index: (
 @function z-index($key) {
 	@return map-get($z-index, $key);
 }
+
+$font-size: (
+	S: 12px,
+	BASE: 16px,
+	L: 24px,
+	XL: 30px,
+	XXL: 36px,
+);
+@function font-size($key) {
+	@return map-get($font-size, $key);
+}
