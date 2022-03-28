@@ -83,7 +83,7 @@ body[data-color="yellow"] {
 	}
 }
 
-@media only screen and (max-width: map-get($global-width, break-point-sp)) {
+@media only screen and (max-width: breakpoint(sp)) {
 	body[data-color="yellow"],
 	body[data-color="white"] {
 		.header-wrapper {

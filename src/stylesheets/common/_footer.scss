@@ -5,7 +5,7 @@
 	margin-top: 100px;
 	.footer-wrapper {
 		width: 100%;
-		max-width: map-get($global-width, max-width);
+		max-width: width(max);
 		padding: 46px 32px;
 		margin: 0 auto;
 	}
@@ -190,7 +190,7 @@
 	}
 }
 
-@media (max-width: map-get($global-width, break-point-sp)) {
+@media (max-width: breakpoint(sp)) {
 	.footer {
 		.footer-wrapper {
 			width: 100%;

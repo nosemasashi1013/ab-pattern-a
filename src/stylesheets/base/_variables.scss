@@ -1,3 +1,10 @@
+$width: (
+	max: 1024px,
+);
+@function width($key) {
+	@return map-get($width, $key);
+}
+
 $breakpoint: (
 	pc: 1100px,
 	sp: 960px,

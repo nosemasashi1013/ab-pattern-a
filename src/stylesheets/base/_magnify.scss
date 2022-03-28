@@ -49,7 +49,7 @@ body[data-size="large"] {
 	display: none;
 }
 
-@media only screen and (max-width: map-get($global-width, break-point-sp)) {
+@media only screen and (max-width: breakpoint(sp)) {
 	body[data-size="large"] {
 		.index-container .section-content-group + .section-content-group,
 		.index-container .section-content-group .section-content + .section-content,
