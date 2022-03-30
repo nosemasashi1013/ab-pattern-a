@@ -15,6 +15,37 @@ block pageOption
 			},
 		]
 
+		const tabItems = [
+			{
+				tabId: tab1,
+				label: "届出・申請",
+				selected: "true",
+				panelId: "panel1",
+				tabPanel: "panel1"
+			},
+			{
+				tabId: tab2,
+				label: "施設",
+				selected: "false",
+				panelId: "panel2",
+				tabPanel: "panel2"
+			},
+			{
+				tabId: tab3,
+				label: "啓発情報(お知らせ)",
+				selected: "false",
+				panelId: "panel3",
+				tabPanel: "panel3"
+			},
+			{
+				tabId: tab4,
+				label: "その他",
+				selected: "false",
+				panelId: "panel4",
+				tabPanel: "panel4"
+			},
+		]
+
 block content
 	section.section-content.section-content-hero
 		img(src="../images/top/daikoku_top.png" alt="" class="hero-img")
@@ -27,6 +58,40 @@ block content
 		+Accordion({title: "government", items: accordionItems })
 		include ../components/base/Textarea.pug
 		+Textarea({id: "textarea", label: "label" })
+		include ../components/base/TabList.pug
+		+TabList({ariaLabel: "ariaLabel", items: tabItems })
+			div(
+				tabindex="0"
+				role="tabpanel"
+				id="panel1"
+				aria-labelledby="tab1"
+				aria-hidden="false"
+			)
+				p.tab-panel__text aaa
+			div(
+				tabindex="0"
+				role="tabpanel"
+				id="panel2"
+				aria-labelledby="tab2"
+				aria-hidden="true"
+			)
+				p.tab-panel__text bbb
+			div(
+				tabindex="0"
+				role="tabpanel"
+				id="panel3"
+				aria-labelledby="tab3"
+				aria-hidden="true"
+			)
+				p.tab-panel__text ccc
+			div(
+				tabindex="0"
+				role="tabpanel"
+				id="panel4"
+				aria-labelledby="tab4"
+				aria-hidden="true"
+			)
+				p.tab-panel__text ccc
 
 	section.section-content.section-content-new-info
 		include ../components/parts/_new-info.pug
