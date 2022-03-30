@@ -114,7 +114,7 @@
 		display: flex;
 		justify-content: flex-end;
 		margin-top: 16px;
-		color: global-color(link);
+		color: colors(link);
 		font-weight: bold;
 		&:hover {
 			text-decoration: underline;
@@ -126,10 +126,10 @@
 	}
 }
 
-@media (max-width: map-get($global-width, break-point-sp)) {
+@media (max-width: breakpoint(sp)) {
 	.section-content-new-info {
 		.section-filter-wrapper {
-			border: 1px solid global-color(primary);
+			border: 1px solid colors(primary);
 			border-radius: 8px;
 			font-weight: bold;
 		}
@@ -140,7 +140,7 @@
 			padding: 8px 16px;
 
 			svg {
-				color: global-color(primary);
+				color: colors(primary);
 				transform: rotate(45deg);
 				transition: 0.2s all ease-in-out;
 			}

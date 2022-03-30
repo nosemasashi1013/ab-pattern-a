@@ -91,7 +91,7 @@
 	}
 }
 
-@media (max-width: map-get($global-width, break-point-sp)) {
+@media (max-width: breakpoint(sp)) {
 	.index-container {
 		.section-content-group {
 			& + .section-content-group,
