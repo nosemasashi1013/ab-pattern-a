@@ -1,0 +1,12 @@
+mixin Search(params={})
+  - const props = Object.assign(params)
+  form(role="search" action="#")
+    .search__container
+      input(
+        class="search__input"
+        type="search"
+        size="100"
+        placeholder="キーワードを入力"
+      )
+      button(type="submit" value="search" class="search__btn" aria-label="検索")
+        i(class="fas fa-search")
