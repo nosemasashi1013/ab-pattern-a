@@ -13,12 +13,6 @@
 	&:hover {
 		opacity: 0.8;
 	}
-	&:last-child {
-		flex-basis: 100%;
-		.menu-text-container {
-			margin-top: 0;
-		}
-	}
 }
 .link-menu-item__container {
 	display: flex;
@@ -41,4 +35,16 @@
 		font-size: 20px;
 		margin-right: 8px;
 	}
+}
+
+.link-menu-list::before {
+	content: "";
+	display: block;
+	width: 23%;
+	order: 1;
+}
+.link-menu-list::after {
+	content: "";
+	display: block;
+	width: 23%;
 }
