@@ -10,6 +10,12 @@ block content
 
 			},
 			{
+				text : "２階層",
+				link : "./index.html",
+				isCurrent : false
+
+			},
+			{
 				text : "ライフシーンで探す",
 				link : "",
 				isCurrent : true
@@ -18,7 +24,7 @@ block content
 		]
 
 	include ../components/base/Breadcrumb.pug
-	+Breadcrumb(breadcrumbItem)
+	+Breadcrumb({items: breadcrumbItem})
 
 	section.layout-default
 		include ../components/parts/_life-scene-header.pug

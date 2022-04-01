@@ -1,7 +1,8 @@
-mixin Breadcrumb(items)
+mixin Breadcrumb(params={})
+  - const props = Object.assign({}, params)
   nav(aria-label="Breadcrumb" class="breadcrumb layout-default")
     ol
-      each item in items
+      each item in props.items
         li
           if item.isCurrent
             span.breadcrumb-link-text.is-current
@@ -10,5 +11,4 @@ mixin Breadcrumb(items)
             a(href=item.link class="breadcrumb-link")
               span.breadcrumb-link-text
                 = item.text
-
 
