@@ -1,0 +1,17 @@
+mixin LinkMenu(params={})
+  - const props = Object.assign(params)
+  ul.link-menu-list
+    each item in props.items
+      li.link-menu-item.box-shadow 
+        a(href=item.link) 
+          .link-menu-item__container
+            if item.icon
+              img(
+                src=props.basePath + item.icon
+                alt=""
+                class="link-menu-item-icon"
+              )
+            .link-menu-item-text__container
+              span.link-menu-item-text
+                = item.text
+              i(class="fas fa-chevron-circle-right")

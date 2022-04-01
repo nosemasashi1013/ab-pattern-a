@@ -46,6 +46,26 @@ block pageOption
 			},
 		]
 
+		const listItems = [
+			{
+				text: "list 1",
+				link: "#"
+			},
+			{
+				text: "list 2",
+				link: "#"
+			},
+			{
+				text: "list 3",
+				link: "#"
+			},
+			{
+				text: "長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります",
+				link: "#"
+			},
+
+		]
+
 block content
 	section.section-content.section-content-hero
 		img(src="../images/top/daikoku_top.png" alt="" class="hero-img")
@@ -60,6 +80,8 @@ block content
 		+Textarea({id: "textarea", label: "label" })
 		include ../components/base/Search.pug
 		+Search({})
+		include ../components/base/LinkList.pug
+		+LinkList({items: listItems})
 		include ../components/base/TabList.pug
 		+TabList({ariaLabel: "ariaLabel", items: tabItems })
 			div(

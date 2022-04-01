@@ -1,5 +1,5 @@
 -
-  const lifeMenu = [
+  const lifeMenuItems = [
     {
       icon: "life_menu_icon_1.png",
       text: "妊娠から子育て",
@@ -47,27 +47,12 @@
     },
   ]
 
-mixin iconImg(fileName)
-  if fileName
-    img(
-      src="../images/top/" + fileName
-      alt=""
-      class="life-menu-icon"
-    )
-  else
-    block
+  const basePath = "../images/top/"
+
+
 
 .life-menu-container.layout-default 
   h2.section-title.life-menu-title
     | ライフシーンで探す
-  ul.life-menu-list
-    each menu in lifeMenu
-      li.life-menu-item.box-shadow 
-        a(href=menu.link) 
-          .menu-item-container
-            +iconImg(menu.icon)
-            .menu-text-container
-              p.life-menu-text
-                = menu.text
-              .icon-wrapper
-                i(class="fas fa-chevron-circle-right")
+  include ../../components/base/LinkMenu.pug
+  +LinkMenu({basePath: basePath, items: lifeMenuItems})

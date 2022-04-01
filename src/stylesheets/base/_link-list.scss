@@ -1,0 +1,17 @@
+.list__item {
+	background-color: #fff;
+	width: 100%;
+	border-bottom: 1px solid #cdd6dd;
+	&-link {
+		display: flex;
+		align-items: center;
+		padding: 16px;
+	}
+	&-text {
+		flex: 1;
+		padding-right: 16px;
+	}
+	&-icon {
+		color: #98a6b5;
+	}
+}
