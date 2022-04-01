@@ -1,5 +1,5 @@
 mixin LinkMenu(params={})
-  - const props = Object.assign(params)
+  - const props = Object.assign({}, params)
   ul.link-menu-list
     each item in props.items
       li.link-menu-item.box-shadow 
