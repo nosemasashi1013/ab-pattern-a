@@ -1,0 +1,9 @@
+.tab-content-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 24px;
+}
+.tab-content {
+	width: calc((100% - 24px) / 2);
+}

@@ -17,7 +17,7 @@
 		border-radius: 4px 4px 0 0;
 		background-color: colors(line);
 		width: calc(100% / 3);
-		padding: 24px;
+		padding: 16px;
 		font-weight: bold;
 		text-align: center;
 		&:hover {
@@ -72,7 +72,7 @@
 	div[role="tabpanel"] {
 		position: relative;
 		z-index: 2;
-		padding: 16px;
+		padding: 48px;
 		border: 1px solid colors(line);
 		border-radius: 0 0 4px 4px;
 		background-color: #fff;
