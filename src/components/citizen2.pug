@@ -77,13 +77,30 @@ block pageOption
         link: "#"
       },
     ]
+    const imgList = [
+      {
+        img: "daikoku_top.png",
+        title: "タイトル1"
+      },
+      {
+        img: "daikoku_top.png",
+        title: "タイトル2"
+      },
+      {
+        img: "daikoku_top.png",
+        title: "タイトル3"
+      },
+    ]
+
+include ../components/base/TabList.pug
+include ../components/base/LinkList.pug
+include ../components/base/ContactBanner.pug
 
 block content
   section.section-content
     .section-content-body.layout-default
       h1.section-title
         | 妊娠から子育て
-      include ../components/base/TabList.pug
       +TabList({ariaLabel: "妊娠から子育て", items: tabItems })
         div(
           tabindex="0"
@@ -96,17 +113,14 @@ block content
             .tab-content 
               h3.content-title
                 | 妊娠時の届出
-              include ../components/base/LinkList.pug
               +LinkList({items: pregnantItems})
             .tab-content 
               h3.content-title
                 | 出産時の届出
-              include ../components/base/LinkList.pug
               +LinkList({items: berthItems})
             .tab-content 
               h3.content-title
                 | その他
-              include ../components/base/LinkList.pug
               +LinkList({items: otherItems})
         div(
           tabindex="0"
@@ -154,8 +168,18 @@ block content
     .section-content-body.layout-default
       h2.section-title
         | このページもよく読まれています
+      .img-list-container 
+        ul.img-list 
+          each item in imgList 
+            li.img-item 
+              .img-container 
+                img(src="../images/top/" + item.img alt="" class="img-list-icon")
+              h3.img-title 
+                = item.title 
+              a(href="#")
+                span.img-text
+                  | もっと見る 
 
   section.section-content
-    .section-content-body.layout-default
-      include ../components/base/ContactBanner.pug
+    .section-content-body.section-contact.layout-default
       +ContactBanner({tel1: "03", tel2: "0000", tel3: "1111", dep: "健康福祉課", div: "保健所総務課", inCharge: "新型コロナウイルスワクチン"})

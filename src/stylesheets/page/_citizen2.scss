@@ -7,3 +7,34 @@
 .tab-content {
 	width: calc((100% - 24px) / 2);
 }
+
+.section-contact {
+	margin-top: 40px;
+}
+.img-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 16px;
+	justify-content: space-between;
+}
+.img-item {
+	width: calc(100% / 4);
+	text-align: center;
+}
+.img-container {
+	border: 1px solid #ccc;
+	.img-list-icon {
+		display: block;
+		height: 180px;
+		object-fit: fill;
+		width: 100%;
+	}
+}
+.img-title {
+	font-weight: bold;
+	font-size: 24px;
+}
+.img-text {
+	font-size: 12px;
+}
