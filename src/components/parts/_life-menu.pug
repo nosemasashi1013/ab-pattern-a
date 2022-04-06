@@ -40,19 +40,15 @@
       text: "お悔やみ",
       link: "#"
     },
-    {
-      icon: "",
-      text: "あなたの状況・ご用件を選んで探す",
-      link: "./search.html"
-    },
   ]
 
   const basePath = "../images/top/"
 
-
+include ../../components/base/LinkMenu.pug
+include ../../components/base/SearchLink.pug
 
 .life-menu-container.layout-default 
   h2.section-title.life-menu-title
     | ライフシーンで探す
-  include ../../components/base/LinkMenu.pug
   +LinkMenu({basePath: basePath, items: lifeMenuItems})
+  +SearchLink({link: "../search.html"})

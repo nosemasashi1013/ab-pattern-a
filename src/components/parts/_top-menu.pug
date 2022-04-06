@@ -1,0 +1,32 @@
+- 
+  const menuListItems = [
+    {
+      text: "市民の方",
+      icon: "life_menu_icon_1.png",
+      link: "./citizen.html"
+    },
+    {
+      text: "事業者の方",
+      icon: "life_menu_icon_1.png",
+      link: "#"
+    },
+    {
+      text: "観光・移住",
+      icon: "life_menu_icon_1.png",
+      link: "#"
+    },
+    {
+      text: "市政",
+      icon: "life_menu_icon_1.png",
+      link: "#"
+    },
+  ]
+
+include ../base/LinkMenu.pug	
+include ../base/SearchLink.pug	
+
+.section-content.layout-default
+  h2.section-title 
+    | 見出しが入ります
+  +LinkMenu({basePath : basePath, items: menuListItems})
+  +SearchLink({link : "../search.html"})

@@ -3,122 +3,23 @@ extends common/_layout
 block pageOption
 	- pageClass.push('page-index')
 	- contentClass.push('index-container')
-	- 
-		const accordionItems = [
-			{
-				label: "県知事の部屋",
-				content: "県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。県知事の部屋はこちらです。"
-			},
-			{
-				label: "label2",
-				content: "bbbbbb"
-			},
-		]
-
-		const tabItems = [
-			{
-				tabId: tab1,
-				label: "届出・申請",
-				selected: "true",
-				panelId: "panel1",
-				tabPanel: "panel1"
-			},
-			{
-				tabId: tab2,
-				label: "施設",
-				selected: "false",
-				panelId: "panel2",
-				tabPanel: "panel2"
-			},
-			{
-				tabId: tab3,
-				label: "啓発情報(お知らせ)",
-				selected: "false",
-				panelId: "panel3",
-				tabPanel: "panel3"
-			},
-			{
-				tabId: tab4,
-				label: "その他",
-				selected: "false",
-				panelId: "panel4",
-				tabPanel: "panel4"
-			},
-		]
-
-		const listItems = [
-			{
-				text: "list 1",
-				link: "#"
-			},
-			{
-				text: "list 2",
-				link: "#"
-			},
-			{
-				text: "list 3",
-				link: "#"
-			},
-			{
-				text: "長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります長い文章が入ります",
-				link: "#"
-			},
-
-		]
+	- const basePath = "../images/top/"
 
 block content
 	section.section-content.section-content-hero
 		img(src="../images/top/daikoku_top.png" alt="" class="hero-img")
 		img(src="../images/top/daikoku_top_label.png" alt="" class="label-img")
 
+	section.section-content 
+		include ./parts/_top-menu.pug
 
-	section.section-content
-		include ../components/parts/_life-menu.pug
-		include ../components/base/Accordion.pug
-		+Accordion({title: "government", items: accordionItems })
-		include ../components/base/Textarea.pug
-		+Textarea({id: "textarea", label: "label" })
-		include ../components/base/Search.pug
-		+Search({})
-		include ../components/base/LinkList.pug
-		+LinkList({items: listItems})
-		include ../components/base/TabList.pug
-		+TabList({ariaLabel: "ariaLabel", items: tabItems })
-			div(
-				tabindex="0"
-				role="tabpanel"
-				id="panel1"
-				aria-labelledby="tab1"
-				aria-hidden="false"
-			)
-				p.tab-panel__text aaa
-			div(
-				tabindex="0"
-				role="tabpanel"
-				id="panel2"
-				aria-labelledby="tab2"
-				aria-hidden="true"
-			)
-				p.tab-panel__text bbb
-			div(
-				tabindex="0"
-				role="tabpanel"
-				id="panel3"
-				aria-labelledby="tab3"
-				aria-hidden="true"
-			)
-				p.tab-panel__text ccc
-			div(
-				tabindex="0"
-				role="tabpanel"
-				id="panel4"
-				aria-labelledby="tab4"
-				aria-hidden="true"
-			)
-				p.tab-panel__text ccc
+	section.section-content.bg-light
+		.section-content.layout-default
+			h2.section-title 
+				| 見出しが入ります
+			.section-content-wrapper 
+				.section-content__floor-map 
+					| フロアマップ
+				.section-content__contact
+					| 組織図・連絡先
 
-	section.section-content.section-content-new-info
-		include ../components/parts/_new-info.pug
-
-	section.section-content
-		include ../components/parts/_business-menu.pug

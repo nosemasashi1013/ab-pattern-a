@@ -1,0 +1,8 @@
+mixin SearchLink(params={})
+  - const props = Object.assign({}, params)
+    .search-link.box-shadow
+      a(href=props.link) 
+        .search-link-text__container
+          span.search-link-text
+            | あなたの状況・ご用件を選んで探す
+          i(class="fas fa-chevron-circle-right")

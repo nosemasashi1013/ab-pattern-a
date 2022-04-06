@@ -99,6 +99,12 @@ module.exports = {
 			inject: "body",
 			chunks: ["main"],
 		}),
+		new HtmlWebpackPlugin({
+			template: "./src/components/citizen.pug",
+			filename: "citizen.html",
+			inject: "body",
+			chunks: ["main"],
+		}),
 		new CleanWebpackPlugin(),
 		new webpack.ProvidePlugin({
 			$: "jquery",

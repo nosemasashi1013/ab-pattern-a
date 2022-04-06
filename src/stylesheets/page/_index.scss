@@ -83,6 +83,23 @@
 			font-size: 28px;
 		}
 	}
+	.section-content-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		gap: 16px;
+
+		.section-content__floor-map,
+		.section-content__contact {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 50%;
+			height: 240px;
+			background-color: #fff;
+			border: 1px solid black;
+		}
+	}
 }
 
 @media all and (-ms-high-contrast: none) {
