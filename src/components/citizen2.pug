@@ -1,0 +1,159 @@
+extends common/_layout
+
+block pageOption 
+  -
+    const tabItems = [
+      {
+        tabId: tab1,
+        label: "届出・申請",
+        selected: "true",
+        panelId: "panel1",
+        tabPanel: "panel1"
+      },
+      {
+        tabId: tab2,
+        label: "金銭的支援",
+        selected: "false",
+        panelId: "panel2",
+        tabPanel: "panel2"
+      },
+      {
+        tabId: tab3,
+        label: "支援サービス",
+        selected: "false",
+        panelId: "panel3",
+        tabPanel: "panel3"
+      },
+      {
+        tabId: tab4,
+        label: "講習会・イベント",
+        selected: "false",
+        panelId: "panel4",
+        tabPanel: "panel4"
+      },
+      {
+        tabId: tab6,
+        label: "施設",
+        selected: "false",
+        panelId: "panel5",
+        tabPanel: "panel5"
+      },
+      {
+        tabId: tab6,
+        label: "お知らせ",
+        selected: "false",
+        panelId: "panel6",
+        tabPanel: "panel6"
+      },
+    ]
+
+    const pregnantItems = [
+      {
+        text: "妊娠の届出・母子手帳の交付",
+        link: "#"
+      },
+      {
+        text: "マタニティマーク",
+        link: "#"
+      },
+    ]
+    const berthItems = [
+      {
+        text: "出生届",
+        link: "#"
+      },
+      {
+        text: "出生連絡票",
+        link: "#"
+      },
+    ]
+    const otherItems = [
+      {
+        text: "認知届",
+        link: "#"
+      },
+      {
+        text: "国民健康保険の加入",
+        link: "#"
+      },
+    ]
+
+block content
+  section.section-content
+    .section-content-body.layout-default
+      h1.section-title
+        | 妊娠から子育て
+      include ../components/base/TabList.pug
+      +TabList({ariaLabel: "妊娠から子育て", items: tabItems })
+        div(
+          tabindex="0"
+          role="tabpanel"
+          id="panel1"
+          aria-labelledby="tab1"
+          aria-hidden="false"
+        )
+          .tab-content-container
+            .tab-content 
+              h3.content-title
+                | 妊娠時の届出
+              include ../components/base/LinkList.pug
+              +LinkList({items: pregnantItems})
+            .tab-content 
+              h3.content-title
+                | 出産時の届出
+              include ../components/base/LinkList.pug
+              +LinkList({items: berthItems})
+            .tab-content 
+              h3.content-title
+                | その他
+              include ../components/base/LinkList.pug
+              +LinkList({items: otherItems})
+        div(
+          tabindex="0"
+          role="tabpanel"
+          id="panel2"
+          aria-labelledby="tab2"
+          aria-hidden="true"
+        )
+          p.tab-panel__text bbb
+        div(
+          tabindex="0"
+          role="tabpanel"
+          id="panel3"
+          aria-labelledby="tab3"
+          aria-hidden="true"
+        )
+          p.tab-panel__text ccc
+        div(
+          tabindex="0"
+          role="tabpanel"
+          id="panel4"
+          aria-labelledby="tab4"
+          aria-hidden="true"
+        )
+          p.tab-panel__text ddd
+        div(
+          tabindex="0"
+          role="tabpanel"
+          id="panel5"
+          aria-labelledby="tab5"
+          aria-hidden="true"
+        )
+          p.tab-panel__text eee
+        div(
+          tabindex="0"
+          role="tabpanel"
+          id="panel6"
+          aria-labelledby="tab6"
+          aria-hidden="true"
+        )
+          p.tab-panel__text fff
+
+
+  section.section-content.bg-light
+    .section-content-body.layout-default
+      h2.section-title
+        | このページもよく読まれています
+
+  section.section-content
+    .section-content-body.layout-default
