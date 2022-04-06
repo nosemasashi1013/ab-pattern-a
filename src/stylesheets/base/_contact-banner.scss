@@ -1,0 +1,57 @@
+.contact-banner-container {
+	padding: 48px;
+	background-color: #fff;
+	border-radius: 8px;
+	position: relative;
+
+	.contact-banner-header {
+		font-size: 36px;
+		font-weight: bold;
+		margin-bottom: 32px;
+	}
+	.contact-form-container {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+		margin-bottom: 32px;
+	}
+
+	.contact-form-tel-container {
+		display: flex;
+		align-items: center;
+		font-size: 40px;
+
+		.contact-form-tel {
+			margin-left: 16px;
+		}
+		.contact-form-tel-icon {
+			color: colors(primary);
+		}
+	}
+	.contact-form-link {
+		display: block;
+		padding: 16px 64px;
+		font-weight: bold;
+		background-color: colors(primary);
+		border-radius: 50px;
+		color: #fff;
+		&:hover {
+			opacity: 0.8;
+			cursor: pointer;
+		}
+	}
+
+	.contact-form-dep,
+	.contact-form-in-charge {
+		font-weight: bold;
+		font-size: 24px;
+	}
+
+	.contact-banner-img {
+		width: 320px;
+		height: auto;
+		position: absolute;
+		bottom: 0;
+		right: 40px;
+	}
+}
