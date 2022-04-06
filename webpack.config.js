@@ -111,6 +111,12 @@ module.exports = {
 			inject: "body",
 			chunks: ["main"],
 		}),
+		new HtmlWebpackPlugin({
+			template: "./src/components/citizen3.pug",
+			filename: "citizen3.html",
+			inject: "body",
+			chunks: ["main"],
+		}),
 		new CleanWebpackPlugin(),
 		new webpack.ProvidePlugin({
 			$: "jquery",
@@ -122,11 +128,6 @@ module.exports = {
 		minimizer: [
 			new TerserPlugin({
 				extractComments: false,
-				// terserOptions: {
-				// 	compress: {
-				// 		drop_console: true,
-				// 	},
-				// },
 			}),
 			new CssMinimizerPlugin(),
 		],
