@@ -1,5 +1,5 @@
 mixin Radio(params={})
-  - const props = Object.assign(params)
+  - const props = Object.assign({}, params)
   label.radio(
     for=props.id
   )
@@ -10,7 +10,6 @@ mixin Radio(params={})
       name=props.name
       value=props.value
       checked=props.checked
-      onClick=props.onClick
     )
     span.radio__label
       =props.label
