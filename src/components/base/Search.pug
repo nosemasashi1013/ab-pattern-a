@@ -1,7 +1,7 @@
 mixin Search(params={})
-  - const props = Object.assign(params)
+  - const props = Object.assign({}, params)
   form(role="search" action="#")
-    .search__container
+    .search
       input(
         class="search__input"
         type="search"
