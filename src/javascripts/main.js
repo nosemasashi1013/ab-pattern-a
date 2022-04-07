@@ -117,18 +117,18 @@ $(function () {
 		searchFilter();
 	});
 
-	$(".accordion__trigger").on("click", function () {
+	$(".accordion-trigger").on("click", function () {
 		if ($(this).attr("aria-expanded") === "true") {
 			$(this).attr("aria-expanded", "false");
 			$(this)
-				.parents(".accordion")
-				.find(".accordion__panel")
+				.parents(".accordion__list")
+				.find(".accordion-panel")
 				.attr("aria-hidden", "true");
 		} else {
 			$(this).attr("aria-expanded", "true");
 			$(this)
-				.parents(".accordion")
-				.find(".accordion__panel")
+				.parents(".accordion__list")
+				.find(".accordion-panel")
 				.attr("aria-hidden", "false");
 		}
 	});

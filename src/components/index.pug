@@ -4,6 +4,17 @@ block pageOption
 	- pageClass.push('page-index')
 	- contentClass.push('index-container')
 	- const basePath = "../images/top/"
+	-
+		const accordionItems = [
+			{
+				label: "aaa",
+				content: "aaa"
+			},
+			{
+				label: "bbb",
+				content: "bbb"
+			},
+		]
 
 block content
 	section.section-content.section-content-hero
@@ -12,7 +23,8 @@ block content
 
 	section.section-content 
 		include ./parts/_top-menu.pug
-
+		include ./base/Accordion.pug
+		+Accordion({title: "accordion", items: accordionItems})
 	section.section-content.bg-light
 		.section-content.layout-default
 			h2.section-title 
