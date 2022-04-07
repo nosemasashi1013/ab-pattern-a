@@ -1,5 +1,5 @@
 mixin Checkbox(params={})
-  - const props = Object.assign(params)
+  - const props = Object.assign({}, params)
   label.checkbox(
     for=props.id
   )
