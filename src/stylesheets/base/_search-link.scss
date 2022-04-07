@@ -1,4 +1,5 @@
 .search-link {
+	@extend .box-shadow;
 	background-color: #fff;
 	padding: 16px;
 	flex-basis: 100%;
@@ -7,14 +8,14 @@
 	&:hover {
 		opacity: 0.8;
 	}
-}
-.search-link-text__container {
-	display: flex;
-	align-items: baseline;
-	justify-content: center;
-}
-.search-link-text {
-	font-weight: bold;
-	font-size: 20px;
-	margin-right: 8px;
+	&__text-container {
+		display: flex;
+		align-items: baseline;
+		justify-content: center;
+	}
+	&__text {
+		font-weight: bold;
+		font-size: 20px;
+		margin-right: 8px;
+	}
 }
