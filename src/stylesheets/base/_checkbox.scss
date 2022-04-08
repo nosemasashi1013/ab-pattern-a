@@ -79,3 +79,10 @@ $checkbox-border-color: #ccc;
 		}
 	}
 }
+@media only screen and (max-width: breakpoint(sp)) {
+	.checkbox {
+		&__label {
+			font-size: 14px;
+		}
+	}
+}
