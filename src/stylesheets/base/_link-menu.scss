@@ -34,17 +34,26 @@
 		justify-content: center;
 	}
 	&__icon {
-		width: 120px;
+		width: 50%;
 		height: auto;
 	}
 	&__text-container {
 		display: flex;
-		align-items: baseline;
-		margin-top: 8px;
+		align-items: center;
+		margin: 8px 8px 0 8px;
 	}
 	&__text {
 		font-weight: bold;
 		font-size: 20px;
 		margin-right: 8px;
+	}
+}
+
+@media only screen and (max-width: breakpoint(sp)) {
+	.link-menu-item {
+		flex-basis: calc(50% - 8px);
+		&__text {
+			font-size: 14px;
+		}
 	}
 }
