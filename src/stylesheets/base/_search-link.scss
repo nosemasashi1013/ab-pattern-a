@@ -10,12 +10,19 @@
 	}
 	&__text-container {
 		display: flex;
-		align-items: baseline;
+		align-items: center;
 		justify-content: center;
 	}
 	&__text {
 		font-weight: bold;
 		font-size: 20px;
 		margin-right: 8px;
+	}
+}
+@media only screen and (max-width: breakpoint(sp)) {
+	.search-link {
+		&__text {
+			font-size: 14px;
+		}
 	}
 }

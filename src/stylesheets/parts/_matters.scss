@@ -39,3 +39,10 @@
 		}
 	}
 }
+@media only screen and (max-width: breakpoint(sp)) {
+	.matters-list {
+		&__item {
+			width: calc(50% - 4px);
+		}
+	}
+}
