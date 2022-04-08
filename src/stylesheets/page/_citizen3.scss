@@ -79,3 +79,25 @@
 		border-bottom: 1px solid #cdd6dd;
 	}
 }
+
+.anchor-nav {
+	margin: 56px 0;
+}
+.anchor-nav-list {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	border-bottom: 2px solid #f0f3f5;
+	&__item {
+		color: colors(primary);
+		border-bottom: 2px solid transparent;
+		&:hover {
+			opacity: 0.8;
+			border-bottom: 2px solid colors(primary);
+		}
+	}
+	&__link {
+		display: block;
+		padding-bottom: 24px;
+	}
+}
