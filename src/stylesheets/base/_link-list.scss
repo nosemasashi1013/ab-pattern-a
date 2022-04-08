@@ -2,6 +2,9 @@
 	background-color: #fff;
 	width: 100%;
 	border-bottom: 1px solid #cdd6dd;
+	&:hover {
+		opacity: 0.8;
+	}
 	&__link {
 		display: flex;
 		align-items: center;

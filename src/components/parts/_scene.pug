@@ -3,7 +3,7 @@
     {
       label: "いざという時",
       value: "1",
-      checked: true
+      checked: false
     },
     {
       label: "妊娠",
@@ -62,20 +62,20 @@
     },
   ]
 
-.search-menu-container.life-scene-container.layout-default
-  h2.life-scene-title
+include ../../components/base/Checkbox.pug
+
+.scene
+  h2.scene__title
     | 人生の出来事
-  ul.life-scene-list 
+  ul.scene-list 
     each item in lifeScene 
-      li.life-scene-item
-        include ../../components/base/Checkbox.pug
+      li.scene-list__item
         +Checkbox({
           id: `life-scene__${item.value}`,
           name: "life-scene",
           value: item.value,
           checked: item.checked,
           label: item.label,
-          onClick: () => {}
         })
 
 

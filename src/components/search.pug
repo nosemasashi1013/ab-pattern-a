@@ -1,6 +1,6 @@
 extends common/_layout
 
-block content
+block pageOption
 	-
 		const breadcrumbItem = [
 			{
@@ -23,16 +23,19 @@ block content
 			},
 		]
 
-	include ../components/base/Breadcrumb.pug
+include ../components/base/Breadcrumb.pug
+include ../components/base/Button.pug
+
+block content
 	+Breadcrumb({items: breadcrumbItem})
 
-	section.layout-default
+	section.section-content__header
 		include ../components/parts/_life-scene-header.pug
 
-	section.life-menu-search-section
+	section.section-content
 		form
 			.section-content
-				include ../components/parts/_life-scene.pug
+				include ../components/parts/_scene.pug
 
 			.section-content.bg-light
 				include ../components/parts/_status.pug
@@ -41,6 +44,5 @@ block content
 				include ../components/parts/_matters.pug
 
 			.section-content.layout-default
-				.search-btn-wrapper
-					include ../components/base/Button.pug
+				.search-btn__container
 					+Button({type: "submit", label: "検索する"})

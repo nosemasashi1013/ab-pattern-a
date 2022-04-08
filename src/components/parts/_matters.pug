@@ -3,7 +3,7 @@
     {
       label: "情報を受け取る",
       value: "1",
-      checked: true
+      checked: false
     },
     {
       label: "証明書が欲しい",
@@ -82,19 +82,19 @@
     },
   ]
 
-.search-menu-container.matters-container.layout-default
-  h2.matters-title
+include ../../components/base/Checkbox.pug
+
+.matters
+  h2.matters__title
     | ご用件
   ul.matters-list 
     each item in matters 
-      li.matters-item
-        include ../../components/base/Checkbox.pug
+      li.matters-list__item
         +Checkbox({
           id: `matters__${item.value}`,
           name: "matters",
           value: item.value,
           checked: item.checked,
           label: item.label,
-          onClick: () => {}
         })
 

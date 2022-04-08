@@ -1,57 +1,5 @@
-.index-container {
-	.section-content {
-		.section-content-header-wrapper {
-			display: flex;
-			align-items: center;
-			.section-icon {
-				display: block;
-				width: 32px;
-				height: auto;
-				margin-right: 8px;
-			}
-		}
-		.section-content-header {
-			font-size: 18px;
-			font-weight: bold;
-			display: flex;
-			justify-content: space-between;
-			& + .section-content-body {
-				margin-top: 16px;
-			}
-			a {
-				background: #fff;
-				padding: 4px 8px;
-				line-height: 1;
-				border-radius: 4px;
-				color: #636b81;
-				display: flex;
-				align-items: center;
-				svg {
-					color: #f59432;
-					margin-right: 4px;
-				}
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
-		.section-content-body {
-			background-color: #fff;
-			border-radius: 8px;
-			padding: 16px 24px;
-			overflow: hidden;
-			.section-content-body-title {
-				font-size: 18px;
-				font-weight: bold;
-			}
-		}
-	}
-	.section-content-group {
-		& + .section-content-group {
-			margin-top: 50px;
-		}
-	}
-	.section-content-hero {
+.section-content {
+	&__hero {
 		position: relative;
 		height: 474px;
 		overflow: hidden;
@@ -64,67 +12,25 @@
 			z-index: 1;
 		}
 	}
-
-	.back-to-top {
-		font-size: 18px;
-		font-weight: bold;
-		color: #0e67e1;
-		display: flex;
-		justify-content: flex-end;
-		.top {
-			display: flex;
-			&:hover {
-				opacity: 0.8;
-				text-decoration: underline;
-			}
-		}
-		svg {
-			margin-left: 8px;
-			font-size: 28px;
-		}
-	}
-	.section-content-wrapper {
+	&__container {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
 		gap: 16px;
-
-		.section-content__floor-map,
-		.section-content__contact {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 50%;
-			height: 240px;
-			background-color: #fff;
-			border: 1px solid black;
-		}
+	}
+	&__floor-map,
+	&__contact {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 50%;
+		height: 240px;
+		background-color: #fff;
+		border: 1px solid black;
 	}
 }
-
 @media all and (-ms-high-contrast: none) {
 	.index-container {
 		margin-bottom: 8px;
-	}
-}
-
-@media (max-width: breakpoint(sp)) {
-	.index-container {
-		.section-content-group {
-			& + .section-content-group,
-			.section-content + .section-content,
-			.section-content-group-left + .section-content-group-right,
-			.section-content-group-a {
-				margin-top: 30px;
-			}
-		}
-		.section-content {
-			.section-content-body {
-				padding: 10px;
-			}
-		}
-		.show-more {
-			font-size: 14px;
-		}
 	}
 }

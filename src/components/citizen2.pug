@@ -77,6 +77,138 @@ block pageOption
         link: "#"
       },
     ]
+    const pregnantSupportItems = [
+      {
+        text: "特定不妊治療費助成",
+        link: "#"
+      },
+      {
+        text: "大黒市独自の不妊治療費助成",
+        link: "#"
+      },
+      {
+        text: "妊娠高血圧症候群（妊娠中毒症）に関する助成",
+        link: "#"
+      },
+      {
+        text: "出産前後の国民年金保険料免除",
+        link: "#"
+      },
+      {
+        text: "出産育児一時金",
+        link: "#"
+      },
+      {
+        text: "出産費貸付制度",
+        link: "#"
+      },
+      {
+        text: "出産祝い",
+        link: "#"
+      },
+      {
+        text: "子育て支援パスポート",
+        link: "#"
+      },
+      {
+        text: "大黒市独自の妊娠・出産に関する金銭的支援",
+        link: "#"
+      },
+    ]
+
+    const childSupportItems =[
+      {
+        text: "乳幼児医療費の助成(子ども医療費)",
+        link: "#"
+      },
+      {
+        text: "児童手当",
+        link: "#"
+      },
+      {
+        text: "企業主導型ベビーシッター利用者支援事業",
+        link: "#"
+      },
+      {
+        text: "自治体独自のベビーシッター費用の助成",
+        link: "#"
+      },
+      {
+        text: "幼児2人同乗自転車購入費の一部助成",
+        link: "#"
+      },
+      {
+        text: "大黒市独自の育児に関する金銭的支援",
+        link: "#"
+      },
+    ]
+    const singleSupportItems =[
+      {
+        text: "児童扶養手当",
+        link: "#"
+      },
+      {
+        text: "ひとり親家庭医療費助成",
+        link: "#"
+      },
+      {
+        text: "母子父子寡婦福祉資金",
+        link: "#"
+      },
+      {
+        text: "自立支援教育訓練給付金",
+        link: "#"
+      },
+      {
+        text: "高等職業訓練促進給付金",
+        link: "#"
+      },
+      {
+        text: "高等学校卒業程度認定試験合格支援事業給付金",
+        link: "#"
+      },
+      {
+        text: "大黒市独自のひとり親の方への金銭的支援",
+        link: "#"
+      },
+    ]
+    const disabledChildSupportItems =[
+      {
+        text: "特別児童扶養手当",
+        link: "#"
+      },
+      {
+        text: "障害児福祉手当",
+        link: "#"
+      },
+      {
+        text: "小児慢性特定疾病医療費の助成",
+        link: "#"
+      },
+      {
+        text: "難病医療費助成制度",
+        link: "#"
+      },
+      {
+        text: "自治体独自の医療費助成制度（ぜん息など）",
+        link: "#"
+      },
+      {
+        text: "大黒市独自の金銭的支援",
+        link: "#"
+      },
+    ]
+    const orphanSupportItems =[
+      {
+        text: "遺児等福祉手当",
+        link: "#"
+      },
+      {
+        text: "大黒市独自の遺児の方への金銭的支援",
+        link: "#"
+      },
+
+    ]
     const imgList = [
       {
         img: "daikoku_top.png",
@@ -99,7 +231,7 @@ include ../components/base/ContactBanner.pug
 block content
   section.section-content
     .section-content-body.layout-default
-      h1.section-title
+      h1.section-content__title
         | 妊娠から子育て
       +TabList({ariaLabel: "妊娠から子育て", items: tabItems })
         div(
@@ -109,17 +241,17 @@ block content
           aria-labelledby="tab1"
           aria-hidden="false"
         )
-          .tab-content-container
-            .tab-content 
-              h3.content-title
+          .tab-content
+            .tab-content__container
+              h3.tab-content__title
                 | 妊娠時の届出
               +LinkList({items: pregnantItems})
-            .tab-content 
-              h3.content-title
+            .tab-content__container
+              h3.tab-content__title
                 | 出産時の届出
               +LinkList({items: berthItems})
-            .tab-content 
-              h3.content-title
+            .tab-content__container
+              h3.tab-content__title
                 | その他
               +LinkList({items: otherItems})
         div(
@@ -129,7 +261,27 @@ block content
           aria-labelledby="tab2"
           aria-hidden="true"
         )
-          p.tab-panel__text bbb
+          .tab-content
+            .tab-content__container
+              h3.tab-content__title
+                | 妊娠・出産に関する金銭的支援
+              +LinkList({items: pregnantSupportItems})
+            .tab-content__container
+              h3.tab-content__title
+                | 育児に関する金銭的支援
+              +LinkList({items: childSupportItems})
+            .tab-content__container
+              h3.tab-content__title
+                | ひとり親の方への金銭的支援
+              +LinkList({items: singleSupportItems})
+            .tab-content__container
+              h3.tab-content__title
+                | 未熟児、障がい、難病のあるお子さんへの金銭的支援
+              +LinkList({items: disabledChildSupportItems})
+            .tab-content__container
+              h3.tab-content__title
+                | 遺児の方への金銭的支援
+              +LinkList({items: orphanSupportItems})
         div(
           tabindex="0"
           role="tabpanel"
@@ -166,7 +318,7 @@ block content
 
   section.section-content.bg-light
     .section-content-body.layout-default
-      h2.section-title
+      h2.section-content__title
         | このページもよく読まれています
       .img-list-container 
         ul.img-list 
@@ -181,5 +333,5 @@ block content
                   | もっと見る 
 
   section.section-content
-    .section-content-body.section-contact.layout-default
+    .section-content__contact-form
       +ContactBanner({tel1: "03", tel2: "0000", tel3: "1111", dep: "健康福祉課", div: "保健所総務課", inCharge: "新型コロナウイルスワクチン"})

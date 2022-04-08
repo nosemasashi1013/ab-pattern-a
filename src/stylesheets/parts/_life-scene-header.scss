@@ -1,21 +1,22 @@
-.life-scene-header-container {
+.life-scene-header {
+	@extend .box-shadow;
 	text-align: center;
 	background-color: #fff;
 	border-radius: 8px;
 	margin-top: 40px;
 	position: relative;
 
-	.life-scene-header {
+	&__label {
 		font-size: 36px;
 		font-weight: bold;
 		padding-top: 60px;
 		margin-bottom: 16px;
 	}
-	.life-scene-description {
+	&__description {
 		color: #707070;
 		padding-bottom: 60px;
 	}
-	.life-scene-header-img {
+	&__icon {
 		width: 128px;
 		height: auto;
 		position: absolute;

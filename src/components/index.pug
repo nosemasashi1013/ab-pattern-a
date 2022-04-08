@@ -17,19 +17,18 @@ block pageOption
 		]
 
 block content
-	section.section-content.section-content-hero
+	section.section-content__hero
 		img(src="../images/top/daikoku_top.png" alt="" class="hero-img")
 		img(src="../images/top/daikoku_top_label.png" alt="" class="label-img")
 
 	section.section-content 
 		include ./parts/_top-menu.pug
-		include ./base/Accordion.pug
-		+Accordion({title: "accordion", items: accordionItems})
+
 	section.section-content.bg-light
-		.section-content.layout-default
-			h2.section-title 
+		.section-content__top
+			h2.section-content__title 
 				| 見出しが入ります
-			.section-content-wrapper 
+			.section-content__container
 				.section-content__floor-map 
 					| フロアマップ
 				.section-content__contact
