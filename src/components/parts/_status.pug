@@ -3,7 +3,7 @@
     {
       label: "from abroad",
       value: "1",
-      checked: true
+      checked: false
     },
     {
       label: "乳幼児",
@@ -82,12 +82,12 @@
     },
   ]
 
-.search-menu-container.status-container.layout-default
-  h2.status-title
+.status
+  h2.status__title
     | あなたの状況
   ul.status-list 
     each item in status 
-      li.status-item
+      li.status-list__item
         include ../../components/base/Checkbox.pug
         +Checkbox({
           id: `status__${item.value}`,
@@ -95,6 +95,5 @@
           value: item.value,
           checked: item.checked,
           label: item.label,
-          onClick: () => {}
         })
 

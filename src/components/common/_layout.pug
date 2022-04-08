@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 html(lang="ja")
   -
-    var pageClass = [];
-    var contentClass= [];
+    let pageClass = [];
+    let contentClass= [];
 
   block pageOption
-  - var pathImage  = '../images/';
+  - let pathImage  = '../images/';
 
   head
     meta(charset="utf-8")
@@ -13,8 +13,11 @@ html(lang="ja")
     meta(name="description" content="")
     meta(name="keywords" content="")
     meta(name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0")
-    title ホーム | 福井県ホームページ
+    title ホーム | 大黒市ホームページ
     link(rel="shortcut icon" href=pathImage + "common/favicon.ico")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic&display=swap" rel="stylesheet")
     <!-- Global site tag (gtag.js) - Google Analytics -->
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-573851-4")
     script.
@@ -23,11 +26,7 @@ html(lang="ja")
       gtag('js', new Date());
       gtag('config', 'UA-573851-4');
     script(src="https://www.googleoptimize.com/optimize.js?id=OPT-KBNQGFP")
-    <!-- Content Analytics -->
-    script(type="text/javascript" src="https://tag.contentanalytics.jp/agent.js" data-ca-namespace="_ca")
-    script(type="text/javascript").
-      _ca('create', '764')
-      _ca('run')
+
   -
     var gaCategory = {
       internal : "internal-link",

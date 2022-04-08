@@ -7,7 +7,7 @@ $radio-border-color: #ccc;
 	padding: 16px 0 16px 44px;
 	border-radius: 6px;
 
-	.radio__input {
+	&__input {
 		clip: rect(0 0 0 0);
 		clip-path: inset(50%);
 		height: 1px;
@@ -24,16 +24,17 @@ $radio-border-color: #ccc;
 			border-color: $radio-border-color;
 			background-color: $radio-bg;
 		}
-		&:focus + .radio__label::before {
-			box-shadow: 0 0 0 4px rgba(blue, 0.4);
-			border: 2px solid blue;
+		&:focus:not(:focus-visible) + .radio__label::before {
+			outline: none;
 		}
-
+		&:focus-visible + .radio__label::before {
+			outline: 2px solid #0000ff;
+		}
 		&:checked + .radio__label::after {
 			transform: translateY(-50%) scale(1);
 		}
 	}
-	.radio__label {
+	&__label {
 		position: relative;
 		margin-bottom: 0;
 		vertical-align: middle;

@@ -4,9 +4,20 @@ block pageOption
 	- pageClass.push('page-index')
 	- contentClass.push('index-container')
 	- const basePath = "../images/top/"
+	-
+		const accordionItems = [
+			{
+				label: "aaa",
+				content: "aaa"
+			},
+			{
+				label: "bbb",
+				content: "bbb"
+			},
+		]
 
 block content
-	section.section-content.section-content-hero
+	section.section-content__hero
 		img(src="../images/top/daikoku_top.png" alt="" class="hero-img")
 		img(src="../images/top/daikoku_top_label.png" alt="" class="label-img")
 
@@ -14,10 +25,10 @@ block content
 		include ./parts/_top-menu.pug
 
 	section.section-content.bg-light
-		.section-content.layout-default
-			h2.section-title 
+		.section-content__top
+			h2.section-content__title 
 				| 見出しが入ります
-			.section-content-wrapper 
+			.section-content__container
 				.section-content__floor-map 
 					| フロアマップ
 				.section-content__contact

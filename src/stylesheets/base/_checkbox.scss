@@ -8,7 +8,7 @@ $checkbox-border-color: #ccc;
 	padding: 16px 0 16px 32px;
 	border-radius: 6px;
 
-	.checkbox__input {
+	&__input {
 		clip: rect(0 0 0 0);
 		clip-path: inset(50%);
 		height: 1px;
@@ -25,15 +25,17 @@ $checkbox-border-color: #ccc;
 			border-color: $checkbox-border-color;
 			background-color: $checkbox-bg;
 		}
-		&:focus + .checkbox__label::before {
-			box-shadow: 0 0 0 4px rgba(blue, 0.4);
-			border: 2px solid blue;
-		}
 		&:checked + .checkbox__label::after {
 			transform: translateY(-50%) scale(1);
 		}
+		&:focus:not(:focus-visible) + .checkbox__label::before {
+			outline: none;
+		}
+		&:focus-visible + .checkbox__label::before {
+			outline: 2px solid #0000ff;
+		}
 	}
-	.checkbox__label {
+	&__label {
 		position: relative;
 		margin-bottom: 0;
 		vertical-align: middle;

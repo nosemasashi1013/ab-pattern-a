@@ -1,14 +1,13 @@
 mixin Textarea(params={})
   - const props = Object.assign({placeholder: "入力してください"}, params)
-  .textarea__container
+  .textarea
     label(
       for=props.id
       class="textarea__label"
     )
     =props.label
-    textarea(
+    textarea.textarea__input(
       id=props.id
-      class="textarea__input"
       type="text"
       placeholder=props.placeholder
     )

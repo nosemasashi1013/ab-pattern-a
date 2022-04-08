@@ -1,5 +1,5 @@
 mixin Button(params={})
   - const props = Object.assign({ type: "button"}, params)
-  button.btn-primary(type=props.type)
+  button.btn--primary(type=props.type)
     span.btn__label
-      block
+      = props.label

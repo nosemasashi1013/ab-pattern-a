@@ -1,15 +1,22 @@
-.tab-content-container {
+.tab-content {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	gap: 24px;
-}
-.tab-content {
-	width: calc((100% - 24px) / 2);
+	gap: 48px;
+	&__container {
+		width: calc((100% - 48px) / 2);
+	}
+	&__title {
+		font-size: 24px;
+		font-weight: bold;
+	}
 }
 
-.section-contact {
-	margin-top: 40px;
+.section-content {
+	&__contact-form {
+		@extend .layout-default;
+		margin-top: 40px;
+	}
 }
 .img-list {
 	display: flex;
