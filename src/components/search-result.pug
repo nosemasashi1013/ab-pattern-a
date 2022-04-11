@@ -1,0 +1,179 @@
+extends common/_layout
+
+block pageOption 
+  -
+    const results = [
+      {
+        title: "母子父子寡婦福祉資金貸付制度",
+        categories: [
+          {
+            label: "ひとり親",
+          },
+          {
+            label: "手当と助成",
+          },
+        ],
+        text: "本文です本文です本文です本文です本文です本文です本文です",
+        summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
+        application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+      },
+      {
+        title: "母子父子寡婦福祉資金貸付制度",
+        categories: [
+          {
+            label: "ひとり親",
+          },
+          {
+            label: "手当と助成",
+          },
+        ],
+        text: "本文です本文です本文です本文です本文です本文です本文です",
+        summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
+        application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+      },
+      {
+        title: "母子父子寡婦福祉資金貸付制度",
+        categories: [
+          {
+            label: "ひとり親",
+          },
+          {
+            label: "手当と助成",
+          },
+        ],
+        text: "本文です本文です本文です本文です本文です本文です本文です",
+        summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
+        application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+      },
+      {
+        title: "母子父子寡婦福祉資金貸付制度",
+        categories: [
+          {
+            label: "ひとり親",
+          },
+          {
+            label: "手当と助成",
+          },
+        ],
+        text: "本文です本文です本文です本文です本文です本文です本文です",
+        summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
+        application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+      },
+      {
+        title: "母子父子寡婦福祉資金貸付制度",
+        categories: [
+          {
+            label: "ひとり親",
+          },
+          {
+            label: "手当と助成",
+          },
+        ],
+        text: "本文です本文です本文です本文です本文です本文です本文です",
+        summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
+        application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+      },
+      {
+        title: "母子父子寡婦福祉資金貸付制度",
+        categories: [
+          {
+            label: "ひとり親",
+          },
+          {
+            label: "手当と助成",
+          },
+        ],
+        text: "本文です本文です本文です本文です本文です本文です本文です",
+        summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
+        application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+      },
+      {
+        title: "母子父子寡婦福祉資金貸付制度",
+        categories: [
+          {
+            label: "ひとり親",
+          },
+          {
+            label: "手当と助成",
+          },
+        ],
+        text: "本文です本文です本文です本文です本文です本文です本文です",
+        summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
+        application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+      },
+      {
+        title: "母子父子寡婦福祉資金貸付制度",
+        categories: [
+          {
+            label: "ひとり親",
+          },
+          {
+            label: "手当と助成",
+          },
+        ],
+        text: "本文です本文です本文です本文です本文です本文です本文です",
+        summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
+        application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+      },
+      {
+        title: "母子父子寡婦福祉資金貸付制度",
+        categories: [
+          {
+            label: "ひとり親",
+          },
+          {
+            label: "手当と助成",
+          },
+        ],
+        text: "本文です本文です本文です本文です本文です本文です本文です",
+        summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
+        application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+      },
+    ]
+
+include ../components/base/Accordion.pug
+include ../components/base/Button.pug
+
+block content
+  section.section-content__header
+    include ../components/parts/_life-scene-header.pug
+
+  section.section-content
+    .search-result
+      section.search-result-main
+        h2.search-result__count
+          = `${results.length} 件`
+        ul.search-result-list
+          each result in results
+            li.search-result-list__item
+              a.search-result-list__link(href=result.link)
+                h2.search-result-list__title
+                  = result.title
+              .search-result-list__category 
+                ul.category-list 
+                  each category in result.categories 
+                    li.category-list-item 
+                      span.category-list-item__label 
+                        = category.label
+              p.search-result-list__text
+                = result.text
+              .search-result-list-summary
+                h3.search-result-list-summary__title 概要
+                p.search-result-list-summary__text
+                  = result.summary
+              .search-result-list-application
+                h3.search-result-list-application__title 申し込み
+                p.search-result-list-summary__text
+                  = result.application
+
+      aside.search-result-condition
+        h2.search-result-condition__title 
+          | 検索項目を変更する
+        form.search-result-condition__form
+          +Accordion({title: "change-condition", items: [{label: "人生の出来事", content: "sss"},{label: "あなたの状況", content: "sss"},{label: "ご用件", content: "sss"}]})
+          .search-result-condition__btn
+            +Button({label: "検索する", type:"submit"})
+
+
+
+
