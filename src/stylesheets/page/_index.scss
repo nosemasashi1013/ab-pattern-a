@@ -1,4 +1,6 @@
 .section-content {
+	position: relative;
+	overflow: hidden;
 	&__hero {
 		position: relative;
 		height: 474px;
