@@ -2,7 +2,7 @@
   const lifeMenuItems = [
     {
       icon: "life_menu_icon_1.png",
-      text: "妊娠から子育て",
+      text: "妊娠・子育て",
       link: "../citizen2.html"
     },
     {
@@ -12,7 +12,7 @@
     },
     {
       icon: "life_menu_icon_3.png",
-      text: "就職から退職まで",
+      text: "就職・退職",
       link: "#"
     },
     {
@@ -49,6 +49,9 @@ include ../../components/base/SearchLink.pug
 
 .section-content__life-scene
   h2.section-content__title
-    | ライフシーンで探す
-  +LinkMenu({basePath: basePath, items: lifeMenuItems})
+    | ライフシーン
+  ul.life-scene-menu-list
+    each item in lifeMenuItems
+      li.life-scene-menu-list__item
+        +LinkMenu({basePath: basePath, icon: item.icon, text: item.text})
   +SearchLink({link: "../search.html"})
