@@ -42,7 +42,6 @@
 		"pug-html-loader": "^1.1.5",
 		"sass": "^1.45.2",
 		"sass-loader": "^12.6.0",
-		"speed-measure-webpack-plugin": "^1.5.0",
 		"style-loader": "^3.3.1",
 		"terser-webpack-plugin": "^5.3.0",
 		"webpack": "^5.65.0",

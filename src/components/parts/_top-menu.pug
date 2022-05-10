@@ -2,22 +2,22 @@
   const menuListItems = [
     {
       text: "市民の方",
-      icon: "life_menu_icon_1.png",
+      icon: "citizen_menu_icon.png",
       link: "./citizen.html"
     },
     {
       text: "事業者の方",
-      icon: "life_menu_icon_2.png",
+      icon: "business_menu_icon.png",
       link: "#"
     },
     {
       text: "観光・移住",
-      icon: "life_menu_icon_3.png",
+      icon: "visitor_menu_icon.png",
       link: "#"
     },
     {
       text: "市政",
-      icon: "life_menu_icon_4.png",
+      icon: "government_menu_icon.png",
       link: "#"
     },
   ]
@@ -26,7 +26,8 @@ include ../base/LinkMenu.pug
 include ../base/SearchLink.pug	
 
 .section-content__top
-  h2.section-content__title 
-    | 見出しが入ります
-  +LinkMenu({basePath : basePath, items: menuListItems})
+  ul.link-menu-list
+    each item in menuListItems
+      li.link-menu-list__item
+        +LinkMenu({basePath: basePath, link: item.link, icon: item.icon, text: item.text})
   +SearchLink({link : "../search.html"})

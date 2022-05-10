@@ -2,22 +2,27 @@
 	@extend .layout-default;
 	padding-bottom: 80px;
 }
-
-.link-menu-list {
+.visitor-menu-list {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	gap: 8px;
 	margin-bottom: 8px;
 	&__item {
-		flex-basis: calc(25% - 8px);
+		flex-basis: calc(33% - 8px);
+	}
+	.link-menu {
+		&__icon {
+			width: 100%;
+			height: auto;
+		}
 	}
 }
 
 @media only screen and (max-width: breakpoint(sp)) {
-	.link-menu-list {
+	.visitor-menu-list {
 		&__item {
-			flex-basis: calc(50% - 8px);
+			flex-basis: 100%;
 		}
 	}
 }
