@@ -1,17 +1,14 @@
 mixin LinkMenu(params={})
   - const props = Object.assign({}, params)
-  ul.link-menu-list
-    each item in props.items
-      li.link-menu-item
-        a(href=item.link) 
-          .link-menu-item__container
-            if item.icon
-              img(
-                src=props.basePath + item.icon
-                alt=""
-                class="link-menu-item__icon"
-              )
-            .link-menu-item__text-container
-              span.link-menu-item__text
-                = item.text
-              i(class="fas fa-chevron-circle-right")
+    .link-menu
+      a(href=props.link class="link-menu__link")
+        if props.icon
+          img(
+            src=props.basePath + props.icon
+            alt=""
+            class="link-menu__icon"
+          )
+        .link-menu-link__text
+          span
+            = props.text
+          i(class="fas fa-chevron-circle-right")

@@ -18,19 +18,12 @@ block pageOption
 
 block content
 	section.section-content__hero
-		img(src="../images/top/daikoku_top.png" alt="" class="hero-img")
-		img(src="../images/top/daikoku_top_label.png" alt="" class="label-img")
+		img(src="../images/top/top_hero_1.png" alt="" class="hero-img")
+		img(src="../images/top/top_hero_1_logo.png" alt="" class="label-img")
 
 	section.section-content 
 		include ./parts/_top-menu.pug
 
 	section.section-content.bg-light
-		.section-content__top
-			h2.section-content__title 
-				| 見出しが入ります
-			.section-content__container
-				.section-content__floor-map 
-					| フロアマップ
-				.section-content__contact
-					| 組織図・連絡先
+		include ./parts/_top-menu-2.pug
 
