@@ -16,12 +16,9 @@ $radio-border-color: #ccc;
 		position: absolute;
 		white-space: nowrap;
 
-		&:checked + .radio__label {
-			color: $radio-bg;
-		}
 		&:checked + .radio__label::before {
 			color: $radio-bg;
-			border-color: $radio-border-color;
+			border-color: colors(primary);
 			background-color: $radio-bg;
 		}
 		&:focus:not(:focus-visible) + .radio__label::before {

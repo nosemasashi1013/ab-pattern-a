@@ -5,7 +5,7 @@ $checkbox-border-color: #ccc;
 
 .checkbox {
 	display: block;
-	padding: 16px 0 16px 32px;
+	padding: 16px 32px;
 	border-radius: 6px;
 
 	&__input {
@@ -17,9 +17,6 @@ $checkbox-border-color: #ccc;
 		position: absolute;
 		white-space: nowrap;
 
-		&:checked + .checkbox__label {
-			color: #fff;
-		}
 		&:checked + .checkbox__label::before {
 			color: $checkbox-bg;
 			border-color: $checkbox-border-color;
@@ -36,6 +33,7 @@ $checkbox-border-color: #ccc;
 		}
 	}
 	&__label {
+		display: inline-block;
 		position: relative;
 		margin-bottom: 0;
 		vertical-align: middle;

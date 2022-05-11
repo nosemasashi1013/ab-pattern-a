@@ -123,6 +123,12 @@ module.exports = {
 			inject: "body",
 			chunks: ["main"],
 		}),
+		new HtmlWebpackPlugin({
+			template: "./src/components/category-top.pug",
+			filename: "category-top.html",
+			inject: "body",
+			chunks: ["main"],
+		}),
 		new CleanWebpackPlugin(),
 		new webpack.ProvidePlugin({
 			$: "jquery",

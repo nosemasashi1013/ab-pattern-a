@@ -93,32 +93,6 @@ $(function () {
 		$(this).remove();
 	});
 
-	$(".checkbox__input, .radio__input")
-		.filter(":checked")
-		.parent()
-		.css("background-color", "#008660");
-
-	$("input[name=target]").on("change", function () {
-		changeFilterColor("target");
-	});
-
-	$("input[name=category]").on("change", function () {
-		changeFilterColor("category");
-	});
-	$("input[name=life-scene]").on("change", function () {
-		changeFilterColor("life-scene");
-	});
-	$("input[name=status]").on("change", function () {
-		changeFilterColor("status");
-	});
-	$("input[name=matters]").on("change", function () {
-		changeFilterColor("matters");
-	});
-
-	$(".new-info-filter").on("change", function () {
-		searchFilter();
-	});
-
 	$(".accordion-trigger").on("click", function () {
 		if ($(this).attr("aria-expanded") === "true") {
 			$(this).attr("aria-expanded", "false");
@@ -180,43 +154,3 @@ $(function () {
 
 	dom.i2svg();
 });
-
-const hideClass = "is-hide";
-
-/**
- * 新着情報リストの絞り込みを行う
- */
-function searchFilter() {
-	const $newInfoItems = $(".new-info-item");
-	const selectedTarget = $(".target-item")
-		.find("input:checked")[0]
-		.getAttribute("value");
-	const selectedCategories = $(".category-item")
-		.find("input:checked")
-		.map((_, i) => i.getAttribute("value"));
-
-	$newInfoItems.addClass(hideClass);
-	$(".no-info-text").toggleClass(hideClass, selectedCategories.length !== 0);
-	$newInfoItems
-		.filter((_, item) =>
-			selectedTarget === "general" || selectedTarget === "business"
-				? $(item).data(`target-${selectedTarget}`)
-				: true
-		)
-		.filter((_, item) =>
-			[...selectedCategories].includes($(item).data("category"))
-		)
-		.removeClass(hideClass);
-}
-
-/**
- * 新着フィルターの色を変える
- * @param {string} name 対象にするinputのname属性の値
- */
-function changeFilterColor(name) {
-	$("input[name=" + name + "]").each(function (i, el) {
-		$(el).prop("checked")
-			? $(this).parent().css("background-color", "#008660")
-			: $(this).parent().removeAttr("style");
-	});
-}

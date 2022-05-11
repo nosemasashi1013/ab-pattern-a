@@ -29,12 +29,6 @@
 		background-color: #fff;
 		border-radius: 8px;
 		width: calc(100% / 4 - 8px);
-		&:hover {
-			background-color: colors(primary);
-			color: #fff;
-			cursor: pointer;
-			transition: 0.2s;
-		}
 	}
 }
 

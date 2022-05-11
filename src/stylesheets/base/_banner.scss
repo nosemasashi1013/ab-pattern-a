@@ -1,0 +1,27 @@
+.banner {
+	@extend .box-shadow;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 8px;
+	margin-top: 40px;
+	position: relative;
+	padding: 60px 0;
+
+	&__label {
+		font-size: 36px;
+		font-weight: bold;
+
+		margin-bottom: 16px;
+	}
+	&__description {
+		color: #707070;
+		padding-bottom: 60px;
+	}
+	&__icon {
+		width: 240px;
+		height: auto;
+		position: absolute;
+		bottom: 0;
+		right: 40px;
+	}
+}
