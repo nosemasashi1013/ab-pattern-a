@@ -1,4 +1,7 @@
-export function initializeSlick() {
+/**
+ * slickを初期化する
+ */
+export const initializeSlick = () => {
 	$(".section-content__carousel").slick({
 		fade: true,
 		slidesToShow: 1,
@@ -22,13 +25,16 @@ export function initializeSlick() {
 				.append(`<p class="btn-label">${label}</p>`);
 		},
 	});
-}
+};
 
-export function changeSlideOnHover() {
+/**
+ * slick dotsホバー時に表示スライドを変える
+ */
+export const changeSlideOnHover = () => {
 	$(".slick-dots li").on("mouseenter", function () {
 		const index = $(this).index();
 		$(this)
 			.parents(".section-content__carousel")
 			.slick("slickGoTo", index, false);
 	});
-}
+};
