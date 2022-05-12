@@ -19,6 +19,7 @@ import {
 	faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
 import "@accessible360/accessible-slick";
+import { initializeSlick, changeSlideOnHover } from "./slider";
 
 $(function () {
 	library.add(
@@ -153,31 +154,8 @@ $(function () {
 		}
 	});
 
-	$(".section-content__carousel").slick({
-		customPaging: function (slider, i) {
-			let label = $(slider.$slides[i]).find("img").attr("alt");
-			let img = $(slider.$slides[i]).find("img");
-
-			return $('<button type="button" />').text(label);
-		},
-		fade: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		dots: true,
-		arrows: false,
-		pauseOnFocus: false,
-		pauseOnHover: false,
-		pauseOnDotsHover: false,
-		infinite: true,
-		waitForAnimate: false,
-	});
-
-	$(".slick-dots li").on("mouseenter", function () {
-		const index = $(this).index();
-		$(this)
-			.parents(".section-content__carousel")
-			.slick("slickGoTo", index, false);
-	});
+	initializeSlick();
+	changeSlideOnHover();
 
 	dom.i2svg();
 });
