@@ -18,6 +18,7 @@ import {
 	faChevronCircleRight,
 	faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
+import "@accessible360/accessible-slick";
 
 $(function () {
 	library.add(
@@ -150,6 +151,32 @@ $(function () {
 			$(".section-content__alert").attr("aria-hidden", "true");
 			$(".alert-trigger__btn").attr("aria-expanded", "false");
 		}
+	});
+
+	$(".section-content__carousel").slick({
+		customPaging: function (slider, i) {
+			let label = $(slider.$slides[i]).find("img").attr("alt");
+			let img = $(slider.$slides[i]).find("img");
+
+			return $('<button type="button" />').text(label);
+		},
+		fade: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: true,
+		arrows: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		pauseOnDotsHover: false,
+		infinite: true,
+		waitForAnimate: false,
+	});
+
+	$(".slick-dots li").on("mouseenter", function () {
+		const index = $(this).index();
+		$(this)
+			.parents(".section-content__carousel")
+			.slick("slickGoTo", index, false);
 	});
 
 	dom.i2svg();

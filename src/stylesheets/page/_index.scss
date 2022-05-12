@@ -37,14 +37,12 @@
 			display: none;
 		}
 	}
-	@keyframes fadeIn {
-		0% {
-			opacity: 0;
-			transform: translate(-50%, -40%);
-		}
-		100% {
+	&__carousel {
+		opacity: 0;
+		transition: opacity 0.8s ease-in-out;
+		&.slick-initialized {
 			opacity: 1;
-			transform: translate(-50%, -50%);
+			transition: opacity 0.8s ease-in-out;
 		}
 	}
 

@@ -12,6 +12,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@accessible360/accessible-slick": "^1.0.1",
 		"@babel/core": "^7.16.7",
 		"@babel/preset-env": "^7.16.7",
 		"@fortawesome/fontawesome-svg-core": "^1.2.36",

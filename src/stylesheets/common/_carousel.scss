@@ -1,0 +1,40 @@
+.index-container {
+	.slick-track {
+		display: flex !important;
+		max-height: 426px;
+	}
+	.slick-slide {
+		height: auto;
+	}
+	.slick-dots {
+		bottom: -60px;
+		display: flex;
+		gap: 2px;
+		li {
+			width: calc(100% / 3) !important;
+			height: 55px !important;
+			margin: 0 !important;
+			box-sizing: border-box;
+
+			button {
+				color: black;
+				font-size: inherit;
+				height: 100% !important;
+				width: 100% !important;
+				background-color: #fff;
+				margin-left: 0;
+				padding: 40px 0;
+				&:hover {
+					background-color: #cdd6dd;
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+	.slick-dotted.slick-slider {
+		margin-bottom: 160px;
+	}
+	.slick-autoplay-toggle-button {
+		bottom: -30px;
+	}
+}
