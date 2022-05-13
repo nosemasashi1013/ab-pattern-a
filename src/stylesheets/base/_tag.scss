@@ -1,0 +1,30 @@
+.tag {
+	position: relative;
+	padding-left: 24px;
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+	}
+
+	&::before {
+		width: 16px;
+		height: 16px;
+		border-radius: 50px;
+		background-color: colors(primary);
+		border: 1px solid colors(primary);
+		left: 0;
+		top: 0;
+	}
+	&::after {
+		border-left: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+		width: 8px;
+		height: 4px;
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		left: 4px;
+		top: 6px;
+	}
+}
