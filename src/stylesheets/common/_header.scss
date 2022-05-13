@@ -19,31 +19,6 @@
 	.icon-wrapper {
 		flex-grow: 1;
 	}
-	.alert-trigger {
-		padding: 0 24px;
-		&__btn {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			&:hover {
-				opacity: 0.8;
-			}
-			&[aria-expanded="true"] {
-				.alert-trigger__icon {
-					transform: rotate(180deg);
-					transition: 0.4s;
-				}
-			}
-		}
-		&__icon {
-			transition: 0.4s;
-		}
-		&__text {
-			text-align: center;
-			color: #cc003f;
-			line-height: 1.5;
-		}
-	}
 	.logo {
 		margin-right: 20px;
 		transition: 0.2s all ease-in-out;
