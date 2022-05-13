@@ -76,7 +76,7 @@ const config = {
 				],
 			},
 			{
-				test: /\.(jpeg|jpg|png|ico)/,
+				test: /\.(jpeg|jpg|png|ico|svg|ttf|woff|eot|gif)/,
 				type: "asset/resource",
 				generator: {
 					filename: "images/[name][ext]",

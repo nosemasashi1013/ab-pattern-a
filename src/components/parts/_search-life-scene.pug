@@ -3,7 +3,7 @@
     {
       icon: "life_menu_icon_1.png",
       text: "妊娠・子育て",
-      link: "../category-top.html"
+      link: "./category-top.html"
     },
     {
       icon: "life_menu_icon_2.png",
@@ -52,4 +52,4 @@ include ../../components/base/SearchLink.pug
     each item in lifeMenuItems
       li.life-scene-menu-list__item
         +LinkMenu({basePath: basePath, link: item.link, icon: item.icon, text: item.text})
-  +SearchLink({link: "../search.html"})
+  +SearchLink({link: "./search.html"})
