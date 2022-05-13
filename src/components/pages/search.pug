@@ -1,4 +1,4 @@
-extends common/_layout
+extends ../common/_layout
 
 block pageOption
 	-
@@ -23,25 +23,25 @@ block pageOption
 			},
 		]
 
-include ../components/base/Breadcrumb.pug
-include ../components/base/Button.pug
+include ../base/Breadcrumb.pug
+include ../base/Button.pug
 
 block content
 	+Breadcrumb({items: breadcrumbItem})
 
 	section.section-content__header
-		include ../components/parts/_life-scene-header.pug
+		include ../parts/_life-scene-header.pug
 
 	section.section-content
 		form
 			.section-content
-				include ../components/parts/_scene.pug
+				include ../parts/_scene.pug
 
 			.section-content.bg-light
-				include ../components/parts/_status.pug
+				include ../parts/_status.pug
 
 			.section-content
-				include ../components/parts/_matters.pug
+				include ../parts/_matters.pug
 
 			.section-content.layout-default
 				.search-btn__container

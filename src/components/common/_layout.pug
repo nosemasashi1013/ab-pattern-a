@@ -6,7 +6,7 @@ html(lang="ja")
 
   block pageOption
   - let pathImage  = '../images/';
-  - const basePath = "../images/top/"
+  - const basePath = "../../images/top/"
 
   head
     meta(charset="utf-8")
@@ -15,58 +15,10 @@ html(lang="ja")
     meta(name="keywords" content="")
     meta(name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0")
     title ホーム | 大黒市ホームページ
-    link(rel="shortcut icon" href=pathImage + "common/favicon.ico")
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic&display=swap" rel="stylesheet")
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-573851-4")
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-573851-4');
-    script(src="https://www.googleoptimize.com/optimize.js?id=OPT-KBNQGFP")
-
   -
-    var gaCategory = {
-      internal : "internal-link",
-      external : "external-link",
-      originalTop : "original-top-link"
-    }
-
-    var globalNavi = [
-      {
-        text: "くらし・環境",
-        className: "life-environment",
-        link: "https://www.pref.fukui.lg.jp/manabi/index.html"
-      },
-      {
-        text: "医療・福祉",
-        className: "medical-welfare",
-        link: "https://www.pref.fukui.lg.jp/kenko/index.html"
-      },
-      {
-        text: "しごと・産業",
-        className: "job-industry",
-        link: "https://www.pref.fukui.lg.jp/shigoto/index.html"
-      },
-      {
-        text: " 観光・文化",
-        className: "tourism-culture",
-        link: "https://www.pref.fukui.lg.jp/miryoku/index.html"
-      },
-      {
-        text: "教育・子育て",
-        className: "education-child",
-        link: "https://www.pref.fukui.lg.jp/kyouiku/index.html"
-      },
-      {
-        text: "県政情報",
-        className: "prefectual-gov-info",
-        link: "https://www.pref.fukui.lg.jp/gyosei/index.html"
-      },
-    ]
 
   body(class=pageClass)
     include ./_header.pug

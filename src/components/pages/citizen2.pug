@@ -1,4 +1,4 @@
-extends common/_layout
+extends ../common/_layout
 
 block pageOption 
   -
@@ -50,7 +50,7 @@ block pageOption
     const pregnantItems = [
       {
         text: "妊娠の届出・母子手帳の交付",
-        link: "./citizen3.html"
+        link: "./detail.html"
       },
       {
         text: "マタニティマーク",
@@ -224,9 +224,9 @@ block pageOption
       },
     ]
 
-include ../components/base/TabList.pug
-include ../components/base/LinkList.pug
-include ../components/base/ContactBanner.pug
+include ../base/TabList.pug
+include ../base/LinkList.pug
+include ../base/ContactBanner.pug
 
 block content
   section.section-content
@@ -325,7 +325,7 @@ block content
           each item in imgList 
             li.img-item 
               .img-container 
-                img(src="../images/top/" + item.img alt="" class="img-list-icon")
+                img(src="../../images/top/" + item.img alt="" class="img-list-icon")
               h3.img-title 
                 = item.title 
               a(href="#")

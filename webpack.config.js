@@ -3,16 +3,22 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
+const globule = require("globule");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-module.exports = {
+const config = {
 	mode: "production",
 	devtool: "source-map",
 	entry: "./src/javascripts/main.js",
 	output: {
 		path: path.resolve(__dirname, "./build"),
 		filename: "./javascripts/main.js",
+	},
+	resolve: {
+		alias: {
+			components: path.resolve(__dirname, "src/components/"),
+		},
 	},
 	cache: {
 		type: "filesystem",
@@ -87,48 +93,6 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: "./stylesheets/main.css",
 		}),
-		new HtmlWebpackPlugin({
-			template: "./src/components/index.pug",
-			filename: "index.html",
-			inject: "body",
-			chunks: ["main"],
-		}),
-		new HtmlWebpackPlugin({
-			template: "./src/components/search.pug",
-			filename: "search.html",
-			inject: "body",
-			chunks: ["main"],
-		}),
-		new HtmlWebpackPlugin({
-			template: "./src/components/citizen.pug",
-			filename: "citizen.html",
-			inject: "body",
-			chunks: ["main"],
-		}),
-		new HtmlWebpackPlugin({
-			template: "./src/components/citizen2.pug",
-			filename: "citizen2.html",
-			inject: "body",
-			chunks: ["main"],
-		}),
-		new HtmlWebpackPlugin({
-			template: "./src/components/citizen3.pug",
-			filename: "citizen3.html",
-			inject: "body",
-			chunks: ["main"],
-		}),
-		new HtmlWebpackPlugin({
-			template: "./src/components/search-result.pug",
-			filename: "search-result.html",
-			inject: "body",
-			chunks: ["main"],
-		}),
-		new HtmlWebpackPlugin({
-			template: "./src/components/category-top.pug",
-			filename: "category-top.html",
-			inject: "body",
-			chunks: ["main"],
-		}),
 		new CleanWebpackPlugin(),
 		new webpack.ProvidePlugin({
 			$: "jquery",
@@ -149,3 +113,25 @@ module.exports = {
 		maxAssetSize: 500000,
 	},
 };
+
+const pugFiles = globule.find("src/components/pages/*.pug", {
+	ignore: [
+		"src/components/base/*.pug",
+		"src/components/parts/*.pug",
+		"src/components/common/*.pug",
+	],
+});
+
+pugFiles.map((pug) => {
+	const html = pug.split("/").slice(-1)[0].replace(".pug", ".html");
+	config.plugins.push(
+		new HtmlWebpackPlugin({
+			filename: `${path.resolve(__dirname, "build")}/${html}`,
+			inject: "body",
+			chunks: ["main"],
+			template: pug,
+		})
+	);
+});
+
+module.exports = config;

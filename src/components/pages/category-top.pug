@@ -1,7 +1,97 @@
-extends common/_layout
+extends ../common/_layout
 
 block pageOption 
   -
+    const radioList = [
+      {
+        id: "category-1",
+        name: "category1",
+        value: "",
+        checked: true,
+        label: "すべて"
+      },
+      {
+        id: "category-2",
+        name: "category1",
+        value: "1",
+        checked: false,
+        label: "届出・申請"
+      },
+      {
+        id: "category-3",
+        name: "category1",
+        value: "2",
+        checked: false,
+        label: "金銭的支援"
+      },
+      {
+        id: "category-4",
+        name: "category1",
+        value: "3",
+        checked: false,
+        label: "支援サービス"
+      },
+      {
+        id: "category-5",
+        name: "category1",
+        value: "4",
+        checked: false,
+        label: "講演会・イベント"
+      },
+      {
+        id: "category-6",
+        name: "category1",
+        value: "5",
+        checked: false,
+        label: "施設"
+      },
+      {
+        id: "category-7",
+        name: "category1",
+        value: "6",
+        checked: false,
+        label: "お知らせ"
+      },
+    ]
+
+    const checkboxList = [
+      {
+        id: "detail-1",
+        name: "detail1",
+        value: "1",
+        checked: false,
+        label: "妊娠・出産に関する金銭的支援"
+      },
+      {
+        id: "detail-2",
+        name: "detail1",
+        value: "1",
+        checked: false,
+        label: "ひとり親の方への金銭的支援"
+      },
+      {
+        id: "detail-3",
+        name: "detail1",
+        value: "1",
+        checked: false,
+        label: "育児に関する金銭的支援"
+      },
+      {
+        id: "detail-4",
+        name: "detail1",
+        value: "1",
+        checked: false,
+        label: "未熟児、障がい、難病のあるお子さんへの金銭的支援"
+      },
+      {
+        id: "detail-5",
+        name: "detail1",
+        value: "1",
+        checked: false,
+        label: "遺児の方への金銭的支援"
+      },
+    ]
+
     const results = [
       {
         title: "母子父子寡婦福祉資金貸付制度",
@@ -16,6 +106,7 @@ block pageOption
         text: "本文です本文です本文です本文です本文です本文です本文です",
         summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
         application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+        link: "../citizen3.html"
       },
       {
         title: "母子父子寡婦福祉資金貸付制度",
@@ -131,17 +222,35 @@ block pageOption
       },
     ]
 
-include ../components/base/Accordion.pug
-include ../components/base/Button.pug
+include ../base/Accordion.pug
+include ../base/Button.pug
+include ../base/Banner.pug
+include ../base/Radio.pug
+include ../base/Checkbox.pug
 
 block content
   section.section-content__header
-    include ../components/parts/_life-scene-header.pug
+    +Banner({title: "妊娠から子育て", icon: "pregnant_child_icon.png"})
 
   section.section-content
-    .search-result
+    .category-search
+      aside.search-result-condition
+        h2.search-result-condition__title 
+          | 知りたいこと
+        form.search-result-condition__form
+          .radio-list
+            ul.radio-list__list
+              each item in radioList 
+                li.radio-list__item
+                  +Radio({id: item.id, name: item.name, value: item.value, checked: item.checked, label: item.label})
+
+          +Accordion({title: "change-condition", items: [{label: "絞り込む"}]})
+            ul
+              each item in checkboxList
+                +Checkbox({id: item.id, name: item.name, value: item.value, checked: item.checked, label: item.label})
+
       section.search-result-main
-        h2.search-result__count
+        h2.category-search__count
           = `${results.length} 件`
         ul.search-result-list
           each result in results
@@ -149,7 +258,7 @@ block content
               a.search-result-list__link(href=result.link)
                 h2.search-result-list__title
                   = result.title
-              .search-result-list__category 
+              .category-search__category 
                 ul.category-list 
                   each category in result.categories 
                     li.category-list-item 
@@ -165,15 +274,3 @@ block content
                 h3.search-result-list-application__title 申し込み
                 p.search-result-list-summary__text
                   = result.application
-
-      aside.search-result-condition
-        h2.search-result-condition__title 
-          | 検索項目を変更する
-        form.search-result-condition__form
-          +Accordion({title: "change-condition", items: [{label: "人生の出来事", content: "sss"},{label: "あなたの状況", content: "sss"},{label: "ご用件", content: "sss"}]})
-          .search-result-condition__btn
-            +Button({label: "検索する", type:"submit"})
-
-
-
-

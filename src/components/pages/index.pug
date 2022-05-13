@@ -1,7 +1,6 @@
-extends common/_layout
+extends ../common/_layout
 
 block pageOption
-	- pageClass.push('page-index')
 	- contentClass.push('index-container')
 
 block content
@@ -11,11 +10,11 @@ block content
 	//- 	img(src="../images/top/top_label_pc.png" alt="" class="label-img-pc")
 	//- 	img(src="../images/top/top_label_sp.png" alt="" class="label-img-sp")
 	section.section-content
-		include ./parts/_slider.pug
+		include ../parts/_slider.pug
 
 	section.section-content 
-		include ./parts/_top-menu.pug
+		include ../parts/_top-menu.pug
 
 	section.section-content.bg-light
-		include ./parts/_top-menu-2.pug
+		include ../parts/_top-menu-2.pug
 
