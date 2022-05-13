@@ -10,21 +10,10 @@
 			transition: opacity 0.8s ease-in-out;
 		}
 	}
-
 	&__container {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
 		gap: 16px;
-	}
-	&__floor-map,
-	&__contact {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 50%;
-		height: 240px;
-		background-color: #fff;
-		border: 1px solid black;
 	}
 }

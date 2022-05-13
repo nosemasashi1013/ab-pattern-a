@@ -12,12 +12,6 @@
 	}
 }
 
-.section-content {
-	&__contact-form {
-		@extend .layout-default;
-		margin-top: 40px;
-	}
-}
 .img-list {
 	display: flex;
 	flex-wrap: wrap;

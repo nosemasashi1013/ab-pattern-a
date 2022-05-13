@@ -30,11 +30,18 @@ body {
 	position: absolute;
 	white-space: nowrap;
 }
-.section-content__title {
-	font-size: 30px;
-	font-weight: bold;
-	text-align: center;
-	padding: 56px 0;
+.section-content {
+	&__title {
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+		padding: 56px 0;
+	}
+	&__contact {
+		@extend .layout-default;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
 }
 .content-title {
 	font-size: 24px;

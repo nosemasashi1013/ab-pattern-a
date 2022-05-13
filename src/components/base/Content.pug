@@ -1,0 +1,5 @@
+mixin Content(params={})
+  - const props = Object.assign({}, params)
+  h2.article__heading
+    = props.title
+  block

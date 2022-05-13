@@ -33,135 +33,18 @@ block pageOption
       },
     ]
 
+include ../base/ContactBanner.pug
+
 block content
   section.article
     h1.article__title 
       | 妊娠の届出・母子健康手帳の交付
-    section.anchor-nav 
-      nav
-        ul.anchor-nav-list
-          each item in anchorNavList
-            li.anchor-nav-list__item
-              a.anchor-nav-list__link(href=item.link) 
-                span.anchor-nav-list__label
-                  = item.label
-    section.article__about#article_1
-      h2.article__heading
-        | 概要
-      .article__content
-        .article__text 
-          | 妊娠が分かったら妊娠の届出をしてください。妊娠届を出された方に母子健康手帳及び付属書類を交付します。
-          | この手帳で妊産婦と乳幼児の健康状態の一貫した記録を行います。また保健・育児に関する情報が記載されています。
-          | 母子健康手帳交付の際、保健師が妊婦の健康状態などをお伺いする面接を行うとともに、母子保健サービスなどの説明をします。
-        h3.article__sub-heading
-          | お渡しするもの
-        ul.article-list
-          li.article-list__item
-            p.article-list__item-text 
-              | 母子健康手帳
-          li.article-list__item
-            p.article-list__item-text 
-              | 母子健康手帳別冊（妊産婦健康診査受診票）
-          li.article-list__item
-            p.article-list__item-text 
-              | 予防接種手帳
-          li.article-list__item
-            p.article-list__item-text 
-              | マタニティマークのストラップ
-          h3.article__sub-heading
-            | 大黒市で交付できる母子健康手帳の外国語版
-          p 英語、中国語、ハングル語、タイ語、スペイン語、ポルトガル語、タガログ語、インドネシア語、ベトナム語、ネパール語
-    section.article__target#article_2
-      h2.article__heading
-        | 対象者
-      .article__content
-        .article__text 
-          | 妊娠した方(大黒市に居住している方)
-    section.article__notification#article_3
-      h2.article__heading
-        | 届出について
-      .article__content
-        .article__text 
-          | お住まいの区の保健福祉センター保健業務担当に妊娠届出書を提出してください。
-          | 期日はありませんが、妊娠が分かりましたら早めに届出をしてください。
-          | 届出は対象者ご本人が行ってください。 ご本人が来所できない場合は、代理の方が提出することもできます。代理の方が来所されるときは、委任状等が必要となります。
-    section.article__fee#article_4
-      h2.article__heading
-        | 手数料
-      .article__content
-        .article__text
-          | 無料
-    section.article__needed#article_5
-      h2.article__heading
-        | 必要なもの
-      .article__content
-        h3.article__sub-heading
-          | マイナンバーカードをお持ちの方
-        ul.article-list
-          li.article-list__item
-            p.article-list__item-text 
-              | マイナンバーカード
-        h3.article__sub-heading
-          | マイナンバーカードを持っていない方
-        .article-confirm-number
-          .article__text
-            | マイナンバー（個人番号）を確認するために下記のいずれかが必要です。<br>
-            | 持参されなかった場合は、受付時に別途書類を記載していただくことがあります。
-          ul.article-list
-            li.article-list__item
-              p.article-list-item-text 
-                | 通知カード
-            li.article-list__item
-              p.article-list__item-text 
-                | 個人番号が記載された住民票の写し
-        .article-confirm-id
-          .article__text
-            | 番号の正しい持ち主であることが確認できるものとして下記のいずれか1点が必要です。
-          ul.article-list
-            li.article-list__item
-              p.article-list__item-text 
-                | 運転免許証またはパスポートなど、顔写真付のもの1点
-            li.article-list__item
-              p.article-list__item-text 
-                | 健康保険証、年金手帳、源泉徴収票、写真なしの身分証など2点以上
-    section.article__necessary#article_6
-      h2.article__heading
-        | こんな時は届出が必要です
-      .article__content
-        .article__text
-          | 大黒市外へ転出する場合 転出先の市区町村に妊娠している旨を届け出てください。母子健康手帳はそのままお使いいただけます。なお、転出後は大黒市発行の妊婦健康診査受診票は使用できなくなりますので、転出先の市区町村で新たな受診票の交付を受けてください。<br>
-          | 大黒市内へ転入する時や氏名の変更をする時は、お住まいの区の保健福祉センター保健業務担当に既に交付を受けた 母子健康手帳と「居住地・氏名変更届」を提出してください。転入前の母子健康手帳はそのままお使いいただけます。
-    section.article__contact#article_7
-      h2.article__heading
-        | お問い合わせ
-      .article__content
-        h3.article__sub-heading
-          | 保健福祉センター所在地（保健業務担当）
-        .article-table__container 
-          dl.article-table
-            dt.article-table__header
-              | 地区名
-              dd.article-table__text
-                | 弁天地区
-            dt.article-table__header
-              | 郵便番号
-              dd.article-table__text
-                | 000-0000
-            dt.article-table__header
-              | 所在地
-              dd.article-table__text
-                | 大黒市弁天町七福8-8-8
-            dt.article-table__header
-              | 電話番号
-              dd.article-table__text
-                | 000-0000-0000
 
+    include ../base/AnchorList.pug
+    +AnchorList({title: "目次", items: anchorNavList})
 
+    include ../parts/_detail-content.pug
 
-
-
-
-
-
-
-
+  section.section-content.bg-light
+    .section-content__contact
+      +ContactBanner({tel1: "03", tel2: "0000", tel3: "1111", dep: "健康福祉課", div: "保健所総務課", inCharge: "新型コロナウイルスワクチン"})
