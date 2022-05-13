@@ -8,9 +8,12 @@
 	overflow: hidden;
 	align-items: center;
 	background-color: #fff;
+	border-radius: 50px;
 
 	&__input {
-		padding: 16px;
+		padding-left: 16px;
+		width: 100%;
+		flex: 1;
 	}
 	&__btn {
 		display: flex;
@@ -23,8 +26,10 @@
 		min-height: 36px;
 		max-height: 36px;
 		text-align: center;
-		color: #3b4043;
-		margin-right: 16px;
+		color: #fff;
+		background-color: colors(primary);
+		border-radius: 50px;
+
 		&:focus:not(:focus-visible) {
 			outline: none;
 		}
