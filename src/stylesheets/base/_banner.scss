@@ -25,3 +25,21 @@
 		right: 40px;
 	}
 }
+
+@media (max-width: breakpoint(sp)) {
+	.banner {
+		padding: 24px 0 60px 0;
+		&__label {
+			font-size: 30px;
+		}
+		&__icon {
+			width: 100px;
+			height: auto;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+	}
+}
