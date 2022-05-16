@@ -16,6 +16,7 @@ block pageOption
         text: "本文です本文です本文です本文です本文です本文です本文です",
         summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
         application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+        link: "./detail.html"
       },
       {
         title: "母子父子寡婦福祉資金貸付制度",
@@ -131,9 +132,240 @@ block pageOption
       },
     ]
 
+    const lifeScene = [
+      {
+        label: "いざという時",
+        value: "1",
+        checked: false
+      },
+      {
+        label: "妊娠",
+        value: "2",
+        checked: false
+      },
+      {
+        label: "出産",
+        value: "3",
+        checked: false
+      },
+      {
+        label: "結婚",
+        value: "4",
+        checked: false
+      },
+      {
+        label: "引越し",
+        value: "5",
+        checked: false
+      },
+      {
+        label: "住まい",
+        value: "6",
+        checked: false
+      },
+      {
+        label: "就職",
+        value: "7",
+        checked: false
+      },
+      {
+        label: "退職",
+        value: "8",
+        checked: false
+      },
+      {
+        label: "ご不幸",
+        value: "9",
+        checked: false
+      },
+      {
+        label: "予備",
+        value: "10",
+        checked: false
+      },
+      {
+        label: "予備",
+        value: "11",
+        checked: false
+      },
+      {
+        label: "予備",
+        value: "12",
+        checked: false
+      },
+    ]
+
+    const status = [
+      {
+        label: "from abroad",
+        value: "1",
+        checked: false
+      },
+      {
+        label: "乳幼児",
+        value: "2",
+        checked: false
+      },
+      {
+        label: "小学生",
+        value: "3",
+        checked: false
+      },
+      {
+        label: "中学生",
+        value: "4",
+        checked: false
+      },
+      {
+        label: "高校生など",
+        value: "5",
+        checked: false
+      },
+      {
+        label: "大学生など",
+        value: "6",
+        checked: false
+      },
+      {
+        label: "成人",
+        value: "7",
+        checked: false
+      },
+      {
+        label: "高齢",
+        value: "8",
+        checked: false
+      },
+      {
+        label: "介護",
+        value: "9",
+        checked: false
+      },
+      {
+        label: "障がい",
+        value: "10",
+        checked: false
+      },
+      {
+        label: "ひとり親",
+        value: "11",
+        checked: false
+      },
+      {
+        label: "生活に困っている",
+        value: "12",
+        checked: false
+      },
+      {
+        label: "ペット・動物",
+        value: "13",
+        checked: false
+      },
+      {
+        label: "予備",
+        value: "14",
+        checked: false
+      },
+      {
+        label: "予備",
+        value: "15",
+        checked: false
+      },
+      {
+        label: "予備",
+        value: "16",
+        checked: false
+      },
+    ]
+
+    const matters = [
+      {
+        label: "情報を受け取る",
+        value: "1",
+        checked: false
+      },
+      {
+        label: "証明書が欲しい",
+        value: "2",
+        checked: false
+      },
+      {
+        label: "手続き・届出する",
+        value: "3",
+        checked: false
+      },
+      {
+        label: "選挙・投票する",
+        value: "4",
+        checked: false
+      },
+      {
+        label: "ごみを出したい",
+        value: "5",
+        checked: false
+      },
+      {
+        label: "医療を受けたい",
+        value: "6",
+        checked: false
+      },
+      {
+        label: "健康づくり",
+        value: "7",
+        checked: false
+      },
+      {
+        label: "学びたい",
+        value: "8",
+        checked: false
+      },
+      {
+        label: "働きたい",
+        value: "9",
+        checked: false
+      },
+      {
+        label: "遊びたい・楽しみたい",
+        value: "10",
+        checked: false
+      },
+      {
+        label: "役立ちたい",
+        value: "11",
+        checked: false
+      },
+      {
+        label: "生活トラブル",
+        value: "12",
+        checked: false
+      },
+      {
+        label: "悩み・相談したい",
+        value: "13",
+        checked: false
+      },
+      {
+        label: "注意点を知りたい",
+        value: "14",
+        checked: false
+      },
+      {
+        label: "年金を受けたい",
+        value: "15",
+        checked: false
+      },
+      {
+        label: "予備",
+        value: "16",
+        checked: false
+      },
+    ]
+
 include ../base/Accordion.pug
 include ../base/Button.pug
 include ../base/Banner.pug
+include ../base/Checkbox.pug
+include ../base/SearchResult.pug
 
 block content
   section.section-content__header
@@ -151,31 +383,53 @@ block content
         ul.search-result-list
           each result in results
             li.search-result-list__item
-              a.search-result-list__link(href=result.link)
-                h2.search-result-list__title
-                  = result.title
-              .search-result-list__category 
-                ul.category-list 
-                  each category in result.categories 
-                    li.category-list-item 
-                      span.category-list-item__label 
-                        = category.label
-              p.search-result-list__text
-                = result.text
-              .search-result-list-summary
-                h3.search-result-list-summary__title 概要
-                p.search-result-list-summary__text
-                  = result.summary
-              .search-result-list-application
-                h3.search-result-list-application__title 申し込み
-                p.search-result-list-summary__text
-                  = result.application
+              +SearchResult({
+                title: result.title,
+                categories: result.categories,
+                text: result.text,
+                link: result.link,
+                summary: result.summary,
+                application: result.application
+              })
 
       aside.search-result-condition
         h2.search-result-condition__title 
           | 検索項目を変更する
         form.search-result-condition__form
-          +Accordion({title: "change-condition", items: [{label: "人生の出来事", content: "sss"},{label: "あなたの状況", content: "sss"},{label: "ご用件", content: "sss"}]})
+          +Accordion({title: "change-life-scene", items: [{label: "人生の出来事"}]})
+            ul.scene-list 
+              each item in lifeScene 
+                li.scene-list__item
+                  +Checkbox({
+                    id: `life-scene__${item.value}`,
+                    name: "life-scene",
+                    value: item.value,
+                    checked: item.checked,
+                    label: item.label,
+                  })
+          +Accordion({title: "change-status", items: [{label: "あなたの状況"}]})
+            ul.status-list 
+              each item in status 
+                li.status-list__item
+                  include ../../components/base/Checkbox.pug
+                  +Checkbox({
+                    id: `status__${item.value}`,
+                    name: "status",
+                    value: item.value,
+                    checked: item.checked,
+                    label: item.label,
+                  })
+          +Accordion({title: "change-matters", items:[{label: "ご用件"}]})
+            ul.matters-list 
+              each item in matters 
+                li.matters-list__item
+                  +Checkbox({
+                    id: `matters__${item.value}`,
+                    name: "matters",
+                    value: item.value,
+                    checked: item.checked,
+                    label: item.label,
+                  })
           .search-result-condition__btn
             +Button({label: "検索する", type:"submit"})
 

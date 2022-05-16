@@ -36,9 +36,11 @@
 }
 
 @media only screen and (max-width: breakpoint(sp)) {
-	.scene-list {
-		&__item {
-			width: calc(50% - 4px);
+	.scene {
+		.scene-list {
+			&__item {
+				width: calc(50% - 4px);
+			}
 		}
 	}
 }

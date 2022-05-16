@@ -29,6 +29,12 @@
 		font-weight: bold;
 		color: colors(primary);
 	}
+	&__text {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+	}
 }
 .search-result-application {
 	margin: 24px 48px;
@@ -48,4 +54,11 @@
 	border: 1px solid #c5c8d1;
 	border-radius: 50px;
 	padding: 4px 16px;
+}
+
+@media only screen and (max-width: breakpoint(sp)) {
+	.search-result-summary,
+	.search-result-application {
+		margin: 24px 0 24px 16px;
+	}
 }
