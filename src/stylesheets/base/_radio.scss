@@ -74,3 +74,10 @@ $radio-border-color: #ccc;
 		}
 	}
 }
+@media (max-width: breakpoint(sp)) {
+	.radio {
+		&__label {
+			white-space: pre-wrap;
+		}
+	}
+}

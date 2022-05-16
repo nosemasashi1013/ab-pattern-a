@@ -36,42 +36,48 @@ block pageOption
         name: "category1",
         value: "1",
         checked: false,
-        label: "届出・申請"
+        label: "届出・申請",
+        newInfoCount: 10
       },
       {
         id: "category-3",
         name: "category1",
         value: "2",
         checked: false,
-        label: "金銭的支援"
+        label: "金銭的支援",
+        newInfoCount: 2
       },
       {
         id: "category-4",
         name: "category1",
         value: "3",
         checked: false,
-        label: "支援サービス"
+        label: "支援サービス",
+        newInfoCount: 4
       },
       {
         id: "category-5",
         name: "category1",
         value: "4",
         checked: false,
-        label: "講演会・イベント"
+        label: "講演会・\nイベント",
+        newInfoCount: 4
       },
       {
         id: "category-6",
         name: "category1",
         value: "5",
         checked: false,
-        label: "施設"
+        label: "施設",
+        newInfoCount: 1
       },
       {
         id: "category-7",
         name: "category1",
         value: "6",
         checked: false,
-        label: "お知らせ"
+        label: "お知らせ",
+        newInfoCount: 2
       },
     ]
 
@@ -272,6 +278,10 @@ block content
               each item in radioList 
                 li.radio-list__item
                   +Radio({id: item.id, name: item.name, value: item.value, checked: item.checked, label: item.label})
+                  if item.newInfoCount
+                    .radio-list__count
+                      p.count
+                        = item.newInfoCount
 
           +Accordion({title: "change-condition", items: [{label: "絞り込む"}]})
             ul

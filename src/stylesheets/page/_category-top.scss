@@ -47,9 +47,29 @@
 			@extend .box-shadow;
 			display: flex;
 			align-items: center;
+			justify-content: space-between;
 			border: 1px solid #e1e1e1;
 			border-radius: 8px;
 			background-color: #fff;
+			position: relative;
+		}
+		&__count {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 32px;
+			padding-right: 4px;
+			.count {
+				width: 26px;
+				height: auto;
+				padding: 4px 4px;
+				text-align: center;
+				font-size: 12px;
+				font-weight: bold;
+				background-color: #dd1500;
+				border-radius: 50px;
+				color: #fff;
+			}
 		}
 	}
 }
