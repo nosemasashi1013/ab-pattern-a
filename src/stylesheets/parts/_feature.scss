@@ -1,0 +1,46 @@
+.section-content__feature {
+	@extend .layout-default;
+	padding-bottom: 60px;
+
+	.card-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+
+		&__item {
+			width: calc(100% / 2 - 16px);
+
+			&--single {
+				width: 100%;
+				.card {
+					&__link {
+						display: flex;
+						flex-direction: row;
+						align-items: stretch;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: breakpoint(sp)) {
+	.section-content__feature {
+		.card-list {
+			&__item {
+				width: 100%;
+			}
+		}
+		.card-list {
+			&__item {
+				&--single {
+					.card {
+						&__link {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+}
