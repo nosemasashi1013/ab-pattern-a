@@ -1,6 +1,6 @@
 .banner {
 	@extend .box-shadow;
-	text-align: center;
+
 	background-color: #fff;
 	border-radius: 8px;
 	margin-top: 40px;
@@ -8,18 +8,19 @@
 	padding: 60px 0;
 
 	&__label {
+		text-align: center;
 		font-size: 36px;
 		font-weight: bold;
-
 		margin-bottom: 16px;
 	}
 	&__description {
+		text-align: center;
 		color: #707070;
-		padding-bottom: 60px;
+		white-space: pre-wrap;
 	}
 	&__icon {
-		width: 240px;
-		height: auto;
+		width: auto;
+		height: 160px;
 		position: absolute;
 		bottom: 0;
 		right: 40px;
@@ -33,13 +34,18 @@
 			font-size: 30px;
 		}
 		&__icon {
-			width: 100px;
-			height: auto;
+			width: auto;
+			height: 68px;
 			position: absolute;
 			bottom: 0;
 			left: 0;
 			right: 0;
 			margin: auto;
+		}
+		&__description {
+			white-space: initial;
+			padding: 0 16px;
+			padding-bottom: 16px;
 		}
 	}
 }

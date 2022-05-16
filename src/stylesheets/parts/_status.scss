@@ -1,6 +1,7 @@
 .status {
 	@extend .layout-default;
 	padding-top: 40px;
+	padding-bottom: 40px;
 
 	&__title {
 		font-size: 30px;
@@ -24,10 +25,12 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	align-items: center;
+	align-items: stretch;
 	gap: 8px;
 
 	&__item {
+		display: flex;
+		align-items: center;
 		border: 1px solid #e1e1e1;
 		background-color: #fff;
 		border-radius: 8px;

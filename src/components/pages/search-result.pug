@@ -133,10 +133,15 @@ block pageOption
 
 include ../base/Accordion.pug
 include ../base/Button.pug
+include ../base/Banner.pug
 
 block content
   section.section-content__header
-    include ../parts/_life-scene-header.pug
+    +Banner({
+      title: "選んで探す 検索結果",
+      description: "「⚫︎⚫︎」、「⚫︎⚫︎」、「⚫︎⚫︎」の検索結果です",
+      icon: "search_menu_img.png"
+    })
 
   section.section-content
     .search-result

@@ -31,6 +31,7 @@
 	.contact-form-link {
 		display: block;
 		padding: 16px 64px;
+		text-align: center;
 		font-weight: bold;
 		background-color: colors(primary);
 		border-radius: 50px;
@@ -53,5 +54,26 @@
 		position: absolute;
 		bottom: 0;
 		right: 40px;
+	}
+}
+@media (max-width: breakpoint(sp)) {
+	.contact-banner-container {
+		padding: 24px 16px;
+		padding-bottom: 160px;
+
+		.contact-banner-header {
+			font-size: 24px;
+			text-align: center;
+		}
+		.contact-form-container {
+			display: block;
+		}
+		.contact-form-tel-container {
+			margin-top: 16px;
+		}
+		.contact-banner-img {
+			width: 200px;
+			right: 0;
+		}
 	}
 }
