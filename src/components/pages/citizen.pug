@@ -1,7 +1,27 @@
 extends ../common/_layout
 
+block pageOption
+  -
+    const breadcrumbItem = [
+      {
+        text : "トップページ",
+        link : "/",
+        isCurrent : false
+
+      },
+      {
+        text : "市民トップ",
+        link : "./citizen.html",
+        isCurrent : true
+
+      },
+    ]
+
+include ../base/Breadcrumb.pug
+
 block content
   include ../parts/_global-navi.pug
+  +Breadcrumb({items: breadcrumbItem})
   section.section-content
     include ../parts/_search-life-scene.pug
 

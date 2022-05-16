@@ -2,6 +2,27 @@ extends ../common/_layout
 
 block pageOption 
   -
+    const breadcrumbItem = [
+      {
+        text : "トップページ",
+        link : "/",
+        isCurrent : false
+
+      },
+      {
+        text : "市民トップ",
+        link : "./citizen.html",
+        isCurrent : false
+
+      },
+      {
+        text : "妊娠から子育て",
+        link : "./category-top.html",
+        isCurrent : true
+
+      },
+    ]
+
     const radioList = [
       {
         id: "category-1",
@@ -223,6 +244,7 @@ block pageOption
     ]
 
 include ../base/Accordion.pug
+include ../base/Breadcrumb.pug
 include ../base/Button.pug
 include ../base/Banner.pug
 include ../base/Radio.pug
@@ -232,6 +254,7 @@ include ../base/ContactBanner.pug
 
 block content
   include ../parts/_global-navi.pug
+  +Breadcrumb({items: breadcrumbItem})
   section.section-content__header
     +Banner({
       title: "妊娠から子育て",
