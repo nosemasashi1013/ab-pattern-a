@@ -37,10 +37,18 @@
 
 @media (max-width: breakpoint(sp)) {
 	.footer-links {
+		&__container {
+			padding: 24px 16px;
+		}
 		&__list {
 			flex-direction: column;
 			align-items: flex-start;
 			gap: 8px;
+		}
+	}
+	.footer-profile {
+		&__container {
+			padding: 24px 16px;
 		}
 	}
 }
