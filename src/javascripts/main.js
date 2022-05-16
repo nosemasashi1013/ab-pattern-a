@@ -24,6 +24,7 @@ import { showAlert } from "./alert";
 import { changeTabStatus } from "./tab";
 import { setFontColor, setFontSize, selectLanguage } from "./accessibility";
 import { detailPageAnchor } from "./anchor";
+import { getCurrentUrl } from "./globalNavi";
 
 $(function () {
 	library.add(
@@ -53,5 +54,6 @@ $(function () {
 	showAlert();
 	initializeSlick();
 	changeSlideOnHover();
+	getCurrentUrl();
 	dom.i2svg();
 });
