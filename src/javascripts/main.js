@@ -6,6 +6,7 @@ import {
 	faAngleDown,
 	faSearch,
 	faExclamationCircle,
+	faArrowLeft,
 	faArrowRight,
 	faArrowDown,
 	faTimes,
@@ -25,6 +26,7 @@ import { changeTabStatus } from "./tab";
 import { setFontColor, setFontSize, selectLanguage } from "./accessibility";
 import { detailPageAnchor } from "./anchor";
 import { getCurrentUrl } from "./globalNavi";
+import { createPagination } from "./pagination";
 
 $(function () {
 	library.add(
@@ -33,6 +35,7 @@ $(function () {
 		faAngleDown,
 		faSearch,
 		faExclamationCircle,
+		faArrowLeft,
 		faArrowRight,
 		faArrowDown,
 		faTimes,
@@ -55,5 +58,6 @@ $(function () {
 	initializeSlick();
 	changeSlideOnHover();
 	getCurrentUrl();
+	createPagination();
 	dom.i2svg();
 });

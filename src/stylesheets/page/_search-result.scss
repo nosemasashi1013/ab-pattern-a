@@ -98,7 +98,7 @@
 	&__item:not(:first-child) {
 		margin-top: 32px;
 	}
-	&__item:not(:last-child) {
+	&__item {
 		border-bottom: 1px solid #cdd6dd;
 	}
 	&__link {

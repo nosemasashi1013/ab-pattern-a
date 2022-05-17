@@ -1,0 +1,14 @@
+mixin Pagenation(params={})
+  - const props = Object.assign({}, params)
+  .pagination
+    .pagination__btn
+      button.prev 
+        i(class="fas fa-arrow-left pagination__icon")
+      p.pagination__text 
+        | 前へ
+    ul.pagination__counter
+    .pagination__btn
+      button.next
+        i(class="fas fa-arrow-right pagination__icon")
+      p.pagination__text 
+        | 次へ

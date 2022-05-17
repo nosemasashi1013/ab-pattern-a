@@ -4,7 +4,7 @@ block pageOption
   -
     const results = [
       {
-        title: "母子父子寡婦福祉資金貸付制度",
+        title: "母子父子寡婦福祉資金貸付制度1",
         categories: [
           {
             label: "ひとり親",
@@ -19,7 +19,22 @@ block pageOption
         link: "./detail.html"
       },
       {
-        title: "母子父子寡婦福祉資金貸付制度",
+        title: "母子父子寡婦福祉資金貸付制度2",
+        categories: [
+          {
+            label: "ひとり親",
+          },
+          {
+            label: "手当と助成",
+          },
+        ],
+        text: "本文です本文です本文です本文です本文です本文です本文です",
+        summary: "概要です概要です概要です概要です概要です概要です概要です概要です",
+        application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
+        link: "./detail.html"
+      },
+      {
+        title: "母子父子寡婦福祉資金貸付制度3",
         categories: [
           {
             label: "ひとり親",
@@ -33,7 +48,7 @@ block pageOption
         application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
       },
       {
-        title: "母子父子寡婦福祉資金貸付制度",
+        title: "母子父子寡婦福祉資金貸付制度4",
         categories: [
           {
             label: "ひとり親",
@@ -47,7 +62,7 @@ block pageOption
         application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
       },
       {
-        title: "母子父子寡婦福祉資金貸付制度",
+        title: "母子父子寡婦福祉資金貸付制度5",
         categories: [
           {
             label: "ひとり親",
@@ -61,7 +76,7 @@ block pageOption
         application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
       },
       {
-        title: "母子父子寡婦福祉資金貸付制度",
+        title: "母子父子寡婦福祉資金貸付制度6",
         categories: [
           {
             label: "ひとり親",
@@ -75,7 +90,7 @@ block pageOption
         application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
       },
       {
-        title: "母子父子寡婦福祉資金貸付制度",
+        title: "母子父子寡婦福祉資金貸付制度7",
         categories: [
           {
             label: "ひとり親",
@@ -89,7 +104,7 @@ block pageOption
         application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
       },
       {
-        title: "母子父子寡婦福祉資金貸付制度",
+        title: "母子父子寡婦福祉資金貸付制度8",
         categories: [
           {
             label: "ひとり親",
@@ -103,7 +118,7 @@ block pageOption
         application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
       },
       {
-        title: "母子父子寡婦福祉資金貸付制度",
+        title: "母子父子寡婦福祉資金貸付制度9",
         categories: [
           {
             label: "ひとり親",
@@ -117,7 +132,7 @@ block pageOption
         application: "申込です申込です申込です申込です申込です申込です申込です申込です申込です",
       },
       {
-        title: "母子父子寡婦福祉資金貸付制度",
+        title: "母子父子寡婦福祉資金貸付制度10",
         categories: [
           {
             label: "ひとり親",
@@ -366,6 +381,7 @@ include ../base/Button.pug
 include ../base/Banner.pug
 include ../base/Checkbox.pug
 include ../base/SearchResult.pug
+include ../base/Pagenation.pug
 
 block content
   include ../parts/_global-navi.pug
@@ -392,6 +408,7 @@ block content
                 summary: result.summary,
                 application: result.application
               })
+        +Pagenation()
 
       aside.search-result-condition
         h2.search-result-condition__title 
