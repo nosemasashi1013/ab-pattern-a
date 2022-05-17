@@ -15,7 +15,7 @@ const splitPage = (currentPageUpdate) => {
 
 	if (currentPageUpdate === undefined || currentPage === 1) {
 		currentPage = 1;
-		activeNext();
+		disableNext();
 		disablePrev();
 	} else if (currentPageUpdate === totalPage) {
 		disableNext();
