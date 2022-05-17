@@ -9,12 +9,14 @@
     link: string,
     text: string,
     summary: string,
-    application: string
+    application: string,
+    isNew: boolean
   }
 mixin SearchResult(params={})
   - const props = Object.assign({}, params)
+  - const className= props.isNew ? "search-result__title--new" : ""
   a.search-result__link(href=props.link)
-    h2.search-result__title
+    h2(class="search-result__title " + className)
       = props.title
   .category-search__category 
     ul.category-list

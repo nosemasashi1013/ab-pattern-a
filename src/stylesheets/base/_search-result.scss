@@ -4,6 +4,18 @@
 		font-size: 24px;
 		font-weight: bold;
 		color: colors(primary);
+		&--new {
+			position: relative;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 8px;
+				height: 8px;
+				background-color: #dd1500;
+				border-radius: 50px;
+				top: 0;
+			}
+		}
 		&:hover {
 			opacity: 0.8;
 		}
