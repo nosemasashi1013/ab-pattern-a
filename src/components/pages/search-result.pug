@@ -381,7 +381,7 @@ include ../base/Button.pug
 include ../base/Banner.pug
 include ../base/Checkbox.pug
 include ../base/SearchResult.pug
-include ../base/Pagenation.pug
+include ../base/Pagination.pug
 
 block content
   include ../parts/_global-navi.pug
@@ -408,7 +408,7 @@ block content
                 summary: result.summary,
                 application: result.application
               })
-        +Pagenation()
+        +Pagination()
 
       aside.search-result-condition
         h2.search-result-condition__title 

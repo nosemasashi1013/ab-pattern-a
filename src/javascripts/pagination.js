@@ -3,7 +3,7 @@ const $rerenderingContents = $(".search-result-list > li");
 const $pageCounter = $(".pagination__counter");
 const $prev = $(".prev");
 const $next = $(".next");
-const count = 5;
+const count = 10;
 
 let currentPage;
 let indexStart;
