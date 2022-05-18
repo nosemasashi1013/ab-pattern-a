@@ -3,7 +3,8 @@ mixin Card(params={})
   .card
     a(href=props.link class="card__link") 
       .card-img
-        img(src="../../images/common/pregnant_child_icon.png" alt="" class="card-img__img")
+        .card-img__container
+          img(src="../../images/common/pregnant_child_icon.png" alt="" class="card-img__img")
       .card-text 
         h3.card-text__title
           = props.title
