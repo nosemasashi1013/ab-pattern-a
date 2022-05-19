@@ -41,6 +41,12 @@
 				object-fit: cover;
 				object-position: 80%;
 			}
+			.btn-label {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				line-height: 1;
+			}
 		}
 	}
 }
@@ -49,4 +55,17 @@
 }
 .slick-autoplay-toggle-button {
 	bottom: -30px;
+}
+
+@media only screen and (max-width: breakpoint(sp)) {
+	.slick-dots {
+		li {
+			button {
+				padding: 40px 16px;
+				.btn-img {
+					width: 48px !important;
+				}
+			}
+		}
+	}
 }

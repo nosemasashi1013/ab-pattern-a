@@ -583,7 +583,8 @@ block content
             ul.radio-list__list
               each item in radioList 
                 li.radio-list__item
-                  +Radio({id: item.id, name: item.name, value: item.value, checked: item.checked, label: item.label})
+                  .radio-list__radio
+                    +Radio({id: item.id, name: item.name, value: item.value, checked: item.checked, label: item.label})
                   if item.newInfoCount
                     .radio-list__count
                       p.count

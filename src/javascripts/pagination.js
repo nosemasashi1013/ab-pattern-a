@@ -13,10 +13,14 @@ let totalPage;
 const splitPage = (currentPageUpdate) => {
 	totalPage = Math.ceil($rerenderingContents.length / count);
 
-	if (currentPageUpdate === undefined || currentPage === 1) {
+	if (totalPage === 1) {
 		currentPage = 1;
 		disableNext();
 		disablePrev();
+	} else if (currentPageUpdate === undefined || currentPage === 1) {
+		currentPage = 1;
+		activeNext();
+		activePrev();
 	} else if (currentPageUpdate === totalPage) {
 		disableNext();
 		activePrev();
@@ -68,9 +72,11 @@ const createPageCounter = () => {
 
 $next.on("click", function () {
 	splitPage((currentPage += 1));
+	setCurrentClass(currentPage);
 });
 $prev.on("click", function () {
 	splitPage((currentPage -= 1));
+	setCurrentClass(currentPage);
 });
 
 const disablePrev = () => {

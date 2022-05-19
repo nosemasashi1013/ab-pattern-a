@@ -376,7 +376,29 @@ block pageOption
       },
     ]
 
+    const breadcrumbItem = [
+      {
+        text : "トップページ",
+        link : "./index.html",
+        isCurrent : false
+
+      },
+      {
+        text : "選んで探す",
+        link : "./search.html",
+        isCurrent : false
+
+      },
+      {
+        text : "選んで探す検索結果",
+        link : "",
+        isCurrent : true
+
+      },
+    ]
+
 include ../base/Accordion.pug
+include ../base/Breadcrumb.pug
 include ../base/Button.pug
 include ../base/Banner.pug
 include ../base/Checkbox.pug
@@ -385,6 +407,8 @@ include ../base/Pagination.pug
 
 block content
   include ../parts/_global-navi.pug
+  +Breadcrumb({items: breadcrumbItem})
+
   section.section-content__header
     +Banner({
       title: "選んで探す 検索結果",
