@@ -3,9 +3,13 @@
 }
 .slick-slide {
 	height: auto;
+	img {
+		width: 100%;
+		object-fit: cover;
+	}
 }
 .slick-dots {
-	bottom: -60px;
+	bottom: -50px;
 	display: flex;
 	gap: 2px;
 	li {
@@ -51,7 +55,7 @@
 	}
 }
 .slick-dotted.slick-slider {
-	margin-bottom: 160px;
+	margin-bottom: 120px;
 }
 .slick-autoplay-toggle-button {
 	bottom: -30px;
