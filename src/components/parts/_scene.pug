@@ -1,0 +1,81 @@
+-
+  const lifeScene = [
+    {
+      label: "いざという時",
+      value: "1",
+      checked: false
+    },
+    {
+      label: "妊娠",
+      value: "2",
+      checked: false
+    },
+    {
+      label: "出産",
+      value: "3",
+      checked: false
+    },
+    {
+      label: "結婚",
+      value: "4",
+      checked: false
+    },
+    {
+      label: "引越し",
+      value: "5",
+      checked: false
+    },
+    {
+      label: "住まい",
+      value: "6",
+      checked: false
+    },
+    {
+      label: "就職",
+      value: "7",
+      checked: false
+    },
+    {
+      label: "退職",
+      value: "8",
+      checked: false
+    },
+    {
+      label: "ご不幸",
+      value: "9",
+      checked: false
+    },
+    {
+      label: "予備",
+      value: "10",
+      checked: false
+    },
+    {
+      label: "予備",
+      value: "11",
+      checked: false
+    },
+    {
+      label: "予備",
+      value: "12",
+      checked: false
+    },
+  ]
+
+include ../../components/base/Checkbox.pug
+
+.scene
+  h2.scene__title
+    | 人生の出来事
+  ul.scene-list 
+    each item in lifeScene 
+      li.scene-list__item
+        +Checkbox({
+          id: `life-scene__${item.value}`,
+          name: "life-scene",
+          value: item.value,
+          checked: item.checked,
+          label: item.label,
+        })
+
+

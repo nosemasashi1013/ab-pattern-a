@@ -1,0 +1,99 @@
+-
+  const status = [
+    {
+      label: "from abroad",
+      value: "1",
+      checked: false
+    },
+    {
+      label: "乳幼児",
+      value: "2",
+      checked: false
+    },
+    {
+      label: "小学生",
+      value: "3",
+      checked: false
+    },
+    {
+      label: "中学生",
+      value: "4",
+      checked: false
+    },
+    {
+      label: "高校生など",
+      value: "5",
+      checked: false
+    },
+    {
+      label: "大学生など",
+      value: "6",
+      checked: false
+    },
+    {
+      label: "成人",
+      value: "7",
+      checked: false
+    },
+    {
+      label: "高齢",
+      value: "8",
+      checked: false
+    },
+    {
+      label: "介護",
+      value: "9",
+      checked: false
+    },
+    {
+      label: "障がい",
+      value: "10",
+      checked: false
+    },
+    {
+      label: "ひとり親",
+      value: "11",
+      checked: false
+    },
+    {
+      label: "生活に困っている",
+      value: "12",
+      checked: false
+    },
+    {
+      label: "ペット・動物",
+      value: "13",
+      checked: false
+    },
+    {
+      label: "予備",
+      value: "14",
+      checked: false
+    },
+    {
+      label: "予備",
+      value: "15",
+      checked: false
+    },
+    {
+      label: "予備",
+      value: "16",
+      checked: false
+    },
+  ]
+
+.status
+  h2.status__title
+    | あなたの状況
+  ul.status-list 
+    each item in status 
+      li.status-list__item
+        include ../../components/base/Checkbox.pug
+        +Checkbox({
+          id: `status__${item.value}`,
+          name: "status",
+          value: item.value,
+          checked: item.checked,
+          label: item.label,
+        })
+

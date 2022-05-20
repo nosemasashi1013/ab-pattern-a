@@ -1,0 +1,86 @@
+-
+  const font = [
+    {
+      meta: "regular",
+      name: "標準",
+    },
+    {
+      meta: "large",
+      name: "拡大",
+    }
+  ]
+  const color = [
+    {
+      meta: "black",
+      name: "黒",
+    },
+    {
+      meta: "white",
+      name: "白",
+    },
+    {
+      meta: "yellow",
+      name: "黄",
+    },
+  ]
+
+.accessibility
+  .select-language
+    select(name="" class="x-language-trigger" onChange="gtag('event', 'select', {'event_category': 'accessibility', 'event_label': 'select-language', 'value': ''});") 
+      option(value="" style="display: none;") Language　 ▼
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=en&XMODE=0&XJSID=0") English
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=zhb&XMODE=0&XJSID=0") 中文(繁)
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=zh&XMODE=0&XJSID=0") 中文(簡)
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=ko&XMODE=0&XJSID=0") 한국
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=pt&XMODE=0&XJSID=0") Português
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=fr&XMODE=0&XJSID=0") français
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=de&XMODE=0&XJSID=0") Deutsche
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=es&XMODE=0&XJSID=0") Español
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=it&XMODE=0&XJSID=0") italiano
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=th&XMODE=0&XJSID=0") ไทย
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=vi&XMODE=0&XJSID=0") Tiếng Việt
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=ru&XMODE=0&XJSID=0") русский
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=hi&XMODE=0&XJSID=0") हिन्दी
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=ms&XMODE=0&XJSID=0") Bahasa Melayu
+      option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=ar&XMODE=0&XJSID=0") عربى
+
+  .select-font-size
+    p.title
+      | 文字の大きさ
+    ul.select-list 
+      each item in font
+        li(
+          class="select-item x-size-trigger size-" + item.meta
+          data-size=item.meta
+        )
+          label
+            input(
+              type="radio"
+              name=additionalValue ? "font-size" + additionalValue : "font-size"
+              onClick="gtag('event', 'click', {'event_category': 'accessibility', 'event_label': 'select-font-size', 'value': ''});"
+            )
+            .check-box
+              i(class="fas fa-check")
+            p.text
+              =item.name
+
+  .select-color
+    p.title
+      | 配色
+    ul.select-list
+      each item in color
+        li(
+          class="select-item x-color-trigger color-" + item.meta
+          data-color=item.meta
+        )
+          label
+            input(
+              type="radio" 
+              name=additionalValue ? "color" + additionalValue : "color"
+              onClick="gtag('event', 'click', {'event_category': 'accessibility', 'event_label': 'select-color', 'value': ''});"
+            )
+            .check-box
+              i(class="fas fa-check")
+            p.text
+              =item.name
+

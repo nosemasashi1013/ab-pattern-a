@@ -1,0 +1,94 @@
+.tabs {
+	div[role="tablist"] {
+		display: flex;
+		justify-content: space-between;
+		gap: 8px;
+		margin: 0 0 -2px;
+	}
+	div[aria-hidden="true"] {
+		display: none;
+	}
+	div[aria-hidden="false"] {
+		display: block;
+	}
+	button[role="tab"] {
+		position: relative;
+		border: 1px solid colors(line);
+		border-radius: 4px 4px 0 0;
+		background-color: colors(line);
+		width: calc(100% / 3);
+		padding: 16px;
+		font-weight: bold;
+		text-align: center;
+		&:hover {
+			outline: 0;
+			border-radius: 0;
+			&::before {
+				position: absolute;
+				bottom: 100%;
+				right: -1px;
+				left: -1px;
+				border-radius: 4px 4px 0 0;
+				border-top: 4px solid colors(primary);
+				content: "";
+				border-color: colors(primary);
+			}
+		}
+		&[aria-selected="true"] {
+			border-bottom: 2px solid #fff;
+			border-radius: 0;
+			background-color: #fff;
+			outline: 0;
+			&:not(:focus):not(:hover)::before {
+				border-top: 4px solid colors(primary);
+			}
+			&::before {
+				position: absolute;
+				bottom: 100%;
+				right: -1px;
+				left: -1px;
+				border-radius: 4px 4px 0 0;
+				border-top: 4px solid colors(primary);
+				content: "";
+			}
+			&::after {
+				position: absolute;
+				content: "";
+				z-index: 3;
+				bottom: -1px;
+				right: 0;
+				left: 0;
+				height: 0.3em;
+				background-color: #fff;
+			}
+		}
+		&:focus:not(:focus-visible) {
+			outline: none;
+		}
+		&:focus-visible {
+			outline: 2px solid #0000ff;
+		}
+	}
+	div[role="tabpanel"] {
+		position: relative;
+		z-index: 2;
+		padding: 48px;
+		border: 1px solid colors(line);
+		border-radius: 0 0 4px 4px;
+		background-color: #fff;
+
+		&:focus {
+			border-color: colors(primary);
+			outline: 0;
+			&::after {
+				position: absolute;
+				content: "";
+				bottom: 0;
+				right: -1px;
+				left: -1px;
+				border-bottom: 3px solid colors(primary);
+				border-radius: 0 0 4px 4px;
+			}
+		}
+	}
+}

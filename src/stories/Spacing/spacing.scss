@@ -1,0 +1,57 @@
+$spacingXS: 4px;
+$spacingS: 8px;
+$spacingM: 16px;
+$spacingL: 24px;
+$spacingXL: 32px;
+$spacingXXL: 48px;
+$spacingXXXL: 56px;
+$spacingXXXXL: 64px;
+
+.spacing-container-wrapper {
+	display: flex;
+	justify-content: space-around;
+}
+.spacing-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: end;
+	gap: 8px;
+}
+.spacing-heading {
+	margin-bottom: 16px;
+}
+.spacing-txt {
+	text-align: center;
+}
+.spacing-txt-size {
+	font-size: 12px;
+}
+.spacing-panel {
+	width: 56px;
+	background-color: #707070;
+}
+.spacing-xs {
+	height: $spacingXS;
+}
+.spacing-s {
+	height: $spacingS;
+}
+.spacing-m {
+	height: $spacingM;
+}
+.spacing-l {
+	height: $spacingL;
+}
+.spacing-xl {
+	height: $spacingXL;
+}
+.spacing-xxl {
+	height: $spacingXXL;
+}
+.spacing-xxxl {
+	height: $spacingXXXL;
+}
+.spacing-xxxxl {
+	height: $spacingXXXXL;
+}

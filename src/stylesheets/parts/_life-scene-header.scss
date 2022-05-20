@@ -1,0 +1,40 @@
+.life-scene-header {
+	@extend .box-shadow;
+	background-color: #fff;
+	border-radius: 8px;
+	margin-top: 40px;
+	padding: 48px;
+	position: relative;
+
+	&__label {
+		font-size: 36px;
+		font-weight: bold;
+		margin-bottom: 16px;
+		text-align: center;
+	}
+	&__description {
+		color: #707070;
+		text-align: center;
+	}
+	&__icon {
+		width: 128px;
+		height: auto;
+		position: absolute;
+		bottom: 0;
+		right: 40px;
+	}
+}
+.pc-only-br {
+	display: block;
+}
+
+@media (max-width: breakpoint(sp)) {
+	.life-scene-header {
+		&__description {
+			text-align: initial;
+		}
+	}
+	.pc-only-br {
+		display: none;
+	}
+}

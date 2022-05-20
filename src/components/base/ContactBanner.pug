@@ -1,0 +1,21 @@
+mixin ContactBanner(params={})
+  - const props = Object.assign({}, params)
+  .contact-banner-container.box-shadow
+    h3.contact-banner-header
+      | お問い合わせはこちらへ
+    .contact-form-container
+      .contact-form-link-container
+        a.contact-form-link(href=props.link)
+          | お問い合わせフォーム
+      .contact-form-tel-container 
+        i(class="fas fa-phone-alt contact-form-tel-icon")
+        address.contact-form-tel
+          a(href=`tel:${props.tel1}${props.tel2}${props.tel3}`)
+            strong
+              = `${props.tel1}-${props.tel2}-${props.tel3}`
+    .contact-form-dep-container 
+      p.contact-form-dep
+        = `大黒市役所　${props.dep}　${props.div}`
+      p.contact-form-in-charge
+        = props.inCharge + "担当"
+    img(src="../../images/common/contact.png" alt="" class="contact-banner-img")

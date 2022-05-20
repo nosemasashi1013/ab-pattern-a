@@ -1,0 +1,18 @@
+mixin TabList(params={})
+  - const props = Object.assign(params)
+  .tabs
+    div(
+      role="tablist"
+      aria-label=props.ariaLabel
+    )
+      each item in props.items
+        button(
+          type="button"
+          role="tab"
+          id=item.tabId
+          aria-selected=item.selected 
+          aria-controls=item.panelId
+        )
+          span.tab__label 
+            = item.label
+    block

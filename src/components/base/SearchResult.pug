@@ -1,0 +1,38 @@
+//-
+  params: {
+    title: string,
+    categories: [
+      {
+        label: string
+      }
+    ],
+    link: string,
+    text: string,
+    summary: string,
+    application: string,
+    isNew: boolean
+  }
+mixin SearchResult(params={})
+  - const props = Object.assign({}, params)
+  - const className= props.isNew ? "search-result__title--new" : ""
+  a.search-result__link(href=props.link)
+    h2(class="search-result__title " + className)
+      = props.title
+  .category-search__category 
+    ul.category-list
+      each category in props.categories 
+        li.category-list-item 
+          include ./Tag.pug
+          +Tag({label: category.label})
+  p.search-result__text
+    = props.text
+  .search-result-summary
+    h3.search-result-summary__title
+      | 概要
+    p.search-result-summary__text
+      = props.summary
+  .search-result-application
+    h3.search-result-application__title
+      | 申し込み
+    p.search-result-summary__text
+      = props.application

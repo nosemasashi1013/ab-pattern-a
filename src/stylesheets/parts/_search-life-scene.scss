@@ -1,0 +1,23 @@
+.section-content__life-scene {
+	@extend .layout-default;
+	padding-bottom: 80px;
+}
+
+.life-scene-menu-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 8px;
+	&__item {
+		flex-basis: calc(25% - 8px);
+	}
+}
+
+@media only screen and (max-width: breakpoint(sp)) {
+	.life-scene-menu-list {
+		&__item {
+			flex-basis: calc(50% - 4px);
+		}
+	}
+}

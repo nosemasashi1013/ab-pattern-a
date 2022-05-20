@@ -1,0 +1,19 @@
+//-
+  params: {
+    items: [
+      {
+        text: string
+        link: string
+      }
+    ]
+  }
+mixin LinkList(params={})
+  - const props = Object.assign(params)
+  .link-list__container
+    ul.link-list 
+      each item in props.items
+        li.link-list-item 
+          a.link-list-item__link(href=item.link)
+            span.link-list-item__text
+              = item.text
+            i(class="fas fa-arrow-right link-list-item__icon")

@@ -1,0 +1,35 @@
+.nav {
+	background-color: #fff;
+	border-top: 1px solid #f3ecec;
+	.nav-list {
+		@extend .layout-default;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		gap: 0;
+
+		&__link {
+			padding: 16px;
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+
+		&__label {
+			font-weight: bold;
+			text-align: center;
+		}
+		&__item {
+			width: 25%;
+		}
+		.current {
+			border-bottom: 4px solid colors(primary);
+		}
+	}
+}
+
+@media (max-width: breakpoint(sp)) {
+	.nav {
+		display: none;
+	}
+}

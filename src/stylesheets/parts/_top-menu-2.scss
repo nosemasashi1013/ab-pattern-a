@@ -1,0 +1,28 @@
+.section-content__top {
+	@extend .layout-default;
+	padding-bottom: 80px;
+}
+.visitor-menu-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 8px;
+	&__item {
+		flex-basis: calc(33% - 8px);
+	}
+	.link-menu {
+		&__icon {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+@media only screen and (max-width: breakpoint(sp)) {
+	.visitor-menu-list {
+		&__item {
+			flex-basis: 100%;
+		}
+	}
+}

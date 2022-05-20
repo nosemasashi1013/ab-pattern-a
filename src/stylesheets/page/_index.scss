@@ -1,0 +1,19 @@
+.section-content {
+	position: relative;
+	overflow: hidden;
+
+	&__carousel {
+		opacity: 0;
+		transition: opacity 0.8s ease-in-out;
+		&.slick-initialized {
+			opacity: 1;
+			transition: opacity 0.8s ease-in-out;
+		}
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		gap: 16px;
+	}
+}

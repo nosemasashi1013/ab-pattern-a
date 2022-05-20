@@ -1,0 +1,39 @@
+-
+  const businessMenu = [
+    {
+      icon: "business_1.png",
+      text: "入札・契約関連"
+    },
+    {
+      icon: "business_2.png",
+      text: "市議会"
+    },
+    {
+      icon: "business_3.png",
+      text: "条約・規則検索"
+    },
+    {
+      icon: "business_4.png",
+      text: "大黒市職員募集"
+    },
+  ]
+
+.business-menu-container.layout-default 
+  h2.section-title.business-menu-title
+    | 市政について・事業者の方
+  ul.business-menu-list
+    each menu in businessMenu
+      li.business-menu-item.box-shadow 
+        a(href="#") 
+          .business-menu-item-container
+            .icon-container
+              img(
+                src="../images/top/" + menu.icon
+                alt=""
+                class="business-menu-icon"
+              )
+            .business-menu-text-container
+              p.business-menu-text
+                = menu.text
+              .icon-wrapper
+                i(class="fas fa-chevron-circle-right")
