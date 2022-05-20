@@ -33,44 +33,11 @@
 			cursor: pointer;
 		}
 	}
-}
-.search-result-summary {
-	margin: 24px 48px;
-	&__title {
-		font-size: 18px;
-		font-weight: bold;
-		color: colors(primary);
-	}
 	&__text {
+		margin: 16px 0 32px 0;
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
+		-webkit-line-clamp: 3;
 		overflow: hidden;
-	}
-}
-.search-result-application {
-	margin: 24px 48px;
-	&__title {
-		font-size: 18px;
-		font-weight: bold;
-		color: colors(primary);
-	}
-}
-.category-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
-	margin: 16px 0;
-}
-.category-list-item {
-	border: 1px solid #c5c8d1;
-	border-radius: 50px;
-	padding: 4px 16px;
-}
-
-@media only screen and (max-width: breakpoint(sp)) {
-	.search-result-summary,
-	.search-result-application {
-		margin: 24px 0 24px 16px;
 	}
 }
