@@ -17,6 +17,7 @@ import {
 	faInfoCircle,
 	faChevronCircleRight,
 	faCaretDown,
+	faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import "@accessible360/accessible-slick";
 import { initializeSlick, changeSlideOnHover } from "./slider";
@@ -46,7 +47,8 @@ $(function () {
 		faArrowCircleUp,
 		faInfoCircle,
 		faChevronCircleRight,
-		faCaretDown
+		faCaretDown,
+		faQuestionCircle
 	);
 
 	setFontColor();
