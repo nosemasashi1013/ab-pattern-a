@@ -6,7 +6,7 @@
 	position: relative;
 	padding: 60px 0;
 
-	&__label {
+	&__title {
 		text-align: center;
 		font-size: 36px;
 		font-weight: bold;
@@ -24,12 +24,23 @@
 		bottom: 0;
 		right: 40px;
 	}
+	.banner-help {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 4px;
+		color: colors(primary);
+		&:hover {
+			text-decoration: underline;
+			opacity: 0.8;
+		}
+	}
 }
 
 @media (max-width: breakpoint(sp)) {
 	.banner {
 		padding: 24px 0 60px 0;
-		&__label {
+		&__title {
 			font-size: 30px;
 		}
 		&__icon {
