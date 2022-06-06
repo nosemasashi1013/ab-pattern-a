@@ -1,0 +1,24 @@
+.link-btn {
+	&__link {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		color: #fff;
+		background-color: colors(primary);
+		padding: 16px 22px;
+		border-radius: 50px;
+	}
+	&__label {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: breakpoint(sp)) {
+	.link-btn {
+		&__link {
+			border-radius: 0;
+		}
+	}
+}

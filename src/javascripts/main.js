@@ -26,6 +26,7 @@ import { changeTabStatus } from "./tab";
 import { setFontColor, setFontSize, selectLanguage } from "./accessibility";
 import { detailPageAnchor } from "./anchor";
 import { getCurrentUrl } from "./globalNavi";
+import { toggleMenu } from "./header";
 import { createPagination } from "./pagination";
 
 $(function () {
@@ -58,6 +59,7 @@ $(function () {
 	initializeSlick();
 	changeSlideOnHover();
 	getCurrentUrl();
+	toggleMenu();
 	createPagination();
 	dom.i2svg();
 });

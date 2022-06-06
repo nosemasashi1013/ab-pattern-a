@@ -1,0 +1,8 @@
+mixin LinkButton(params={})
+  - const props = Object.assign({}, params)
+  .link-btn 
+    a(href="/" class="link-btn__link")
+      if props.icon
+        i(class=props.icon)
+      p.link-btn__label 
+        = props.label

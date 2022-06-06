@@ -13,8 +13,12 @@
 		display: flex;
 		align-items: center;
 	}
+	&__menus {
+		display: flex;
+		align-items: center;
+	}
 	&__search {
-		display: none;
+		margin-left: 16px;
 	}
 	&__icon {
 		flex-grow: 1;
@@ -28,6 +32,19 @@
 			width: 180px;
 			height: auto;
 		}
+	}
+	&__nav {
+		&--pc {
+			display: flex;
+		}
+	}
+	&__nav {
+		&--sp {
+			display: none;
+		}
+	}
+	&__navi {
+		display: none;
 	}
 }
 
@@ -47,7 +64,6 @@
 			position: fixed;
 			z-index: z-index(layer-4);
 			top: 0;
-			display: flex;
 			width: 100%;
 		}
 		&__icon {
@@ -56,12 +72,7 @@
 				width: 120px;
 			}
 		}
-		&__search {
-			display: block;
-			margin-right: 16px;
-		}
 		&__content {
-			@extend .layout-default;
 			padding: 0;
 			display: flex;
 			justify-content: space-between;
@@ -70,15 +81,58 @@
 			position: relative;
 			z-index: z-index(layer-4) - 20;
 		}
+		&__nav {
+			&--pc {
+				display: none;
+			}
+		}
+		&__nav {
+			&--sp {
+				display: flex;
+			}
+		}
+		&__navi {
+			display: block;
+			margin-top: 0;
+			padding: 13px 22px 20px;
+			position: fixed;
+			height: 100vh;
+			width: 100%;
+			left: 0;
+			top: 68px;
+			background-color: #f9f9fb;
+			overflow: hidden;
+			transition: 0.6s all ease-in-out;
+			transform: translateY(-150%);
+			&[aria-hidden="false"] {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		&__search {
+			border-right: 1px solid #fff;
+		}
+		.icon-wrapper {
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			&.open {
+				width: auto;
+				height: 20px;
+			}
+			&.close {
+				display: none;
+				color: #fff;
+			}
+		}
 		.menu {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			background-color: colors(primary);
-			width: 68px;
-			height: 68px;
-			position: relative;
+			width: 70px;
+			height: 70px;
 			&__icon,
 			&__icon::before,
 			&__icon::after {
@@ -86,12 +140,16 @@
 				display: block;
 				position: absolute;
 				z-index: 100;
-				top: 24px;
+				top: 0;
+				left: 0;
 				bottom: 0;
 				width: 32px;
 				height: 3px;
 				background: #fff;
 				cursor: pointer;
+			}
+			&__icon {
+				left: -16px;
 			}
 			&__icon::before {
 				top: 10px;
@@ -99,6 +157,38 @@
 			&__icon::after {
 				top: 20px;
 				width: 20px;
+			}
+			&__text {
+				color: #fff;
+				font-size: 12px;
+				padding-top: 8px;
+			}
+			&:focus:not(:focus-visible) {
+				outline: none;
+			}
+			&:focus-visible {
+				outline: 2px solid #0000ff;
+			}
+		}
+		.global-navi {
+			margin: 16px 0;
+			&__list {
+				display: flex;
+				flex-direction: column;
+				border: 1px solid #a6adc6;
+				background-color: #fff;
+				border-radius: 4px;
+			}
+			&__item {
+				padding: 24px 16px;
+				&:not(:last-child) {
+					border-bottom: 1px solid #a6adc6;
+				}
+			}
+			&__link {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
 			}
 		}
 	}
