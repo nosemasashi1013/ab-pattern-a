@@ -3,6 +3,6 @@ mixin LinkButton(params={})
   .link-btn 
     a(href="/" class="link-btn__link")
       if props.icon
-        i(class=props.icon)
+        i(class=props.icon + " link-btn__icon")
       p.link-btn__label 
         = props.label
