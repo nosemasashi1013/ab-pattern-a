@@ -17,8 +17,8 @@ import {
 	faInfoCircle,
 	faChevronCircleRight,
 	faCaretDown,
-	faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 import "@accessible360/accessible-slick";
 import { initializeSlick, changeSlideOnHover } from "./slider";
 import { changeAccordionStatus } from "./accordion";
@@ -28,6 +28,7 @@ import { setFontColor, setFontSize, selectLanguage } from "./accessibility";
 import { detailPageAnchor } from "./anchor";
 import { getCurrentUrl } from "./globalNavi";
 import { toggleMenu } from "./header";
+import { moveFocus } from "./header";
 import { createPagination } from "./pagination";
 
 $(function () {
@@ -62,6 +63,7 @@ $(function () {
 	changeSlideOnHover();
 	getCurrentUrl();
 	toggleMenu();
+	moveFocus();
 	createPagination();
 	dom.i2svg();
 });

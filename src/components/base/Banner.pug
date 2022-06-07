@@ -9,8 +9,6 @@ mixin Banner(params={})
           = props.description
       if props.help
         a.banner-help(href=props.help.link)
-          i(class="fas fa-question-circle")
-          p.banner-help__text 
-            = props.help.text
+          i(class="far fa-question-circle" aria-label=props.help.text)
     if props.icon
       img.banner__icon(src="../../images/common/" + props.icon alt="")

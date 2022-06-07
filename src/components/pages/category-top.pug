@@ -581,7 +581,6 @@ include ../base/Banner.pug
 include ../base/Radio.pug
 include ../base/Checkbox.pug
 include ../base/SearchResult.pug
-include ../base/ContactBanner.pug
 include ../base/Pagination.pug
 include ../base/ViewedLink.pug
 
@@ -591,7 +590,7 @@ block content
   section.section-content__header
     +Banner({
       title: "妊娠から子育て",
-      description: `${breadcrumbItem.length}件の新着情報があります`,
+      description: `${breadcrumbItem.length}件の新着情報があります。`,
       help: {
         text: "新着表記について",
         link: "/"
@@ -659,6 +658,3 @@ block content
               heading: item.heading,
               text: item.text,
             })
-  section.section-content
-    .section-content__contact
-      +ContactBanner({tel1: "03", tel2: "0000", tel3: "1111", dep: "健康福祉課", div: "保健所総務課", inCharge: "新型コロナウイルスワクチン"})

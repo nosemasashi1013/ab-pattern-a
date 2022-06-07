@@ -24,6 +24,11 @@
 		bottom: 0;
 		right: 40px;
 	}
+	&__text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 	.banner-help {
 		display: flex;
 		align-items: center;

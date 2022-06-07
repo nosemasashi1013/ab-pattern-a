@@ -1,8 +1,7 @@
+const $menu = $(".menu");
+const $navi = $(".header__navi");
+const $menuText = $(".menu__text");
 export const toggleMenu = () => {
-	const $menu = $(".menu");
-	const $navi = $(".header__navi");
-	const $menuText = $(".menu__text");
-
 	$menu.on("click", function () {
 		if ($(this).attr("aria-expanded") === "false") {
 			$(this).attr("aria-expanded", true);
@@ -19,3 +18,10 @@ export const toggleMenu = () => {
 		}
 	});
 };
+
+export const moveFocus = () => {
+	if ($menu.attr("aria-expanded") === "false") return false;
+	$(".global-navi__link:last").on("focusout", function () {
+    $menu.focus();
+	})
+}
