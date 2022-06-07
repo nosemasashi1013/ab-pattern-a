@@ -12,4 +12,5 @@ mixin Banner(params={})
           i(class="fas fa-question-circle")
           p.banner-help__text 
             = props.help.text
-    img.banner__icon(src="../../images/common/" + props.icon alt="")
+    if props.icon
+      img.banner__icon(src="../../images/common/" + props.icon alt="")

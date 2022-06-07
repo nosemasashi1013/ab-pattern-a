@@ -17,9 +17,6 @@ block pageOption
       },
       {
         text : "妊娠から子育て",
-        link : "./category-top.html",
-        isCurrent : true
-
       },
     ]
 
@@ -553,6 +550,29 @@ block pageOption
         isNew: true,
       },
     ]
+    const viewedLinkList = [
+      {
+        link: "/",
+        img: "viewed_1.png",
+        alt: "代替テキスト",
+        heading: "講演会",
+        text: "おじいちゃんとおばあちゃんのための子育てセミナー",
+      },
+      {
+        link: "/",
+        img: "viewed_2.png",
+        alt: "代替テキスト",
+        heading: "講演会",
+        text: "おじいちゃんとおばあちゃんのための子育てセミナー",
+      },
+      {
+        link: "/",
+        img: "viewed_3.png",
+        alt: "代替テキスト",
+        heading: "講演会",
+        text: "おじいちゃんとおばあちゃんのための子育てセミナーおじいちゃんとおばあちゃんのための子育てセミナーおじいちゃんとおばあちゃんのための子育てセミナーおじいちゃんとおばあちゃんのための子育てセミナーおじいちゃんとおばあちゃんのための子育てセミナーおじいちゃんとおばあちゃんのための子育てセミナーおじいちゃんとおばあちゃんのための子育てセミナーおじいちゃんとおばあちゃんのための子育てセミナー",
+      },
+    ]
 
 include ../base/Accordion.pug
 include ../base/Breadcrumb.pug
@@ -563,6 +583,7 @@ include ../base/Checkbox.pug
 include ../base/SearchResult.pug
 include ../base/ContactBanner.pug
 include ../base/Pagination.pug
+include ../base/ViewedLink.pug
 
 block content
   include ../parts/_global-navi.pug
@@ -624,5 +645,20 @@ block content
         +Pagination()
 
   section.section-content.bg-light
+    .section-content__viewed
+      h2.section-content__title 
+        | このページもよく読まれています
+      ul.viewed-list
+        each item in viewedLinkList
+          li.viewed-list__item
+            +ViewedLink({
+              basePath: "../../images/common/",
+              link: item.link,
+              img: item.img,
+              alt: item.alt,
+              heading: item.heading,
+              text: item.text,
+            })
+  section.section-content
     .section-content__contact
       +ContactBanner({tel1: "03", tel2: "0000", tel3: "1111", dep: "健康福祉課", div: "保健所総務課", inCharge: "新型コロナウイルスワクチン"})

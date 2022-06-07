@@ -4,11 +4,11 @@ mixin Breadcrumb(params={})
     ol
       each item in props.items
         li
-          if item.isCurrent
-            span.breadcrumb-link-text.is-current
-              = item.text
-          else
+          if item.link
             a(href=item.link class="breadcrumb-link")
               span.breadcrumb-link-text
                 = item.text
+          else
+            span.breadcrumb-link-text.is-current
+              = item.text
 
