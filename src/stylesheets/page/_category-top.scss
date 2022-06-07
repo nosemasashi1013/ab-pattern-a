@@ -77,6 +77,11 @@
 		}
 	}
 }
+.viewed-list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
 @media (max-width: breakpoint(sp)) {
 	.category-search {
 		display: block;
