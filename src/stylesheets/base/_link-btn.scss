@@ -8,9 +8,20 @@
 		background-color: colors(primary);
 		padding: 8px 32px;
 		border-radius: 50px;
+
+		&--primary {
+			@extend .link-btn__link;
+			background-color: colors(primary);
+			color: #fff;
+		}
+		&--secondary {
+			@extend .link-btn__link;
+			background-color: #fff;
+			color: colors(primary);
+			border: 1px solid colors(primary);
+		}
 	}
 	&__label {
-		font-size: 12px;
 	}
 	&__icon {
 		width: 18px;
@@ -22,8 +33,6 @@
 	.link-btn {
 		&__link {
 			flex-direction: column;
-			border-radius: 0;
-			padding: 16px 24px;
 		}
 	}
 }

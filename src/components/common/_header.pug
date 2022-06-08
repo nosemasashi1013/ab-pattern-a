@@ -57,10 +57,18 @@ header.header
       .header__nav--pc
         //- +Accessibility({font: font, color: color})
         .header__search
-          +LinkButton({icon: "fas fa-search", label: "検索"})
+          +LinkButton({
+            icon: "fas fa-search",
+            label: "検索",
+            link: "/"
+          })
       .header__nav--sp
         .header__search
-          +LinkButton({icon: "fas fa-search", label: "検索"})
+          +LinkButton({
+            icon: "fas fa-search",
+            label: "検索",
+            link: "/"
+          })
         //- .header__menu
         //-   button.menu(type="button" aria-haspopup="true" aria-contriols="sp-menu" aria-expanded="false")
         //-     .icon-wrapper.open
