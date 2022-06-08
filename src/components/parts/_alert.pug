@@ -24,16 +24,18 @@
 include ../base/LinkMenu.pug
 
 .section-content__alert(aria-hidden="true" id="alert-section")
-  .alert 
+  .alert(role="alert")
     .alert-title 
       i(class="fas fa-exclamation-triangle alert-title__icon")
       h2.alert-title__text 
         = `${alerts.heavyRain}発令中`
     p.alert-note 
       | 最新の情報を確認し、<br class="sp-only-br"/>十分に警戒してください。
-    .alert-links 
+    .alert-links
       ul.alert-links-list
         each item in alertLinkItems
           li.alert-links-list__item 
             +LinkMenu({basePath: basePath, link: item.link, icon: item.icon, text: item.text})
+    .alert-logo 
+      img(src="../../images/common/daikoku-icon.png" alt="大黒市アイコン" class="alert-logo__img")
 
