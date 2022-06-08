@@ -1,3 +1,6 @@
+include ../base/SwitchButton.pug
+include ../base/Radio.pug
+
 mixin Accessibility(params={})
   - const props = Object.assign({}, params)
   .accessibility
@@ -20,43 +23,38 @@ mixin Accessibility(params={})
         option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=ms&XMODE=0&XJSID=0") Bahasa Melayu
         option(value="https://translation2.j-server.com/LUCPFUKUI/ns/tl.cgi/https://translation2.j-server.com/LUCPFUKUI/ns/warning_mess.cgi?url=https%3a//www.pref.fukui.lg.jp/index3.html&target=_top&SLANG=ja&TLANG=ar&XMODE=0&XJSID=0") عربى
 
-    .select-font-size
-      p.title
-        | 文字の大きさ
-      ul.select-list 
-        each item in props.font
-          li(
-            class="select-item x-size-trigger size-" + item.meta
-            data-size=item.meta
-          )
-            label
-              input(
-                type="radio"
-                name=additionalValue ? "font-size" + additionalValue : "font-size"
-                onClick="gtag('event', 'click', {'event_category': 'accessibility', 'event_label': 'select-font-size', 'value': ''});"
-              )
-              .check-box
-                i(class="fas fa-check")
-              p.text
-                =item.name
-
     .select-color
       p.title
         | 配色
       ul.select-list
-        each item in props.color
+        each item, index in props.color
           li(
             class="select-item x-color-trigger color-" + item.meta
             data-color=item.meta
           )
-            label
-              input(
-                type="radio" 
-                name=additionalValue ? "color" + additionalValue : "color"
-                onClick="gtag('event', 'click', {'event_category': 'accessibility', 'event_label': 'select-color', 'value': ''});"
-              )
-              .check-box
-                i(class="fas fa-check")
-              p.text
-                =item.name
+            +Radio({
+              id: props.isSp ? "select-color-sp-" + index : "select-color-" + index,
+              name: props.isSp ? "color-sp" : "color",
+              value: item.meta,
+              label: item.name,
+            })
+
+    .select-font-size
+      +SwitchButton({label: "文字拡大", id: props.isSp ? "switch-font-btn-sp" : "switch-font-btn"})
+      //- ul.select-list 
+      //-   each item in props.font
+      //-     li(
+      //-       class="select-item x-size-trigger size-" + item.meta
+      //-       data-size=item.meta
+      //-     )
+      //-       label
+      //-         input(
+      //-           type="radio"
+      //-           name=additionalValue ? "font-size" + additionalValue : "font-size"
+      //-           onClick="gtag('event', 'click', {'event_category': 'accessibility', 'event_label': 'select-font-size', 'value': ''});"
+      //-         )
+      //-         .check-box
+      //-           i(class="fas fa-check")
+      //-         p.text
+      //-           =item.name
 

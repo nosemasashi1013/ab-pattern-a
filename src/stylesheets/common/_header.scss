@@ -105,10 +105,12 @@
 
 			&[aria-hidden="true"] {
 				height: 0;
+				visibility: hidden;
 				transform: translateY(-150%);
 			}
 			&[aria-hidden="false"] {
 				height: 100vh;
+				visibility: visible;
 				transform: translateY(0);
 			}
 		}
@@ -149,7 +151,7 @@
 			}
 		}
 		.global-navi {
-			margin: 16px 0;
+			margin: 24px 0;
 			&__list {
 				display: flex;
 				flex-direction: column;

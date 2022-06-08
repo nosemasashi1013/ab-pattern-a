@@ -31,14 +31,17 @@
     {
       meta: "black",
       name: "黒",
+      checked: true,
     },
     {
       meta: "white",
       name: "白",
+      checked: false,
     },
     {
       meta: "yellow",
       name: "黄",
+      checked: false,
     },
   ]
 
@@ -70,7 +73,7 @@ header.header
               i(class="fas fa-times")
             p.menu__text メニュー
     .header__navi#sp-menu(aria-hidden="true")
-      +Accessibility({font: font, color: color})
+      +Accessibility({font: font, color: color, isSp: true})
       .header__global-navi 
         nav.global-navi
           ul.global-navi__list
