@@ -1,0 +1,7 @@
+mixin IncrementalSearch(params={})
+  - const props = Object.assign({}, params)
+  .incremental-search 
+    input.incremental-search__input(
+      type="text"
+      placeholder=props.placeholder
+    )

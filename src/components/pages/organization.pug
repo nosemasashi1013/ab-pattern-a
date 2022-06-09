@@ -1,0 +1,43 @@
+extends ../common/_layout
+
+block pageOption
+  -
+    const breadcrumbItem = [
+      {
+        text : "トップページ",
+        link : "/",
+        isCurrent : false
+
+      },
+      {
+        text : "組織一覧・問い合わせ先",
+
+      },
+    ]
+
+include ../base/Breadcrumb.pug
+include ../base/Banner.pug
+include ../base/IncrementalSearch.pug
+
+block content
+  include ../parts/_global-navi.pug
+
+  +Breadcrumb({items: breadcrumbItem})
+
+  section.section-content 
+    .section-content__header
+      +Banner({
+        basePath: "../../images/common/",
+        title: "組織一覧・問い合わせ先",
+        icon: "organization.png"
+      })
+  section.section-content
+    .section-content__body
+      h2.section-content__heading 
+        | フリーワード検索
+      .section-content__input
+        +IncrementalSearch({
+          placeholder: "部署名・業務などを入力してください"
+        })
+
+

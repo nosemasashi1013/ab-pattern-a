@@ -11,4 +11,4 @@ mixin Banner(params={})
         a.banner-help(href=props.help.link)
           i(class="far fa-question-circle" aria-label=props.help.text)
     if props.icon
-      img.banner__icon(src="../../images/common/" + props.icon alt="")
+      img.banner__icon(src=props.basePath + props.icon alt="")
