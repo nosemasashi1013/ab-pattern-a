@@ -1,0 +1,37 @@
+-
+  const helps = [
+    {
+      icon: "help_icon_1.png",
+      question: "担当部署の連絡先が知りたい",
+      answer: "部署名を入れて検索してください。\n一部でも大丈夫です。"
+
+    },
+    {
+      icon: "help_icon_2.png",
+      question: "「年金」の「受取人」が知りたい",
+      answer: "「年金　受取人」で検索してください。\nスペースを入れると複数のキーワードで調べることができます。"
+
+    },
+  ]
+
+include ../base/Section.pug
+
++Section()
+  .search-help 
+    .search-help__title
+      i(class="far fa-question-circle")
+      h2 検索のヒント
+    ul.search-help__list
+      each item in helps 
+        li.search-help__item 
+          .qa-help 
+            .qa-help-q 
+              img.qa-help-q__img(src="../../images/common/" + item.icon, alt="検索方法についての質問")
+              h3.qa-help-q__text 
+                = item.question
+            .qa-help-a
+              p.qa-help-a__label(aria-label="回答") 
+                | A.
+              p.qa-help-a__text 
+                = item.answer
+
