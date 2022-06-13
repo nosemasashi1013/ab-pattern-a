@@ -22,7 +22,6 @@ export const toggleMenu = () => {
 export const moveFocus = () => {
 	if ($menu.attr("aria-expanded") === false) return true;
 	$(".global-navi__link:last").on("focusout", function () {
-		console.log($menu.attr("aria-expanded"));
 		$menu[0].focus();
 	});
 };
