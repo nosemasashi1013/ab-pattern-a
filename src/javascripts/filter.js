@@ -1,4 +1,5 @@
 export const categoryFilter = () => {
+	$(".no-result-text").hide();
 	$(
 		".search-result-condition__form .checkbox__input, .search-result-condition__form .radio__input"
 	).on("change", function () {
@@ -29,6 +30,10 @@ export const categoryFilter = () => {
 					: true;
 			});
 		$filteredResults.show();
+
+		$filteredResults.length === 0
+			? $(".no-result-text").show()
+			: $(".no-result-text").hide();
 		$(".result-count").text(String($filteredResults.length));
 	});
 };

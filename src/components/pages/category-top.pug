@@ -197,6 +197,8 @@ block content
           span.result-count 
             = `${results.length}`
           | 件
+        p.no-result-text 
+          | 該当するページはありません。
         ul.search-result-list
           each result in results
             - const requirementsData = result.requirements.map((v, i) => String(v))
