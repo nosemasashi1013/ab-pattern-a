@@ -30,6 +30,7 @@ import { getCurrentUrl } from "./globalNavi";
 import { toggleMenu } from "./header";
 import { moveFocus } from "./header";
 import { createPagination } from "./pagination";
+import { categoryFilter } from "./filter";
 
 $(function () {
 	library.add(
@@ -65,5 +66,6 @@ $(function () {
 	toggleMenu();
 	moveFocus();
 	createPagination();
+	categoryFilter();
 	dom.i2svg();
 });
