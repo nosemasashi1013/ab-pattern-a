@@ -1,0 +1,53 @@
+-
+  const keywordList = [
+    {
+      link: "#",
+      label: "コロナ"
+    },
+    {
+      link: "#",
+      label: "コロナワクチン"
+    },
+    {
+      link: "#",
+      label: "緊急事態宣言"
+    },
+    {
+      link: "#",
+      label: "協力金"
+    },
+    {
+      link: "#",
+      label: "抗原検査"
+    },
+    {
+      link: "#",
+      label: "給付金"
+    },
+    {
+      link: "#",
+      label: "職域摂取"
+    },
+    {
+      link: "#",
+      label: "ワクチン副反応"
+    },
+  ]
+
+include ../base/Input.pug
+include ../base/Section.pug
+include ../base/LinkChipList.pug
+
++Section()
+  .keyword-input
+    .keyword-input__title 
+      | キーワードで検索する
+    .keyword-input__form
+      +Input({placeholder: "キーワードを入力"})
+    .keyword-input__list
+      +LinkChipList({
+        title: "よく検索されているキーワード",
+        list: keywordList,
+      })
+
+

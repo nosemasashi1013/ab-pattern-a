@@ -1,0 +1,20 @@
+.section {
+	@extend .layout-default;
+	&__content {
+		@extend .box-shadow;
+		background-color: #fff;
+		border-radius: 8px;
+		width: 100%;
+		max-width: 1024px;
+		margin-top: 48px;
+		margin-bottom: 48px;
+		padding: 40px 16px;
+	}
+}
+@media only screen and (max-width: breakpoint(sp)) {
+	.section {
+		max-width: 100%;
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}

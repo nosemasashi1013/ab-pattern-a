@@ -29,6 +29,10 @@
 @import "base/chip";
 @import "base/switch-button";
 @import "base/incremental-search";
+@import "base/section";
+@import "base/input";
+@import "base/link-chip";
+@import "base/link-chip-list";
 @import "common/accessibility";
 @import "common/header";
 @import "common/slick";
@@ -48,6 +52,8 @@
 @import "parts/hero";
 @import "parts/anchor-list";
 @import "parts/feature";
+@import "parts/keyword-input";
+@import "parts/search-help";
 @import "common/footer";
 @import "page/index";
 @import "page/search";
@@ -57,3 +63,4 @@
 @import "page/category-top";
 @import "page/site-map";
 @import "page/organization";
+@import "page/keyword-search";

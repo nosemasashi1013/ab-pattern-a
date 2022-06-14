@@ -54,40 +54,8 @@ header.header
       .header__icon
         a(href="/")
           img(src="../../images/common/daikoku-icon.png" alt="大黒市" class="logo")
-      .header__nav--pc
-        //- +Accessibility({font: font, color: color})
-        .header__search
-          +LinkButton({
-            icon: "fas fa-search",
-            label: "検索",
-            link: "/"
-          })
-      .header__nav--sp
-        .header__search
-          +LinkButton({
-            icon: "fas fa-search",
-            label: "検索",
-            link: "/"
-          })
-        //- .header__menu
-        //-   button.menu(type="button" aria-haspopup="true" aria-contriols="sp-menu" aria-expanded="false")
-        //-     .icon-wrapper.open
-        //-       <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" role="img" aria-labelledby="menu">
-        //-         <rect y="2" width="34" height="4" rx="3" ry="3" fill="white" />
-        //-         <rect y="15" width="34" height="4" rx="3" ry="3" fill="white" />
-        //-         <rect y="28" width="24" height="4" rx="3" ry="3" fill="white" />
-        //-       </svg>
-        //-     .icon-wrapper.close
-        //-       i(class="fas fa-times")
-        //-     p.menu__text メニュー
-        //- .header__navi#sp-menu(aria-hidden="true")
-        //-   +Accessibility({font: font, color: color, isSp: true})
-        //-   .header__global-navi 
-        //-     nav.global-navi
-        //-       ul.global-navi__list
-        //-         each item in globalNavi
-        //-           li.global-navi__item
-        //-             a.global-navi__link(href=item.link) 
-        //-               p.global-navi__label
-        //-                 = item.label
-        //-               i(class="fas fa-angle-right")
+      .header__search
+        a.header-link(href="./keyword-search.html")
+          i(class="fas fa-search search-icon")
+          p.header-link__text 
+            | 検索
