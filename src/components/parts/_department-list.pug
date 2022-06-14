@@ -1,0 +1,182 @@
+-
+  const citizenBureau = {
+    name: "市民局",
+    departments: {
+      shiminsankaku : {
+        name: "市民参画部",
+        divisions: {
+          shiminkatsudou : {
+            name: "市民活動推進課",
+            contacts: [
+              {
+                name: "庶務広報担当",
+                description: "「市民の声」の受け付け、市民意見提出手続（パブリック・コメント手続）の取りまとめ、市政モニターの運営、市政出前講座の運営",
+                tel: "000-8888-777",
+                fax: "000-8888-777",
+              },
+              {
+                name: "自治振興室",
+                description: "地域づくり支援の統括・調整、連合自治会、附属機関、更正保護活動、提案型協働事業、その他参画・協働に関すること",
+                tel: "000-8888-777",
+                fax: "000-8888-777",
+              },
+              {
+                name: "市民活動・ボランティアサポートセンター",
+                description: "市民活動に関する情報の提供、講座や研修会の開催、活動に関する相談、ネットワークづくり、協働のサポート、団体の活動支援、個人ボランティアの登録",
+                tel: "000-8888-777",
+                fax: "000-8888-777",
+              },
+            ]
+          }
+        }
+      },
+      shiminseikatsu : {
+        name: "市民生活部",
+        divisions: {
+          shiminkatsudou : {
+            name: "市民活動推進課",
+            contacts: [
+              {
+                name: "庶務広報担当",
+                description: "「市民の声」の受け付け、市民意見提出手続（パブリック・コメント手続）の取りまとめ、市政モニターの運営、市政出前講座の運営",
+                tel: "000-8888-777",
+                fax: "000-8888-777",
+              },
+              {
+                name: "自治振興室",
+                description: "地域づくり支援の統括・調整、連合自治会、附属機関、更正保護活動、提案型協働事業、その他参画・協働に関すること",
+                tel: "000-8888-777",
+                fax: "000-8888-777",
+              },
+              {
+                name: "市民活動・ボランティアサポートセンター",
+                description: "市民活動に関する情報の提供、講座や研修会の開催、活動に関する相談、ネットワークづくり、協働のサポート、団体の活動支援、個人ボランティアの登録",
+                tel: "000-8888-777",
+                fax: "000-8888-777",
+              },
+            ]
+          }
+        }
+      },
+    }
+  }
+
+include ../base/Section.pug
+include ../base/LinkButton.pug
+
++Section()
+  ul.department-breadcrumb
+    li.department-breadcrumb-item
+      span.department-breadcrumb-item__text
+        = citizenBureau.name
+    li.department-breadcrumb-item
+      span.department-breadcrumb-item__text
+        = citizenBureau.departments.shiminsankaku.name
+    li.department-breadcrumb-item
+      span.department-breadcrumb-item__text
+        = citizenBureau.departments.shiminsankaku.divisions.shiminkatsudou.name
+  .contacts 
+    ul.contacts-list 
+      each item in citizenBureau.departments.shiminsankaku.divisions.shiminkatsudou.contacts
+        li.contacts-list-item
+          .contacts-list-item__header
+            h3.contacts-list-item__title 
+              = item.name
+            +LinkButton({
+              primary: true,
+              link: "/",
+              label: "お問い合わせフォーム"
+            })
+          .contacts-list-item__body 
+            dl.contacts-list-item-table
+              div.table-layout
+                dt.contacts-list-item-table__term
+                  h4 主な業務内容
+                dd.contacts-list-item-table__description
+                  = item.description
+              dt.contacts-list-item-table__term
+                h4 電話番号
+              dd.contacts-list-item-table__description
+                = item.tel
+              dt.contacts-list-item-table__term
+                h4 ファクス番号
+              dd.contacts-list-item-table__description
+                = item.fax
++Section()
+  ul.department-breadcrumb
+    li.department-breadcrumb-item
+      span.department-breadcrumb-item__text
+        = citizenBureau.name
+    li.department-breadcrumb-item
+      span.department-breadcrumb-item__text
+        = citizenBureau.departments.shiminsankaku.name
+    li.department-breadcrumb-item
+      span.department-breadcrumb-item__text
+        | 男女共同参画推進課
+        //- = citizenBureau.departments.shiminsankaku.divisions.shiminkatsudou.name
+  .contacts 
+    ul.contacts-list 
+      each item in citizenBureau.departments.shiminsankaku.divisions.shiminkatsudou.contacts
+        li.contacts-list-item
+          .contacts-list-item__header
+            h3.contacts-list-item__title 
+              = item.name
+            +LinkButton({
+              primary: true,
+              link: "/",
+              label: "お問い合わせフォーム"
+            })
+          .contacts-list-item__body 
+            dl.contacts-list-item-table
+              div.table-layout
+                dt.contacts-list-item-table__term
+                  h4 主な業務内容
+                dd.contacts-list-item-table__description
+                  = item.description
+              dt.contacts-list-item-table__term
+                h4 電話番号
+              dd.contacts-list-item-table__description
+                = item.tel
+              dt.contacts-list-item-table__term
+                h4 ファクス番号
+              dd.contacts-list-item-table__description
+                = item.fax
++Section()
+  ul.department-breadcrumb
+    li.department-breadcrumb-item
+      span.department-breadcrumb-item__text
+        = citizenBureau.name
+    li.department-breadcrumb-item
+      span.department-breadcrumb-item__text
+        = citizenBureau.departments.shiminsankaku.name
+    li.department-breadcrumb-item
+      span.department-breadcrumb-item__text
+        | 男女共同参画推進センター（あいめっせ）
+        //- = citizenBureau.departments.shiminsankaku.divisions.shiminkatsudou.name
+  .contacts 
+    ul.contacts-list 
+      each item in citizenBureau.departments.shiminsankaku.divisions.shiminkatsudou.contacts
+        li.contacts-list-item
+          .contacts-list-item__header
+            h3.contacts-list-item__title 
+              = item.name
+            +LinkButton({
+              primary: true,
+              link: "/",
+              label: "お問い合わせフォーム"
+            })
+          .contacts-list-item__body 
+            dl.contacts-list-item-table
+              div.table-layout
+                dt.contacts-list-item-table__term
+                  h4 主な業務内容
+                dd.contacts-list-item-table__description
+                  = item.description
+              dt.contacts-list-item-table__term
+                h4 電話番号
+              dd.contacts-list-item-table__description
+                = item.tel
+              dt.contacts-list-item-table__term
+                h4 ファクス番号
+              dd.contacts-list-item-table__description
+                = item.fax

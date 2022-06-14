@@ -18,6 +18,7 @@ block pageOption
 include ../base/Breadcrumb.pug
 include ../base/Banner.pug
 include ../base/IncrementalSearch.pug
+include ../base/Section.pug
 
 block content
   include ../parts/_global-navi.pug
@@ -31,7 +32,7 @@ block content
         title: "組織一覧・問い合わせ先",
         icon: "organization.png"
       })
-  section.section-content
+  +Section()
     .section-content__body
       h2.section-content__heading 
         | フリーワード検索
@@ -39,5 +40,8 @@ block content
         +IncrementalSearch({
           placeholder: "部署名・業務などを入力してください"
         })
+
+  include ../parts/_search-help.pug
+  include ../parts/_department-list.pug
 
 
