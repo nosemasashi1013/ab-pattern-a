@@ -38,7 +38,8 @@
 		&__header {
 			display: flex;
 			align-items: center;
-			gap: 48px;
+			justify-content: space-between;
+			// gap: 48px;
 			margin-bottom: 24px;
 		}
 		&__title {

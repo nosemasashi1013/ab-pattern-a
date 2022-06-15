@@ -15,12 +15,16 @@
   ]
 
 include ../base/Section.pug
+include ../base/Accordion.pug
 
-+Section()
-  .search-help 
-    .search-help__title
-      i(class="far fa-question-circle")
-      h2 検索のヒント
+.search-help
+  +Accordion({
+    title: "search-help",
+    items: [{
+      helpIcon: true,
+      label: "検索のヒント",
+    }]
+  })
     ul.search-help__list
       each item in helps 
         li.search-help__item 

@@ -6,18 +6,15 @@ block pageOption
       {
         text : "トップページ",
         link : "/",
-        isCurrent : false
-
       },
       {
         text : "組織一覧・問い合わせ先",
-
       },
     ]
 
 include ../base/Breadcrumb.pug
 include ../base/Banner.pug
-include ../base/IncrementalSearch.pug
+include ../base/Input.pug
 include ../base/Section.pug
 
 block content
@@ -33,13 +30,12 @@ block content
         icon: "organization.png"
       })
   +Section()
-    .section-content__body
-      h2.section-content__heading 
-        | フリーワード検索
-      .section-content__input
-        +IncrementalSearch({
-          placeholder: "部署名・業務などを入力してください"
-        })
+    h2.section-content__heading 
+      | フリーワード検索
+    .section-content__input
+      +Input({
+        placeholder: "部署名・業務などを入力してください"
+      })
 
   include ../parts/_search-help.pug
   include ../parts/_department-list.pug

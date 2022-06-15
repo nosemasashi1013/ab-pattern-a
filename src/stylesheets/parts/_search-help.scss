@@ -1,4 +1,5 @@
 .search-help {
+	@extend .layout-default;
 	&__title {
 		display: flex;
 		align-items: center;
