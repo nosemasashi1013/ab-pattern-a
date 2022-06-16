@@ -31,6 +31,7 @@ import { toggleMenu } from "./header";
 import { moveFocus } from "./header";
 import { createPagination } from "./pagination";
 import { categoryFilter } from "./filter";
+import { incrementalSearch } from "./incrementalSearch";
 
 $(function () {
 	library.add(
@@ -67,5 +68,6 @@ $(function () {
 	moveFocus();
 	createPagination();
 	categoryFilter();
+	incrementalSearch();
 	dom.i2svg();
 });
