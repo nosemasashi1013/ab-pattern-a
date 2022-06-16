@@ -1,0 +1,19 @@
+.faq {
+	&__title {
+		font-size: 24px;
+		font-weight: bold;
+		margin-bottom: 24px;
+	}
+}
+.faq-list-item {
+	margin: 16px 0;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	&__icon {
+		font-size: 30px;
+	}
+	&__text {
+		font-weight: bold;
+	}
+}

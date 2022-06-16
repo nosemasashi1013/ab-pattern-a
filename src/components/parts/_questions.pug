@@ -1,0 +1,41 @@
+-
+  const questions = [
+    {
+      text: "文字を大きくできますか？",
+      link: "./answer.html?id=1",
+    },
+    {
+      text: "新着情報とはなんですか？",
+      link: "./answer.html?id=2",
+    },
+    {
+      text: "担当がわからない場合はどうすればいいですか？",
+      link: "",
+    },
+    {
+      text: "担当がわからない場合はどうすればいいですか？",
+      link: "",
+    },
+    {
+      text: "担当がわからない場合はどうすればいいですか？",
+      link: "",
+    },
+    {
+      text: "担当がわからない場合はどうすればいいですか？",
+      link: "",
+    }
+  ]
+
+include ../base/Section.pug
+
++Section()
+  .faq
+    h2.faq__title
+      | よくあるご質問
+    ul.faq-list 
+      each item in questions 
+        li.faq-list-item 
+          i(class="far fa-comments faq-list-item__icon")
+          a(href=item.link) 
+            p.faq-list-item__text 
+              = item.text
