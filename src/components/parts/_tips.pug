@@ -1,0 +1,133 @@
+-
+  const tips = [
+    {
+      label: "あ",
+      list: [
+        {
+          text: "色"
+        },
+        {
+          text: "オンライン手続き"
+        },
+        {
+          text: "アクセシビリティ"
+        },
+      ]
+    },
+    {
+      label: "か",
+      list: [
+        {
+          text: "カラーモード"
+        },
+        {
+          text: "高齢者"
+        },
+        {
+          text: "検索"
+        },
+      ]
+    },
+    {
+      label: "さ",
+      list: [
+        {
+          text: "相談"
+        },
+        {
+          text: "所在地"
+        },
+        {
+          text: "時間"
+        },
+      ]
+    },
+    {
+      label: "た",
+      list: [
+        {
+          text: "担当窓口"
+        },
+        {
+          text: "手続き"
+        },
+        {
+          text: "電話"
+        },
+      ]
+    },
+    {
+      label: "な",
+      list: [
+        {
+          text: "何か"
+        },
+      ]
+    },
+    {
+      label: "は",
+      list: [
+        {
+          text: "プリント"
+        },
+      ]
+    },
+    {
+      label: "ま",
+      list: [
+        {
+          text: "窓口"
+        },
+        {
+          text: "申し込み"
+        },
+      ]
+    },
+    {
+      label: "や",
+      list: [
+        {
+          text: "夜間"
+        },
+      ]
+    },
+    {
+      label: "ら",
+      list: [
+        {
+          text: "キーワード"
+        },
+      ]
+    },
+    {
+      label: "A-Z",
+      list: [
+        {
+          text: "Language"
+        },
+        {
+          text: "foreigner"
+        },
+      ]
+    },
+  ]
+
+include ../base/Section.pug
+include ../base/LinkChip.pug
+
++Section()
+  .tips 
+    h2.tips__title 
+      | ことばのヒント
+    dl.tips-list 
+      each item in tips 
+        dt.tips-list__term
+          = item.label 
+        dd.tips-list__description 
+          ul.tips-list__list 
+            each tip in item.list 
+              li.tips-list__item 
+                +LinkChip({
+                  link: "#",
+                  label: tip.text
+                })

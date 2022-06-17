@@ -19,7 +19,10 @@ import {
 	faChevronCircleRight,
 	faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
-import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
+import {
+	faQuestionCircle,
+	faComments,
+} from "@fortawesome/free-regular-svg-icons";
 import "@accessible360/accessible-slick";
 import { initializeSlick, changeSlideOnHover } from "./slider";
 import { changeAccordionStatus } from "./accordion";
@@ -56,7 +59,8 @@ $(function () {
 		faInfoCircle,
 		faChevronCircleRight,
 		faCaretDown,
-		faQuestionCircle
+		faQuestionCircle,
+		faComments
 	);
 
 	setFontColor();
