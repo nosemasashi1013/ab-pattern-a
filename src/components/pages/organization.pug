@@ -16,6 +16,7 @@ include ../base/Breadcrumb.pug
 include ../base/Banner.pug
 include ../base/Input.pug
 include ../base/Section.pug
+include ../parts/_keyword-input.pug
 
 block content
   include ../parts/_global-navi.pug
@@ -29,13 +30,10 @@ block content
         title: "組織一覧・問い合わせ先",
         icon: "organization.png"
       })
-  +Section()
-    h2.section-content__heading 
-      | フリーワード検索
-    .section-content__input.organization-search
-      +Input({
-        placeholder: "部署名・業務などを入力してください"
-      })
+  +KeywordInput({
+    title: "フリーワード検索",
+    placeholder: "部署名・業務などを入力してください",
+  })
 
   include ../parts/_search-help.pug
   include ../parts/_department-list.pug

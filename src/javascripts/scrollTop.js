@@ -2,7 +2,7 @@ export const showScrollTop = () => {
 	const $pagetop = $(".scroll-top");
 
 	$(window).on("scroll", function () {
-		$(this).scrollTop() < 2000
+		$(this).scrollTop() < 1400
 			? $pagetop.attr("aria-hidden", "true")
 			: $pagetop.attr("aria-hidden", "false");
 	});
