@@ -18,6 +18,7 @@ include ../base/Breadcrumb.pug
 include ../base/Banner.pug
 include ../base/Input.pug
 include ../base/Section.pug
+include ../parts/_keyword-input.pug
 
 block content
   include ../parts/_global-navi.pug
@@ -31,12 +32,12 @@ block content
         icon: "question_menu_icon.png"
       })
 
-  +Section()
-    .keyword-input
-      .keyword-input__title 
-        | 聞きたいことはなんですか？
-      .keyword-input__form
-        +Input({placeholder: "例：文字を大きく"})
+  .faq-search#faq-search-input
+    +KeywordInput({
+      title: "聞きたいことはなんですか？",
+      placeholder: "例：文字を大きく",
+    })
+
   include ../parts/_questions.pug
   include ../parts/_tips.pug
 

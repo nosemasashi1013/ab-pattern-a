@@ -12,9 +12,9 @@
 			content: "";
 			display: block;
 			position: absolute;
-			width: 56px;
+			width: 100%;
 			height: 2px;
-			background-color: #cdd6dd;
+			background-color: colors(primary);
 			margin-top: 40px;
 		}
 	}

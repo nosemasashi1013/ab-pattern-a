@@ -40,3 +40,30 @@ export const incrementalSearch = () => {
 		}
 	});
 };
+
+export const faqSearch = () => {
+	$(".faq-search .input-form__input").on("keyup change", function (e) {
+		if (e.key?.match(/\s/)) return false;
+		const valArr = String($(this).val()).split(/\s/);
+		const $question = $(".faq-list-item");
+
+		if (!$(this).val()) {
+			$question.show();
+		} else {
+			$question.hide();
+			$question.each(function () {
+				if ($(this).text().match(valArr.join("|"))) {
+					$(this).show();
+				}
+			});
+		}
+	});
+};
+
+export const clickTipsList = () => {
+	$(".tips-list__item .link-chip").on("click", function () {
+		const $tipLabel = $(this).text();
+		const $input = $(".faq-search .input-form__input");
+		$input.val($tipLabel).trigger("change");
+	});
+};

@@ -81,6 +81,9 @@
         {
           text: "申し込み"
         },
+        {
+          text: "文字"
+        },
       ]
     },
     {
@@ -128,6 +131,6 @@ include ../base/LinkChip.pug
             each tip in item.list 
               li.tips-list__item 
                 +LinkChip({
-                  link: "#",
+                  link: "#faq-search-input",
                   label: tip.text
                 })

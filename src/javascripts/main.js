@@ -35,7 +35,11 @@ import { toggleMenu } from "./header";
 import { moveFocus } from "./header";
 import { createPagination } from "./pagination";
 import { categoryFilter } from "./filter";
-import { incrementalSearch } from "./incrementalSearch";
+import {
+	incrementalSearch,
+	faqSearch,
+	clickTipsList,
+} from "./incrementalSearch";
 import { showScrollTop } from "./scrollTop";
 import { scrollTop } from "./scrollTop";
 import { keywordSearch } from "./keywordSearch";
@@ -81,5 +85,7 @@ $(function () {
 	showScrollTop();
 	scrollTop();
 	keywordSearch();
+	faqSearch();
+	clickTipsList();
 	dom.i2svg();
 });
