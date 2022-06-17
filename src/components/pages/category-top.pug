@@ -182,16 +182,17 @@ block content
                         = item.newInfoCount
 
           +Accordion({title: "change-condition", items: [{label: "絞り込む"}]})
-            ul.checkbox-list__list
-              each item in checkboxList
-                li.checkbox-list__item
-                  +Checkbox({
-                    id: item.id,
-                    name: item.name,
-                    value: item.value,
-                    checked: item.checked,
-                    label: item.label
-                  })
+            .checkbox-list
+              ul.checkbox-list__list
+                each item in checkboxList
+                  li.checkbox-list__item
+                    +Checkbox({
+                      id: item.id,
+                      name: item.name,
+                      value: item.value,
+                      checked: item.checked,
+                      label: item.label
+                    })
 
       section.search-result-main
         h2.category-search__count
