@@ -4,6 +4,7 @@ import {
 	faCheck,
 	faAngleRight,
 	faAngleDown,
+	faAngleUp,
 	faSearch,
 	faExclamationCircle,
 	faArrowLeft,
@@ -35,12 +36,15 @@ import { moveFocus } from "./header";
 import { createPagination } from "./pagination";
 import { categoryFilter } from "./filter";
 import { incrementalSearch } from "./incrementalSearch";
+import { showScrollTop } from "./scrollTop";
+import { scrollTop } from "./scrollTop";
 
 $(function () {
 	library.add(
 		faCheck,
 		faAngleRight,
 		faAngleDown,
+		faAngleUp,
 		faSearch,
 		faExclamationCircle,
 		faArrowLeft,
@@ -73,5 +77,7 @@ $(function () {
 	createPagination();
 	categoryFilter();
 	incrementalSearch();
+	showScrollTop();
+	scrollTop();
 	dom.i2svg();
 });
