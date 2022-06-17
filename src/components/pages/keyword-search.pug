@@ -1,8 +1,25 @@
 extends ../common/_layout
 
 block pageOption
+  -
+    const breadcrumbItem = [
+      {
+        text : "トップページ",
+        link : "./index.html",
+        isCurrent : false
+
+      },
+      {
+        text : "キーワードで検索する",
+      },
+    ]
+
+include ../base/Breadcrumb.pug
 
 block content
+  include ../parts/_global-navi.pug
+  +Breadcrumb({items: breadcrumbItem})
+
   include ../parts/_keyword-input.pug
   include ../parts/_search-help.pug
 

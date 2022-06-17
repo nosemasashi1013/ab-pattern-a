@@ -39,7 +39,7 @@ include ../base/Section.pug
 include ../base/LinkChipList.pug
 
 +Section()
-  .keyword-input
+  form.keyword-input(role="search" action="./keyword-search-result.html")
     .keyword-input__title 
       | キーワードで検索する
     .keyword-input__form

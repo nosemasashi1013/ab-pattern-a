@@ -1,0 +1,103 @@
+extends ../common/_layout
+
+block pageOption
+  include ../../data/_data.pug
+  -
+    const breadcrumbItem = [
+      {
+        text : "トップページ",
+        link : "./index.html",
+        isCurrent : false
+
+      },
+      {
+        text : "キーワードで検索する",
+        link : "./keyword-search.html",
+        isCurrent : false
+
+      },
+      {
+        text : "キーワードで検索する検索結果",
+      },
+    ]
+    const filter = [
+      {
+        label: "すべて",
+        value: "1",
+        checked: true
+      },
+      {
+        label: "市民の方",
+        value: "2",
+        checked: false
+      },
+      {
+        label: "事業者の方",
+        value: "3",
+        checked: false
+      },
+      {
+        label: "観光・移住",
+        value: "4",
+        checked: false
+      },
+      {
+        label: "市政について",
+        value: "5",
+        checked: false
+      },
+    ]
+
+include ../base/Accordion.pug
+include ../base/Breadcrumb.pug
+include ../base/Button.pug
+include ../base/LinkButton.pug
+include ../base/Banner.pug
+include ../base/Checkbox.pug
+include ../base/SearchResult.pug
+include ../base/Pagination.pug
+include ../base/Radio.pug
+
+block content
+  include ../parts/_global-navi.pug
+  +Breadcrumb({items: breadcrumbItem})
+
+  include ../parts/_keyword-input.pug
+
+  section.section-content
+    .keyword-search-result
+      section.keyword-search-result-main
+        h2.keyword-search-result-main__title
+          | 検索結果
+        .keyword-search-result-main__body
+          h3.keyword-search-result__count
+            = `${results.length} 件`
+          ul.keyword-search-result-list
+            each result in results
+              li.keyword-search-result-list__item
+                +SearchResult({
+                  title: result.title,
+                  categories: result.categories,
+                  text: result.text,
+                  link: result.link,
+                  summary: result.summary,
+                  application: result.application
+                })
+          +Pagination()
+
+      aside.keyword-search-result-condition
+        h3.keyword-search-result-condition__title 
+          | 対象を絞る
+        form.keyword-search-result-condition__form
+          .radio-list
+            ul.radio-list__list
+              each item in filter 
+                li.radio-list__item
+                  .radio-list__radio
+                    +Radio({
+                      id: `target-${item.value}`,
+                      name: "target",
+                      value: item.value,
+                      checked: item.checked,
+                      label: item.label,
+                    })

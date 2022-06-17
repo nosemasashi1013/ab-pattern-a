@@ -35,6 +35,7 @@ import { categoryFilter } from "./filter";
 import { incrementalSearch } from "./incrementalSearch";
 import { showScrollTop } from "./scrollTop";
 import { scrollTop } from "./scrollTop";
+import { keywordSearch } from "./keywordSearch";
 
 $(function () {
 	library.add(
@@ -75,5 +76,6 @@ $(function () {
 	incrementalSearch();
 	showScrollTop();
 	scrollTop();
+	keywordSearch();
 	dom.i2svg();
 });
