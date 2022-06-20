@@ -72,9 +72,14 @@
 			width: 160px;
 		}
 		.card-text {
+			padding: 24px 16px;
 			flex: 1;
 			&__title {
 				font-size: 18px;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+				overflow: hidden;
 			}
 			&__description {
 				display: none;
