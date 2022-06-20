@@ -6,9 +6,10 @@
 		font-weight: bold;
 	}
 	.copy-right {
-		background-color: #dbe6ed;
+		background-color: colors(primary);
 		text-align: center;
-		padding-bottom: 24px;
+		padding: 8px;
+		color: #fff;
 	}
 }
 .footer-links {
@@ -19,8 +20,7 @@
 	}
 	&__list {
 		display: flex;
-		align-items: center;
-		justify-content: space-around;
+		gap: 48px;
 	}
 }
 .footer-profile {

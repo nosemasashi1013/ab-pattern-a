@@ -1,0 +1,12 @@
+.chip {
+	border: 1px solid #c5c8d1;
+	border-radius: 50px;
+	padding: 0 16px;
+	width: fit-content;
+}
+
+@media (max-width: breakpoint(sp)) {
+	.chip {
+		font-size: 12px;
+	}
+}

@@ -1,0 +1,20 @@
+include ../base/Input.pug
+include ../base/Section.pug
+include ../base/LinkChipList.pug
+
+mixin KeywordInput(params={})
+  - const props = Object.assign({}, params)
+  +Section()
+    form.keyword-input(role="search" action="./keyword-search-result.html")
+      .keyword-input__title 
+        = props.title
+      .keyword-input__form
+        +Input({placeholder: props.placeholder})
+      if props.keywords
+        .keyword-input__list
+          +LinkChipList({
+            title: "よく検索されているキーワード",
+            list: props.keywords,
+          })
+
+

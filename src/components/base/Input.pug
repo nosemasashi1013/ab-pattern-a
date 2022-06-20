@@ -1,0 +1,10 @@
+mixin Input(params={})
+  - const props = Object.assign({}, params)
+  .input 
+    if props.label
+      h2.input__label
+        = props.label
+    .input-form
+      input.input-form__input(type="text" placeholder=props.placeholder)
+      button.input-form__btn(type="submit")
+        i(class="fas fa-search")

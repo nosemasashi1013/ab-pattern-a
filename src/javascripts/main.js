@@ -4,6 +4,7 @@ import {
 	faCheck,
 	faAngleRight,
 	faAngleDown,
+	faAngleUp,
 	faSearch,
 	faExclamationCircle,
 	faArrowLeft,
@@ -18,6 +19,10 @@ import {
 	faChevronCircleRight,
 	faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+	faQuestionCircle,
+	faComments,
+} from "@fortawesome/free-regular-svg-icons";
 import "@accessible360/accessible-slick";
 import { initializeSlick, changeSlideOnHover } from "./slider";
 import { changeAccordionStatus } from "./accordion";
@@ -26,13 +31,25 @@ import { changeTabStatus } from "./tab";
 import { setFontColor, setFontSize, selectLanguage } from "./accessibility";
 import { detailPageAnchor } from "./anchor";
 import { getCurrentUrl } from "./globalNavi";
+import { toggleMenu } from "./header";
+import { moveFocus } from "./header";
 import { createPagination } from "./pagination";
+import { categoryFilter } from "./filter";
+import {
+	incrementalSearch,
+	faqSearch,
+	clickTipsList,
+} from "./incrementalSearch";
+import { showScrollTop } from "./scrollTop";
+import { scrollTop } from "./scrollTop";
+import { keywordSearch } from "./keywordSearch";
 
 $(function () {
 	library.add(
 		faCheck,
 		faAngleRight,
 		faAngleDown,
+		faAngleUp,
 		faSearch,
 		faExclamationCircle,
 		faArrowLeft,
@@ -45,7 +62,9 @@ $(function () {
 		faArrowCircleUp,
 		faInfoCircle,
 		faChevronCircleRight,
-		faCaretDown
+		faCaretDown,
+		faQuestionCircle,
+		faComments
 	);
 
 	setFontColor();
@@ -58,6 +77,15 @@ $(function () {
 	initializeSlick();
 	changeSlideOnHover();
 	getCurrentUrl();
+	toggleMenu();
+	moveFocus();
 	createPagination();
+	categoryFilter();
+	incrementalSearch();
+	showScrollTop();
+	scrollTop();
+	keywordSearch();
+	faqSearch();
+	clickTipsList();
 	dom.i2svg();
 });

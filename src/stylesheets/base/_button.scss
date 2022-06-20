@@ -1,11 +1,12 @@
 .btn {
 	@extend .box-shadow;
-	padding: 12px 48px;
+	padding: 8px 48px;
 	border-radius: 50px;
 	font-weight: bold;
-	font-size: 24px;
 	&:hover {
 		opacity: 0.8;
+	}
+	&:disabled {
 	}
 	&--primary {
 		@extend .btn;
@@ -16,5 +17,6 @@
 		@extend .btn;
 		background-color: #fff;
 		color: colors(primary);
+		border: 1px solid colors(primary);
 	}
 }

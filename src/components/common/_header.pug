@@ -1,4 +1,52 @@
-include ../base/Search.pug
+-
+  const globalNavi = [
+    {
+      label: "市民の方",
+      link: "/",
+    },
+    {
+      label: "事業者の方",
+      link: "/",
+    },
+    {
+      label: "観光・移住",
+      link: "/",
+    },
+    {
+      label: "市政について",
+      link: "/",
+    },
+  ]
+  const font = [
+    {
+      meta: "regular",
+      name: "標準",
+    },
+    {
+      meta: "large",
+      name: "拡大",
+    }
+  ]
+  const color = [
+    {
+      meta: "black",
+      name: "黒",
+      checked: true,
+    },
+    {
+      meta: "white",
+      name: "白",
+      checked: false,
+    },
+    {
+      meta: "yellow",
+      name: "黄",
+      checked: false,
+    },
+  ]
+
+include ../base/LinkButton.pug
+include ./_accessibility.pug
 
 header.header
   .header__wrapper
@@ -6,16 +54,8 @@ header.header
       .header__icon
         a(href="/")
           img(src="../../images/common/daikoku-icon.png" alt="大黒市" class="logo")
-      .header__search 
-        +Search()
-      .header__menu
-        .menu
-          span.menu__icon
-      include ./_accessibility.pug
-
-
-
-
-
-
-
+      .header__search
+        a.header-link(href="./keyword-search.html")
+          i(class="fas fa-search search-icon")
+          p.header-link__text 
+            | 検索

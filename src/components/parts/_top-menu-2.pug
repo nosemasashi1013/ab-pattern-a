@@ -13,7 +13,12 @@
     {
       text: "組織図・問い合わせ先",
       icon: "organization_menu_icon.png",
-      link: "#"
+      link: "./organization.html"
+    },
+    {
+      text: "HPよくあるご質問",
+      icon: "question_menu_icon.png",
+      link: "./faq.html"
     },
   ]
 
@@ -25,4 +30,9 @@ include ../base/LinkMenu.pug
   ul.visitor-menu-list
     each item in items
       li.visitor-menu-list__item
-        +LinkMenu({basePath: basePath, icon: item.icon, text: item.text})
+        +LinkMenu({
+          basePath: basePath,
+          icon: item.icon,
+          text: item.text,
+          link: item.link
+        })

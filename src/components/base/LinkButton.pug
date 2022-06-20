@@ -1,0 +1,10 @@
+mixin LinkButton(params={})
+  - const props = Object.assign({}, params)
+  - const primaryStyleClass = props.primary ? "link-btn__link--primary" : ""
+  - const secondaryStyleClass = props.secondary ? "link-btn__link--secondary" : ""
+  .link-btn 
+    a(href=props.link class=`link-btn__link ${primaryStyleClass} ${secondaryStyleClass}`)
+      if props.icon
+        i(class=props.icon + " link-btn__icon")
+      p.link-btn__label 
+        = props.label

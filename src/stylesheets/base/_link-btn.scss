@@ -1,0 +1,38 @@
+.link-btn {
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		color: #fff;
+		background-color: colors(primary);
+		padding: 8px 32px;
+		border-radius: 50px;
+
+		&--primary {
+			@extend .link-btn__link;
+			background-color: colors(primary);
+			color: #fff;
+		}
+		&--secondary {
+			@extend .link-btn__link;
+			background-color: #fff;
+			color: colors(primary);
+			border: 1px solid colors(primary);
+		}
+	}
+	&__label {
+	}
+	&__icon {
+		width: 18px;
+		height: 18px;
+	}
+}
+
+@media (max-width: breakpoint(sp)) {
+	.link-btn {
+		&__link {
+			flex-direction: column;
+		}
+	}
+}

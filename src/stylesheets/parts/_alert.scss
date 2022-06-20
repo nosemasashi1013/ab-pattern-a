@@ -9,7 +9,7 @@
 .alert {
 	border: 8px solid #ff3372;
 	border-radius: 16px;
-	padding: 32px;
+	padding: 32px 32px 16px;
 	background-color: #fff;
 }
 
@@ -53,6 +53,15 @@
 		}
 	}
 }
+.alert-logo {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 16px;
+	&__img {
+		height: 24px;
+		width: auto;
+	}
+}
 
 @media only screen and (max-width: breakpoint(sp)) {
 	.section-content__alert {
@@ -61,6 +70,7 @@
 	}
 	.alert {
 		margin: 0 16px;
+		padding: 32px 16px 16px;
 	}
 	.alert-links-list {
 		&__item {

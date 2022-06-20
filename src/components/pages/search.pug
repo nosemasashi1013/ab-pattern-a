@@ -11,9 +11,6 @@ block pageOption
 			},
 			{
 				text : "選んで探す",
-				link : "",
-				isCurrent : true
-
 			},
 		]
 
@@ -27,6 +24,7 @@ block content
 
 	section.section-content__header
 		+Banner({
+			basePath: "../../images/common/",
 			title: "選んで探す",
 			description: "人生の出来事、「こんなことがしたい」「知りたい」といったことを\n選択いただくことで、ご自身に合った検索ができます。",
 			icon: "search_menu_img.png"
@@ -45,4 +43,8 @@ block content
 
 			.section-content.layout-default
 				.search-btn__container
-					+Button({type: "submit", label: "検索する"})
+					+Button({
+						type: "submit",
+						label: "検索する",
+						primary: true
+					})

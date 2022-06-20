@@ -1,5 +1,7 @@
 mixin Button(params={})
-  - const props = Object.assign({ type: "button"}, params)
-  button.btn--primary(type=props.type formaction="../search-result.html")
+  - const props = Object.assign({ type: "button" }, params)
+  - const primaryStyleClass = props.primary ? "btn--primary" : ""
+  - const secondaryStyleClass = props.secondary ? "btn--secondary" : ""
+  button(class=`btn ${primaryStyleClass} ${secondaryStyleClass}` type=props.type formaction="../search-result.html" disabled=props.disabled)
     span.btn__label
       = props.label

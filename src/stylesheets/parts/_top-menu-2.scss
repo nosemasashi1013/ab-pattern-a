@@ -9,12 +9,12 @@
 	gap: 8px;
 	margin-bottom: 8px;
 	&__item {
-		flex-basis: calc(33% - 8px);
+		flex-basis: calc(25% - 8px);
 	}
 	.link-menu {
 		&__icon {
-			width: 100%;
-			height: auto;
+			width: auto;
+			height: 70px;
 		}
 	}
 }

@@ -3,6 +3,7 @@
     title: string,
     items: [
       {
+        helpIcon?: string
         label: string
         content: string
       }
@@ -24,8 +25,12 @@ mixin Accordion(params={})
             aria-controls=panelId
           )
             .accordion-trigger__label-container
-              span.accordion-trigger__label
-                = item.label
+              - const modifier = item.helpIcon ? "--help" : ""
+              div(class=`accordion-trigger__label${modifier}`)
+                if item.helpIcon
+                  i(class="far fa-question-circle")
+                span
+                  = item.label
               .accordion-trigger__icon
                 i(class="fas fa-angle-down")
 

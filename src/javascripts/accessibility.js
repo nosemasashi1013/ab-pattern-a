@@ -14,7 +14,6 @@ export const setFontColor = () => {
 		$("body").attr("data-color", color);
 		Cookies.set("font-color", color, { expires: 1, path: "/" });
 	});
-
 	$(".x-color-trigger[data-color=" + Cookies.get("font-color") + "]")
 		.find("input")
 		.map(function (index, dom) {
@@ -31,17 +30,18 @@ export const setFontSize = () => {
 	}
 	$("body").attr("data-size", Cookies.get("font-size"));
 
-	$(".x-size-trigger").on("click", function () {
-		let size = $(this).data("size");
+	$(".switch-btn__trigger").on("click", function () {
+		let size = $(this).attr("data-size");
+		if (size === "large") {
+			$(this).find($(".switch-btn__label")).text("標準に戻す");
+			$(this).attr("data-size", "regular");
+		} else {
+			$(this).find($(".switch-btn__label")).text("文字拡大");
+			$(this).attr("data-size", "large");
+		}
 		$("body").attr("data-size", size);
 		Cookies.set("font-size", size, { expires: 1, path: "/" });
 	});
-
-	$(".x-size-trigger[data-size=" + Cookies.get("font-size") + "]")
-		.find("input")
-		.map(function (index, dom) {
-			$(dom).prop("checked", true);
-		});
 };
 
 /**

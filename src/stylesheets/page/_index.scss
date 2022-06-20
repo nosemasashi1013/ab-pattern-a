@@ -1,7 +1,5 @@
 .section-content {
 	position: relative;
-	overflow: hidden;
-
 	&__carousel {
 		opacity: 0;
 		transition: opacity 0.8s ease-in-out;

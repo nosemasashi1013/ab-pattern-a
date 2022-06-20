@@ -1,0 +1,66 @@
+extends ../common/_layout
+
+block pageOption
+  -
+    const breadcrumbItem = [
+      {
+        text : "トップページ",
+        link : "./index.html",
+        isCurrent : false
+
+      },
+      {
+        text : "キーワードで検索する",
+      },
+    ]
+
+    const keywords = [
+      {
+        link: "#",
+        label: "コロナ"
+      },
+      {
+        link: "#",
+        label: "コロナワクチン"
+      },
+      {
+        link: "#",
+        label: "緊急事態宣言"
+      },
+      {
+        link: "#",
+        label: "協力金"
+      },
+      {
+        link: "#",
+        label: "抗原検査"
+      },
+      {
+        link: "#",
+        label: "給付金"
+      },
+      {
+        link: "#",
+        label: "職域摂取"
+      },
+      {
+        link: "#",
+        label: "ワクチン副反応"
+      },
+    ]
+
+include ../base/Breadcrumb.pug
+include ../parts/_keyword-input.pug
+
+block content
+  include ../parts/_global-navi.pug
+  +Breadcrumb({items: breadcrumbItem})
+
+  +KeywordInput({
+    title: "キーワードで検索する",
+    placeholder: "キーワードを入力",
+    keywords: keywords
+  })
+  include ../parts/_search-help.pug
+
+

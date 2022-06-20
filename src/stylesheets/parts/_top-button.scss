@@ -1,0 +1,30 @@
+.scroll-top {
+	position: fixed;
+	right: 80px;
+	bottom: 80px;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #c8d0d8;
+	border-radius: 8px;
+	padding: 32px;
+	background: #fff;
+	text-decoration: none;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.4s;
+	&[aria-hidden="false"] {
+		visibility: visible;
+		opacity: 1;
+		transition: all 0.4s;
+	}
+}
+
+@media only screen and (max-width: breakpoint(sp)) {
+	.scroll-top {
+		right: 20px;
+	}
+}
