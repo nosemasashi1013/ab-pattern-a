@@ -1,6 +1,15 @@
+//-
+  params: {
+    items: [
+      {
+        link: string,
+        text: string,
+      }
+    ]
+  }
 mixin Breadcrumb(params={})
   - const props = Object.assign({}, params)
-  nav(aria-label="Breadcrumb" class="breadcrumb layout-default")
+  nav(aria-label="パンくずリスト" class="breadcrumb layout-default")
     ol
       each item in props.items
         li

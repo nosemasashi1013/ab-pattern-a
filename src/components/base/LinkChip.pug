@@ -1,3 +1,8 @@
+//-
+  params: {
+    link: string,
+    label: string
+  }
 mixin LinkChip(params={})
   - const props = Object.assign({}, params)
   a.link-chip(href=props.link)

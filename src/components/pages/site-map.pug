@@ -2,6 +2,7 @@ extends ../common/_layout
 
 block pageOption
   -
+    const pageTitle = "サイトマップ"
     const breadcrumbItem = [
       {
         text : "トップページ",
@@ -552,10 +553,10 @@ block content
   include ../parts/_global-navi.pug
   +Breadcrumb({items: breadcrumbItem})
 
-  section.section-content__header
-    +Banner({
-      title: "サイトマップ",
-    })
+  +Banner({
+    title: "サイトマップ",
+  })
+
   section.section-content__body
     .site-map
       .site-map__content

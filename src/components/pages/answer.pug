@@ -18,6 +18,7 @@ block pageOption
         text : "文字を大きくできますか？",
       },
     ]
+    const pageTitle = breadcrumbItem[2].text
 
 include ../base/Breadcrumb.pug
 include ../base/Banner.pug
@@ -28,11 +29,9 @@ block content
   include ../parts/_global-navi.pug
   +Breadcrumb({items: breadcrumbItem})
 
-  section.section-content 
-    .section-content__header
-      +Banner({
-        basePath: "../../images/top/",
-        title: "よくあるご質問",
-        icon: "question_menu_icon.png"
-      })
+  +Banner({
+    basePath: "../../images/top/",
+    title: "よくあるご質問",
+    icon: "question_menu_icon.png"
+  })
   include ../parts/_answer-section.pug

@@ -1,3 +1,11 @@
+//-
+  params: {
+    primary?: boolean,
+    secondary?: boolean,
+    link: string,
+    icon: string,
+    label: string
+  }
 mixin LinkButton(params={})
   - const props = Object.assign({}, params)
   - const primaryStyleClass = props.primary ? "link-btn__link--primary" : ""

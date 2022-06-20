@@ -3,6 +3,7 @@ extends ../common/_layout
 block pageOption 
   include ../../data/_data.pug
   -
+    const pageTitle = "検索結果"
     const filter = [
       {
         label: "出産",
@@ -96,13 +97,12 @@ block content
   include ../parts/_global-navi.pug
   +Breadcrumb({items: breadcrumbItem})
 
-  section.section-content__header
-    +Banner({
-      basePath: "../../images/common/",
-      title: "選んで探す 検索結果",
-      description: "「⚫︎⚫︎」、「⚫︎⚫︎」、「⚫︎⚫︎」の検索結果です",
-      icon: "search_menu_img.png"
-    })
+  +Banner({
+    basePath: "../../images/common/",
+    title: "選んで探す 検索結果",
+    description: "「⚫︎⚫︎」、「⚫︎⚫︎」、「⚫︎⚫︎」の検索結果です",
+    icon: "search_menu_img.png"
+  })
 
   section.section-content
     .search-result

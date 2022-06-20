@@ -2,6 +2,7 @@ extends ../common/_layout
 
 block pageOption
 	-
+		const pageTitle = "選んで探す"
 		const breadcrumbItem = [
 			{
 				text : "トップページ",
@@ -22,13 +23,12 @@ block content
 	include ../parts/_global-navi.pug
 	+Breadcrumb({items: breadcrumbItem})
 
-	section.section-content__header
-		+Banner({
-			basePath: "../../images/common/",
-			title: "選んで探す",
-			description: "人生の出来事、「こんなことがしたい」「知りたい」といったことを\n選択いただくことで、ご自身に合った検索ができます。",
-			icon: "search_menu_img.png"
-		})
+	+Banner({
+		basePath: "../../images/common/",
+		title: "選んで探す",
+		description: "人生の出来事、「こんなことがしたい」「知りたい」といったことを\n選択いただくことで、ご自身に合った検索ができます。",
+		icon: "search_menu_img.png"
+	})
 
 	section.section-content
 		form

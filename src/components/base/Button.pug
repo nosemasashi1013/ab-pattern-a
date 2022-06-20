@@ -1,3 +1,11 @@
+//-
+  params: {
+    primary?: boolean,
+    secondary?: boolean,
+    type?: "submit" | "button" | "reset",
+    disabled?: boolean,
+    label: string
+  }
 mixin Button(params={})
   - const props = Object.assign({ type: "button" }, params)
   - const primaryStyleClass = props.primary ? "btn--primary" : ""

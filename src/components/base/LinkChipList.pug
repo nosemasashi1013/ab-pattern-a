@@ -1,5 +1,15 @@
 include ./LinkChip.pug
 
+//-
+  params: {
+    title: string,
+    list: [
+      {
+        link: string,
+        label: string
+      }
+    ]
+  }
 mixin LinkChipList(params={})
   - const props = Object.assign({}, params)
   .link-chip-list

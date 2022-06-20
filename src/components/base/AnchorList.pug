@@ -1,3 +1,13 @@
+//-
+  params: {
+    title: string,
+    items: [
+      {
+        label: string
+        link: string
+      }
+    ]
+  }
 mixin AnchorList(params={})
   - const props = Object.assign({}, params)
   .anchor-nav-pc

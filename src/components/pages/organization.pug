@@ -2,6 +2,7 @@ extends ../common/_layout
 
 block pageOption
   -
+    const pageTitle = "組織一覧・問い合わせ先"
     const breadcrumbItem = [
       {
         text : "トップページ",
@@ -23,13 +24,11 @@ block content
 
   +Breadcrumb({items: breadcrumbItem})
 
-  section.section-content 
-    .section-content__header
-      +Banner({
-        basePath: "../../images/common/",
-        title: "組織一覧・問い合わせ先",
-        icon: "organization.png"
-      })
+  +Banner({
+    basePath: "../../images/common/",
+    title: "組織一覧・問い合わせ先",
+    icon: "organization.png"
+  })
   +KeywordInput({
     title: "フリーワード検索",
     placeholder: "部署名・業務などを入力してください",

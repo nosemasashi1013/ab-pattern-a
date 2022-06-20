@@ -2,6 +2,7 @@ extends ../common/_layout
 
 block pageOption
   -
+    const pageTitle = "よくあるご質問"
     const breadcrumbItem = [
       {
         text : "トップページ",
@@ -24,13 +25,11 @@ block content
   include ../parts/_global-navi.pug
   +Breadcrumb({items: breadcrumbItem})
 
-  section.section-content 
-    .section-content__header
-      +Banner({
-        basePath: "../../images/top/",
-        title: "よくあるご質問",
-        icon: "question_menu_icon.png"
-      })
+  +Banner({
+    basePath: "../../images/top/",
+    title: "よくあるご質問",
+    icon: "question_menu_icon.png"
+  })
 
   .faq-search#faq-search-input
     +KeywordInput({

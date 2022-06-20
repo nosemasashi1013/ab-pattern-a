@@ -1,3 +1,11 @@
+//-
+  params: {
+    id: string,
+    name: string,
+    value: string,
+    checked?: boolean,
+    label: string
+  }
 mixin Checkbox(params={})
   - const props = Object.assign({}, params)
   label.checkbox(

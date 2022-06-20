@@ -1,7 +1,8 @@
 extends ../common/_layout
 
-block pageOption
+block append pageOption
   -
+    const pageTitle = "市民トップ"
     const breadcrumbItem = [
       {
         text : "トップページ",
@@ -15,11 +16,13 @@ block pageOption
       },
     ]
 
+
 include ../base/Breadcrumb.pug
 
 block content
   include ../parts/_global-navi.pug
   +Breadcrumb({items: breadcrumbItem})
+
   section.section-content
     include ../parts/_search-life-scene.pug
 

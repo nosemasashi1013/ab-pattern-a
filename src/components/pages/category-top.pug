@@ -3,6 +3,7 @@ extends ../common/_layout
 block pageOption 
   include ../../data/_data.pug
   -
+    const pageTitle = "妊娠から子育て"
     const breadcrumbItem = [
       {
         text : "トップページ",
@@ -152,17 +153,17 @@ include ../base/ViewedLink.pug
 block content
   include ../parts/_global-navi.pug
   +Breadcrumb({items: breadcrumbItem})
-  section.section-content__header
-    +Banner({
-      basePath: "../../images/common/",
-      title: "妊娠から子育て",
-      description: `5件の新着情報があります。`,
-      help: {
-        text: "新着表記について",
-        link: "/"
-      },
-      icon: "pregnant_child_icon.png"
-    })
+
+  +Banner({
+    basePath: "../../images/common/",
+    title: "妊娠から子育て",
+    description: `5件の新着情報があります。`,
+    help: {
+      text: "新着表記について",
+      link: "/"
+    },
+    icon: "pregnant_child_icon.png"
+  })
 
   section.section-content
     .category-search
