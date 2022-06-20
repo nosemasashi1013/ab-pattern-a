@@ -1,33 +1,29 @@
 -
   const menuListItems = [
     {
-      text: "市民の方",
-      icon: "citizen_menu_icon.png",
+      text: "Next page",
       link: "./citizen.html"
     },
     {
-      text: "事業者の方",
-      icon: "business_menu_icon.png",
-      link: "#"
+      text: "No page",
+      link: "./citizen.html"
     },
     {
-      text: "観光・移住",
-      icon: "visitor_menu_icon.png",
-      link: "#"
+      text: "No page",
+      link: "./citizen.html"
     },
     {
-      text: "市政",
-      icon: "government_menu_icon.png",
-      link: "#"
+      text: "No page",
+      link: "./citizen.html"
     },
   ]
 
 include ../base/LinkMenu.pug	
-include ../base/SearchLink.pug	
 
 .section-content__top
+  h2.section-content__title 
+    | Welcome to Pattern A!
   ul.link-menu-list
     each item in menuListItems
       li.link-menu-list__item
         +LinkMenu({basePath: basePath, link: item.link, icon: item.icon, text: item.text})
-  +SearchLink({link : "../search.html"})
