@@ -1,54 +1,46 @@
 -
   const links = [
     {
-      link : "./site-map.html",
-      text : "サイトマップ",
+      link : "#",
+      text : "Link",
     },
     {
       link : "#",
-      text : "プライバシーポリシー",
+      text : "Link",
     },
     {
       link : "#",
-      text : "著作権・リンク・免責事項",
+      text : "Link",
     },
   ]
 
   const profile = {
-    title: "大黒市役所",
-    number: "1000020282014",
-    address: "〒141-0032 県大黒市富士見町1-2-3",
-    tel: "079-221-2111",
-    hour: "月曜日から金曜日の午前8時35分から午後5時20分まで （土曜日・日曜日、祝日、12月29日から翌年1月3日までは閉庁）"
+    title: "Test A",
+    number: "123456789",
+    address: "Japan",
+    tel: "000-0000-0000",
+    hour: "Monday"
   }
 
 -
 footer.footer
   .footer__container
-    .footer-links
-      .footer-links__container
-        ul.footer-links__list
-          each item in links
-            li.footer-links__item
-              a.footer-links__link(href=item.link)
-                span.footer-links__text 
-                  = item.text
     .footer-profile
       .footer-profile__container
         .footer-profile__title 
           h3
             = profile.title
             span.footer-profile__number
-              = `（法人番号：${profile.number}）`
+              = `（No.${profile.number}）`
         .footer-profile__address 
           p
             = profile.address 
         .footer-profile__tel
-          span 電話番号：
+          span tel：
           a(href=`tel:${profile.tel}`)
             = profile.tel 
         .footer-profile__hour 
           p
             = profile.hour
     .copy-right
-      | &copy; 2021-2022 City of Daikoku
+      | &copy; 2021-2022 Test A
